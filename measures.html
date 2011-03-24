@@ -1,0 +1,548 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="stylesheets/demo_page.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="stylesheets/demo_table.css" type="text/css" media="screen">
+    <link rel="icon" type="image/png" href="/images/favicon.ico" />
+    <title>popHealth - Quality Measure Status</title>
+    <script type="text/javascript" src="javascripts/jquery.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function() {
+        $('#example').dataTable( {
+          "bPaginate": false,
+           "bInfo": false,
+           "aaSorting": [[ 0, "asc" ]]
+         } );
+       } );
+    </script>
+  </head>
+  <body>
+    <div id="page">
+      <div id="header">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="screen_shots.html">Screen Shots</a></li>
+          <li><a href="http://demo.projectpophealth.org">Demo</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="documents.html">Documents</a></li>
+          <li><a href="http://github.com/pophealth" target="_external">Code</a></li>
+          <li><a href="video.html">Video</a></li>
+          <li><a href="measures.html" class="selected">Measure Status</a></li>
+          <li><a href="glossary.html">Glossary</a></li>
+          <li><a href="mailto:talk@projectpophealth.org">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <div id="logo">
+          <a href="index.html"><img src="images/pophealth_logo_small.png" alt="popHealth Logo" /></a>
+        </div>
+        <div>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <img src="images/measure_legend.png"/>
+                </td>
+                <td>
+                  <div class="question">Quality Measures encodings in popHealth</div>
+                  <p>The algorithms and code sets have been encoded into popHealth according to the set of Supplemental Meaningful Use Stage 1 Specifications which have been published on the <a href="http://www.cms.gov/QualityMeasures/03_ElectronicSpecifications.asp#TopOfPage">CMS website</a>.</p>
+                 <p>When egregious errors have been identified in the measure definitions, popHealth has been developed to fix these egregious errors in the software source code in order to meet the criteria as a reference implementation of the Meaningful Use Stage 1 Quality Measures.  Egregious errors include typographical mistakes in the expression of measure definitions, or the incorrect expression of coded values for blood pressure results.  Further, these enhancements to the measure definitions are documented here, and updated as soon as .  If you would like to be notified on changes to these egregious error corrections in popHealth, <a href="http://groups.google.com/group/pophealth-announce/subscribe" target="_external">join the popHealth announcement email list</a>.</p>
+                 <p>Below is the list of all 44 of the Meaningful Use Stage 1 Quality Measures, and the status of those measures as they have been encoded in the popHealth software.</p>
+               </td>
+             </tr>
+           </tbody>
+         </table>
+        </div>
+      </div>
+      <div id="dt_example">
+        <div id="container">
+
+          <div id="demo">
+            <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+              <thead>
+                <tr>
+                  <th>NQF ID</th>
+                  <th>Name</th>
+                  <th>Category</th>
+                  <th>Measure Steward</th>
+                  <th>Status</th>
+                  <th>Software Encoded</th>
+                  <th>Open Issues</th>
+                  <th>Steward Sign Off</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="measure_approved">
+                  <td>0001</td>
+                  <td>Asthma Assessment</td>
+                  <td>Asthma</td>
+                  <td>AMA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_error">
+                  <td>0002</td>
+                  <td>Appropriate Testing for Children with Pharyngitis</td>
+                  <td>Miscellaneous</td>
+                  <td>NCQA</td>
+                  <td>Red</td>
+                  <td class="center">Yes</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_error">
+                  <td>0004</td>
+                  <td>Initiation and Engagement of Alcohol and Other Drug Dependence Treatment</td>
+                  <td>Miscellaneous</td>
+                  <td>NCQA</td>
+                  <td>Red</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0012</td>
+                  <td>Prenatal Care: Screening for Human Immunodeficiency Virus (HIV)</td>
+                  <td>Women's Health</td>
+                  <td>AMA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0013</td>
+                  <td>Hypertension: Blood Pressure Measurement</td>
+                  <td>Core</td>
+                  <td>AMA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_error">
+                  <td>0014</td>
+                  <td>Prenatal Care: Anti‐D Immune Globulin</td>
+                  <td>Women's Health</td>
+                  <td>AMA</td>
+                  <td>Red</td>
+                  <td class="center">Yes</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_error">
+                  <td>0018</td>
+                  <td>Controlling High Blood Pressure</td>
+                  <td>Miscellaneous</td>
+                  <td>NCQA</td>
+                  <td>Red</td>
+                  <td class="center">Yes</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_warning">
+                  <td>0024</td>
+                  <td>Weight Assessment and Counseling for Children and Adolescents</td>
+                  <td>Core Alternate</td>
+                  <td>NCQA</td>
+                  <td>Yellow</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0027</td>
+                  <td>Smoking and Tobacco Use Cessation, Medical Assistance</td>
+                  <td>Miscellaneous</td>
+                  <td>NCQA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0028</td>
+                  <td>Preventive Care and Screening Measure Pair</td>
+                  <td>Core</td>
+                  <td>AMA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0031</td>
+                  <td>Breast Cancer Screening</td>
+                  <td>Cancer</td>
+                  <td>NCQA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_error">
+                  <td>0032</td>
+                  <td>Cervical Cancer Screening</td>
+                  <td>Women's Health</td>
+                  <td>NCQA</td>
+                  <td>Red</td>
+                  <td class="center">Yes</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                </tr>
+                </tr>
+                <tr class="measure_error">
+                  <td>0033</td>
+                  <td>Chlamydia Screening for Women</td>
+                  <td>Women's Health</td>
+                  <td>NCQA</td>
+                  <td>Red</td>
+                  <td class="center">Yes</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0034</td>
+                  <td>Colorectal Cancer Screening</td>
+                  <td>Cancer</td>
+                  <td>NCQA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_warning">
+                  <td>0036</td>
+                  <td>Use of Appropriate Medications for Asthma</td>
+                  <td>Asthma</td>
+                  <td>NCQA</td>
+                  <td>Yellow</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_error">
+                  <td>0038</td>
+                  <td>Childhood Immunization Status</td>
+                  <td>Core Alternate</td>
+                  <td>NCQA</td>
+                  <td>Red</td>
+                  <td class="center">Yes</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_error">
+                  <td>0041</td>
+                  <td>Preventive Care and Screening: Influenza Immunization for Patients > 50 Years Old</td>
+                  <td>Core Alternate</td>
+                  <td>AMA</td>
+                  <td>Red</td>
+                  <td class="center">Yes</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0043</td>
+                  <td>Pneumonia Vaccination Status for Older Adults</td>
+                  <td>Miscellaneous</td>
+                  <td>NCQA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0047</td>
+                  <td>Asthma Pharmacologic Therapy</td>
+                  <td>Asthma</td>
+                  <td>AMA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0052</td>
+                  <td>Low Back Pain: Use of Imaging Studies</td>
+                  <td>Miscellaneous</td>
+                  <td>NCQA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0055</td>
+                  <td>Diabetes: Eye Exam</td>
+                  <td>Diabetes</td>
+                  <td>NCQA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0056</td>
+                  <td>Diabetes: Foot Exam</td>
+                  <td>Diabetes</td>
+                  <td>NCQA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0059</td>
+                  <td>Diabetes: HbA1c Poor Control</td>
+                  <td>Diabetes</td>
+                  <td>NCQA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_warning">
+                  <td>0061</td>
+                  <td>Diabetes: Blood Pressure Management</td>
+                  <td>Diabetes</td>
+                  <td>NCQA</td>
+                  <td>Yellow</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0062</td>
+                  <td>Diabetes: Urine Screening</td>
+                  <td>Diabetes</td>
+                  <td>NCQA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0064</td>
+                  <td>Diabetes: LDL Management & Control</td>
+                  <td>Diabetes</td>
+                  <td>NCQA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0067</td>
+                  <td>Coronary Artery Disease (CAD): Oral Antiplatelet Therapy Prescribed for Patients with CAD</td>
+                  <td>Heart conditions</td>
+                  <td>AMA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_error">
+                  <td>0068</td>
+                  <td>Ischemic Vascular Disease (IVD): Use of Aspirin or another Antithrombotic</td>
+                  <td>Heart conditions</td>
+                  <td>AMA</td>
+                  <td>Red</td>
+                  <td class="center">Yes</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0070</td>
+                  <td>Coronary Artery Disease (CAD): Beta‐Blocker Therapy for CAD Patients with Prior Myocardial Infarction</td>
+                  <td>Heart conditions</td>
+                  <td>AMA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0073</td>
+                  <td>Ischemic Vascular Disease (IVD): Blood Pressure Management</td>
+                  <td>Heart conditions</td>
+                  <td>AMA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0074</td>
+                  <td>Coronary Artery Disease (CAD): Drug Therapy for Lowering LDL‐Cholesterol</td>
+                  <td>Heart conditions</td>
+                  <td>AMA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0075</td>
+                  <td>Ischemic Vascular Disease (IVD): Complete Lipid Panel and LDL Control</td>
+                  <td>Heart conditions</td>
+                  <td>AMA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_error">
+                  <td>0081</td>
+                  <td>Heart Failure (HF): Angiotensin‐Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy for Left Ventricular Systolic Dysfunction (LVSD)</td>
+                  <td>Heart conditions</td>
+                  <td>AMA</td>
+                  <td>Red</td>
+                  <td class="center">Yes</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0083</td>
+                  <td>Heart Failure (HF): Beta‐Blocker Therapy for Left Ventricular Systolic Dysfunction (LVSD)</td>
+                  <td>Heart conditions</td>
+                  <td>AMA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0084</td>
+                  <td>Heart Failure (HF): Warfarin Therapy Patients with Atrial Fibrillation</td>
+                  <td>Heart conditions</td>
+                  <td>AMA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0086</td>
+                  <td>Primary Open Angle Glaucoma (POAG): Optic Nerve Evaluation</td>
+                  <td>Miscellaneous</td>
+                  <td>AMA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0088</td>
+                  <td>Diabetic Retinopathy: Documentation of Presence or Absence of Macular Edema and Level of Severity of Retinopathy</td>
+                  <td>Diabetes</td>
+                  <td>AMA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0089</td>
+                  <td>Diabetic Retinopathy: Communication with the Physician Managing Ongoing Diabetes Care</td>
+                  <td>Diabetes</td>
+                  <td>AMA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0105</td>
+                  <td>Anti‐Depressant Medication Management</td>
+                  <td>Miscellaneous</td>
+                  <td>NCQA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0385</td>
+                  <td>Oncology Colon Cancer: Chemotherapy for Stage III Colon Cancer Patients</td>
+                  <td>Cancer</td>
+                  <td>AMA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_error">
+                  <td>0387</td>
+                  <td>Oncology Breast Cancer: Hormonal Therapy for Stage IC‐IIIC Estrogen Receptor/Progesterone Receptor (ER/PR) Positive Breast Cancer</td>
+                  <td>Cancer</td>
+                  <td>AMA</td>
+                  <td>Red</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0389</td>
+                  <td>Prostate Cancer: Avoidance of Overuse of Bone Scan for Staging Low Risk Prostate Cancer Patients</td>
+                  <td>Cancer</td>
+                  <td>AMA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_warning">
+                  <td>0421</td>
+                  <td>Adult Weight Screening and Follow‐Up</td>
+                  <td>Core</td>
+                  <td>QIP</td>
+                  <td>Yellow</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+                <tr class="measure_approved">
+                  <td>0575</td>
+                  <td>Diabetes: HbA1c Control</td>
+                  <td>Diabetes</td>
+                  <td>NCQA</td>
+                  <td>Green</td>
+                  <td class="center">Yes</td>
+                  <td class="center">No</td>
+                  <td class="center">No</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <br/><br/>
+      </div>
+      <div id="footer">
+        <div id="footerSourceForge"><a href="http://github.com/" target="_external"><img src="images/github_icon.png" alt="GitHub Logo"></a></div>
+        <div id="footerLinks">
+          Content of this site is sponsored by the <a href="www.hhs.gov/healthit/" target="_external">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp 
+          <a href="http://www.hhs.gov/Privacy.html" target="_external">Privacy Policy</a> &nbsp 
+          <a href="http://www.hhs.gov/Disclaimer.html" target="_external">Disclaimer</a> &nbsp
+          <br/>Page Last Revised: March 24, 2011
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-13224247-1");
+        pageTracker._trackPageview();
+      }
+      catch(err) {}
+    </script>
+  </body>
+</html>
