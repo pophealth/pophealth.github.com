@@ -171,20 +171,19 @@ table.announcementSubscription input#emailDigest{
     margin-left:220px;
 }
 fieldset{
-	border: none;
+  border: none;
 }
 
 /* * Sidebar * */
 #sidebar {
-    margin: 0 0 25px 30px;
-    width:      350px;
-    float:      left;
+  margin: 0 0 25px 30px;
+  width:      350px;
+  float:      left;
 }
 
 #links{
-  margin-left: 80px;
+  margin: 35px 0 0 80px;
 }
-
 
 .milestonesList {
     margin: 0px 0 50px 20px;
@@ -307,6 +306,16 @@ div.gossary_title h2 {
   margin-top:0px;
   padding-top:10px;
   padding-bottom:5px;
+}
+
+.installationStep {
+    border-top:1px dotted #ccc;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+.firstInstallationStep {
+  border-top:0px
 }
 
 /* * Footer * */
