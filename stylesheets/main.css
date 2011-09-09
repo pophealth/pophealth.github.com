@@ -37,12 +37,21 @@ color: #AAAAAA;
 }
 
 #logo {
-    margin: 45px 0 0px 0;
+    margin: 15px 0 0px 0;
     width:100%;
 }
 
 #logo img{
-    margin: 0 35px 35px 0;
+    margin: 0px 35px 35px 0px;
+}
+
+#certification_logo {
+    margin: 0px 0px 0px 0px;
+    width:100%;
+}
+
+#certification_logo img{
+    margin: 0px 0px 0px 0px;
 }
 
 img.announce{
@@ -110,7 +119,7 @@ img{
 }
 
 #screenshot{
-    margin-top: 250px;
+    margin-top: 320px;
 }
 .imageHeader{
     text-align: center;
