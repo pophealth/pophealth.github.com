@@ -1,50 +1,73 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="en">
+<!doctype html>
+<meta charset=utf-8>
+<html lang=en>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="pragma" content="no-cache">
-    <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen">
-    <link rel="icon" type="image/png" href="/images/favicon.ico" />
-    <title>popHealth - Download popHealth</title>
+          <!-- Enable IE9 Standards mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=9" >
+        <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen"/>
+    <link rel="icon" type="image/png" href="/images/pophealth_logo_small.png"/>
+    <title>popHealth - An Open Source Quality Measure Reference Implementation</title>
+    <script type="text/javascript">
+    
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-25047251-1']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    
+    </script>
   </head>
   <body>
-    <div id="page">
-      <div id="header">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="video.html">Video</a></li>
-          <li><a href="screen_shots.html">Screen Shots</a></li>
-          <li><a href="http://demo.projectpophealth.org">Demo</a></li>
-          <li><a href="documents.html">Documents</a></li>
-          <li><a href="http://github.com/pophealth" target="_external">Code</a></li>
-          <li><a href="download.html" class="selected">Download</a></li>
-          <li><a href="glossary.html">Glossary</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="mailto:talk@projectpophealth.org">Contact</a></li>
-        </ul>
+    <div id="header">
+      <div id="logo">
+          <a href="index.html"><img src="images/pophealth_logo_large.png" alt="popHealth Logo" height="65"/></a>
+          <img src="images/certificate.png" class="cert"/>
+
       </div>
-      <div id="documentcontent">
-        <div id="logo">
-          <a href="index.html"><img src="images/pophealth_logo_small.png" alt="popHealth Logo" /></a>
-        </div>
-        <div class="projectDescription">
-          <h2>Download and Installation Instructions</h2>
+      <div id="nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="screen_shots.html">Screen Shots</a></li>
+            <li><a href="http://demo.projectpophealth.org/users/sign_in">Demo</a></li>
+            <li><a href="download.html" class="selected">Download</a></li>
+            <li><a href="http://github.com/pophealth">Code</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="mailto:talk@projectpophealth.org">Contact</a></li>
+          </ul> 
+       </div>
+  </div>
+        <div class="main">
+          <h1>Download and Installation Instructions</h1>
           <br/>
           If you are having issues with the 6 step download process enumerated here, please refer to our <a href="documents/pophealth_trouble_shooting_guide.pdf">detailed trouble-shooting guide</a>.
-        </div>
         <div class="installationStep firstInstallationStep">
           <div class="installationStep">
-            <p><b>Step 1:</b> <a href="http://downloads.vmware.com/d/info/desktop_downloads/vmware_player/3_0" target="_external"><img src="images/download_button.jpg" width="114" height="122"></a>Download and Install VMWare Player v3.0  To download VMWare player for free, you will need to sign up for an account via a form.</p>
+            <h2>Step 1:</h2> <a href="http://downloads.vmware.com/d/info/desktop_downloads/vmware_player/3_0" target="_external"><img src="images/download_button.jpg" width="114" height="122"></a>
+            <p>Download and Install VMWare Player v3.0  To download VMWare player for free, you will need to sign up for an account via a form.</p>
             <br/>
-            <p><b>Step 2:</b> <a href="https://s3.amazonaws.com/pophealth/popHealth.vmwarevm.zip" target="_external"><img src="images/download_button.jpg" width="114" height="122" /></a> Next, download the popHealth v1.1.3 Virtual Machine and save the file someplace on your computer, such as your Desktop, or in a another directory where you will want to use popHealth.  You should unzip this file, and you will now have an uncompressed virtual machine "<em>popHealth.vmwarevm</em>".  This file will allow you to launch a popHealth server, data importer and C32/CCR analysis tools on your computer.</p>
+            <h2>Step 2:</h2> <a href="https://s3.amazonaws.com/pophealth/popHealth.vmwarevm.zip" target="_external"><img src="images/download_button.jpg" width="114" height="122" /></a>
+            <p> Next, download the popHealth v1.1.3 Virtual Machine and save the file someplace on your computer, such as your Desktop, or in a another directory where you will want to use popHealth.  You should unzip this file, and you will now have an uncompressed virtual machine "<em>popHealth.vmwarevm</em>".  This file will allow you to launch a popHealth server, data importer and C32/CCR analysis tools on your computer.</p>
             <br/>
-            <p><b>Step 3:</b> <a href="images/pophealth_desktop.png"><img src="images/pophealth_desktop.png" width="244" height="212" /></a>After you have installed VMWare Player, and downloaded the popHealth virtual machine, double-click on the popHealth machine image to startup your own popHealth virtual machine.  After the VM starts, you should see an image of a virtual machine running with a purple desktop background.  This is the popHealth virtual machine, that has been pre-configured with all of the software dependancies necessary to run popHealth.</p>
+            <h2>Step 3:</h2> <a href="images/pophealth_desktop.png"><img src="images/pophealth_desktop.png" width="244" height="212" /></a>
+            <p>After you have installed VMWare Player, and downloaded the popHealth virtual machine, double-click on the popHealth machine image to startup your own popHealth virtual machine.  After the VM starts, you should see an image of a virtual machine running with a purple desktop background.  This is the popHealth virtual machine, that has been pre-configured with all of the software dependancies necessary to run popHealth.</p>
             <br/>
-            <p><b>Step 4:</b> <a href="images/pophealth_continuity_of_care_records_copied.png"><img src="images/pophealth_continuity_of_care_records_copied.png" width="244" height="212" /></a>Next, export your patient records via the HITPS C32 format, or ASTM CCR format from your Electronic Health Record system.  You should include all your C32 or CCR records in a single folder.  Drag this folder into your popHealth desktop.  If you don't have any C32 or CCR files, and would still like to user popHealth with randomized patient data, refer to our instructions for seeding the system with random data under the "Test Patient Records" section of our Wiki <a href="https://github.com/pophealth/popHealth/wiki/Installation">here</a>.</p>
+            <h2>Step 4:</h2> <a href="images/pophealth_continuity_of_care_records_copied.png"><img src="images/pophealth_continuity_of_care_records_copied.png" width="244" height="212" /></a>
+            <p>Next, export your patient records via the HITPS C32 format, or ASTM CCR format from your Electronic Health Record system.  You should include all your C32 or CCR records in a single folder.  Drag this folder into your popHealth desktop.  If you don't have any C32 or CCR files, and would still like to user popHealth with randomized patient data, refer to our instructions for seeding the system with random data under the "Test Patient Records" section of our Wiki <a href="https://github.com/pophealth/popHealth/wiki/Installation">here</a>.</p>
             <br/>
-            <p><b>Step 5:</b> <a href="images/pophealth_importer.png"><img src="images/pophealth_importer.png" width="244" height="212" /></a>Import your patient records into popHealth.  To do this, start up the popHealth Data Importer tool by double clicking on the "popHealth C32/CCR Importer" icon on the desktop.  Once the popHealth Data Importer tool starts up, you should select a directory from the file menu where all of your C32 or CCR XML files have been exported by going to the menu bar and selecting File:Open.  Once you have selected the directory directory with your records, all of the files in that directory will be analyzed and displayed in the popHealth Data Importer tool.  You can now select the "Import" button on the bottom of the user interface. Each C32 or CCR record in the directory you have selected will be uploaded to the popHealth database via a secure RESTful service on the popHealth web application.</p>
+            <h2>Step 5:</h2> <a href="images/pophealth_importer.png"><img src="images/pophealth_importer.png" width="244" height="212" /></a>
+            <p>Import your patient records into popHealth.  To do this, start up the popHealth Data Importer tool by double clicking on the "popHealth C32/CCR Importer" icon on the desktop.  Once the popHealth Data Importer tool starts up, you should select a directory from the file menu where all of your C32 or CCR XML files have been exported by going to the menu bar and selecting File:Open.  Once you have selected the directory directory with your records, all of the files in that directory will be analyzed and displayed in the popHealth Data Importer tool.  You can now select the "Import" button on the bottom of the user interface. Each C32 or CCR record in the directory you have selected will be uploaded to the popHealth database via a secure RESTful service on the popHealth web application.</p>
             <br/>
-            <p><b>Step 6:</b> <a href="images/pophealth_web_application.png"><img src="images/pophealth_web_application.png" width="244" height="212" /></a>  Double click on the popHealth Web Application desktop icon.  This will bring up the popHealth report user interface via the FireFox browser.  If you have already created a popHealth account, you should enter your credentials now.  If you have not created a popHealth account, you should create a new account via the form available via the "Create New Account" link on the login page.</p>
+            <h2>Step 6:</h2> <a href="images/pophealth_web_application.png"><img src="images/pophealth_web_application.png" width="244" height="212" /></a>  
+            <p>Double click on the popHealth Web Application desktop icon.  This will bring up the popHealth report user interface via the FireFox browser.  If you have already created a popHealth account, you should enter your credentials now.  If you have not created a popHealth account, you should create a new account via the form available via the "Create New Account" link on the login page.</p>
             <p>Congratulations!  You are now using the popHealth application, and can select measures via the list of Meaningful Use Clinical Quality Measures on the left side of the popHealth interface.</p>
             <br/>
             <p>* For users wanting to set up popHealth on a non-Windows system using the popHealth virtual machine, you will need to consider alternative VM hosting applications such as VMWare Fusion for the Apple platform, or Virtual Box.</p>
@@ -57,16 +80,19 @@
           If you experience problems with PDF documents, please <a href="http://get.adobe.com/reader/">download the latest version of the Reader®</a>.
           <p/>
       </div>
-      <div id="footer">
+
+
+      </div>
+      <footer>
         <div id="footerSourceForge"><a href="http://github.com/" target="_external"><img src="images/github_icon.png" alt="GitHub Logo"></a></div>
         <div id="footerLinks">
           Content of this site is sponsored by the <a href="http://www.hhs.gov/healthit/" target="_external">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp
           <a href="http://www.hhs.gov/Privacy.html" target="_external">Privacy Policy</a> &nbsp 
           <a href="http://www.hhs.gov/Disclaimer.html" target="_external">Disclaimer</a> &nbsp
-          <br/>Page Last Revised: August 25, 2011
+          <br/>Page Last Revised: November 7, 2011
         </div>
       </div>
-    </div>
+    </footer>
     <script type="text/javascript">
       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
       document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

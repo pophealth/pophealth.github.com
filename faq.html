@@ -1,33 +1,52 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="en">
+<!doctype html>
+<meta charset=utf-8>
+<html lang=en>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="pragma" content="no-cache">
-    <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen">
-    <link rel="icon" type="image/png" href="/images/favicon.ico" />
-    <title>popHealth - Frequently Asked Questions</title>
+          <!-- Enable IE9 Standards mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=9" >
+    		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+    <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen"/>
+    <link rel="icon" type="image/png" href="/images/pophealth_logo_small.png"/>
+    <title>popHealth - An Open Source Quality Measure Reference Implementation</title>
+    <script type="text/javascript">
+    
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-25047251-1']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    
+    </script>
   </head>
-  <body>
-    <div id="page">
-      <div id="header">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="video.html">Video</a></li>
-          <li><a href="screen_shots.html">Screen Shots</a></li>
-          <li><a href="http://demo.projectpophealth.org">Demo</a></li>
-          <li><a href="documents.html">Documents</a></li>
-          <li><a href="http://github.com/pophealth" target="_external">Code</a></li>
-          <li><a href="download.html">Download</a></li>
-          <li><a href="glossary.html">Glossary</a></li>
-          <li><a href="faq.html" class="selected">FAQ</a></li>
-          <li><a href="mailto:talk@projectpophealth.org">Contact</a></li>
-        </ul>
+	<body>
+    <div id="header">
+      <div id="logo">
+          <a href="index.html"><img src="images/pophealth_logo_large.png" alt="popHealth Logo" height="65"/></a>
+          <img src="images/certificate.png" class="cert"/>
+
       </div>
-      <div id="faqcontent">
-        <div id="logo">
-          <a href="index.html"><img src="images/pophealth_logo_small.png" alt="popHealth Logo" /></a>
-        </div>
-        <div class="faq_title">
+      <div id="nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="screen_shots.html">Screen Shots</a></li>
+            <li><a href="http://demo.projectpophealth.org/users/sign_in">Demo</a></li>
+            <li><a href="download.html">Download</a></li>
+            <li><a href="http://github.com/pophealth">Code</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="faq.html" class="selected">FAQ</a></li>
+            <li><a href="mailto:talk@projectpophealth.org">Contact</a></li>
+          </ul> 
+       </div>
+  </div>
+        <div class="main">
+          <h1>Frequently Asked Questions</h1>
           <h2>General Overview</h2>
           <ul id="faqHeader">
             <li><a href="#whatIsPopHealth">What is popHealth?</a></li>
@@ -63,11 +82,13 @@
         <div class="questionAnswer firstQuestion">
           <div class="question" id="whatIsPopHealth">What is popHealth?</div>
           <p>popHealth is an open source reference implementation software service that automates the reporting of Meaningful Use quality measures. popHealth integrates with a healthcare provider’s electronic health record (EHR) system using continuity of care records.  popHealth streamlines the automated generation of summary quality measure reports on the provider’s patient population.</p>
-          <p>Key to popHealth's value for providers and vendors interested in implementing summary quality reporting:
-            <ul>
+          <p>Key to popHealth's value for providers and vendors interested in implementing summary quality reporting:   </p>            
+	   <ul>
+	     <p> 	
               <li>The ability to quickly view and report static quality measures based on established quality measures.</li>
               <li>Infrastructure to eventually remotely automate the addition of new quality measure reports, and export multiple modes of reporting output.</li>
-            </ul>
+	     </p>
+           </ul>
           </p>
         </div>
         <div class="questionAnswer">
@@ -81,7 +102,7 @@
         <div class="questionAnswer">
           <div class="question" id="certification">Does popHealth work with any ONC-certified Electronic Health Record System?</div>
           <p>popHealth was designed to work with ONC-certified Electronic Health Record Systems producing Continuity of Care files with clinical data coded per the clinical vocabularies used in the Meaningful Use Clinical Quality Measure eSpecifications posted on the <a href="https://www.cms.gov/QualityMeasures/03_ElectronicSpecifications.asp">CMS website</a>.</p>
-          </p>For popHealth to produce Meaningful Use quality measure results, a certified Electronic Health Record system must be configured to provide coded results for all fields expressed in either the HITSP C32 or ASTM CCR Health Information Exchange standards.  As both Continuity of Care XML standards and the Meaningful Use Clinical Quality Measures evolve, popHealth will adjust for future changes of the standards and of the quality measures.  Meaningful Use Clinical Quality Measures electronic specifications define clinical data concepts and values coded in specific clinical vocabularies.  To produce reports based on these definitions, the following code and value sets are required:
+          <p>For popHealth to produce Meaningful Use quality measure results, a certified Electronic Health Record system must be configured to provide coded results for all fields expressed in either the HITSP C32 or ASTM CCR Health Information Exchange standards.  As both Continuity of Care XML standards and the Meaningful Use Clinical Quality Measures evolve, popHealth will adjust for future changes of the standards and of the quality measures.  Meaningful Use Clinical Quality Measures electronic specifications define clinical data concepts and values coded in specific clinical vocabularies.  To produce reports based on these definitions, the following code and value sets are required:
             <ul>
               <li>Allergies: RxNorm, SNOMED-CT</li>
               <li>Care Goals: SNOMED-CT</li>
@@ -123,7 +144,7 @@
         <div class="questionAnswer">
           <div class="question" id="provideruse">What is basic Concept of Operations for use of popHealth by a provider?</div>
           <p>popHealth has been designed to operate within a provider’s infrastructure. This design decision has been made to address privacy and security concerns associated with access to information associated with individual patient records.</p>
-          <img src="images/provider_workflow.png" alt="popHealth Provider Workflow" class="screenshot" style="border:1px solid #EEEEEE">
+          <img src="images/provider_workflow.png" alt="popHealth Provider Workflow" class="screenshot" style="border:1px solid #EEEEEE; margin-left: 25px">
         </div>
         <div class="questionAnswer">
           <div class="question" id="report">How can popHealth be used to report EHR quality measurement data?</div>
@@ -182,19 +203,19 @@
           <p>While popHealth uses MongoDB for database infrastructure, popHealth is licensed under the Apache 2.0 distribution license.  There are no requirements for any EHR vendor to open access of their closed source code for any paid commercial system, or free open source system, that integrates with the popHealth software via the Apache 2.0 distribution license.</p>
            <p>Use of open source infrastructure can cause confusion in situations like this.  10Gen, the company that stewards MongoDB, has provided clarification on the commercial use of systems that use MongoDB for database infrastructure in a commercial project <a href="http://www.mongodb.org/display/DOCS/Licensing">here</a>.  They directly address the situation where a commercial company may want to include MongoDB in a product and ensure that commercial projects are never required to publish their product's source code:</p>
            <p>"<a href="http://www.mongodb.org/display/DOCS/Licensing"><em>it is never required that applications using mongo be published</em></a>".</p>
-           </p>An issue that could theoretically arise would be if a commercial EHR opted use/subsume popHealth, modify the MongoDB database server for some additional need, and then incorporate a modified version of MongoDB into their commercial project.  At that point, a modified version of the MongoDB source code would need to be made available by an Electronic Health Record vendor.  However, since it is difficult to consider a hypothetical need for that, the popHealth community is confident that commercial EHR vendors will be able to integrate popHealth with your products, and charge whatever fee they deem appropriate when using the popHealth software in a paid commercial project.  The popHealth software will not produce any viral requirement to open other projects.</p>
+           <p>An issue that could theoretically arise would be if a commercial EHR opted use/subsume popHealth, modify the MongoDB database server for some additional need, and then incorporate a modified version of MongoDB into their commercial project.  At that point, a modified version of the MongoDB source code would need to be made available by an Electronic Health Record vendor.  However, since it is difficult to consider a hypothetical need for that, the popHealth community is confident that commercial EHR vendors will be able to integrate popHealth with your products, and charge whatever fee they deem appropriate when using the popHealth software in a paid commercial project.  The popHealth software will not produce any viral requirement to open other projects.</p>
         </div>
       </div>
-      <div id="footer">
+      <footer>
         <div id="footerSourceForge"><a href="http://github.com/" target="_external"><img src="images/github_icon.png" alt="GitHub Logo"></a></div>
         <div id="footerLinks">
           Content of this site is sponsored by the <a href="http://www.hhs.gov/healthit/" target="_external">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp
           <a href="http://www.hhs.gov/Privacy.html" target="_external">Privacy Policy</a> &nbsp 
           <a href="http://www.hhs.gov/Disclaimer.html" target="_external">Disclaimer</a> &nbsp
-          <br/>Page Last Revised: September 9, 2011
+          <br/>Page Last Revised: November 7, 2011
         </div>
       </div>
-    </div>
+    </footer>
     <script type="text/javascript">
       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
       document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

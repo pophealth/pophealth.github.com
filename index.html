@@ -1,119 +1,136 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="en">
+<!doctype html>
+<html lang=en>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="pragma" content="no-cache">
-    <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen">
-    <link rel="icon" type="image/png" href="/images/favicon.ico" />
-    <title>popHealth - An Open Source Quality Measure Reference Implementation</title>
+   
+    <!-- Enable IE9 Standards mode -->
+      <!-- Enable IE9 Standards mode -->
+   <meta http-equiv="X-UA-Compatible" content="IE=9" >
+    <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen"/>
+   <meta charset=utf-8>
+
+    		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+    <link rel="icon" type="image/png" href="/images/pophealth_logo_small.png"/>
+      <title>popHealth - An Open Source Quality Measure Reference Implementation</title>
+    <script type="text/javascript">
+    
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-25047251-1']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    
+    </script>
   </head>
-  <body>
-    <div id="page">
-      <div id="header">
-        <ul>
-          <li><a href="index.html" class="selected">Home</a></li>
-          <li><a href="video.html">Video</a></li>
-          <li><a href="screen_shots.html">Screen Shots</a></li>
-          <li><a href="http://demo.projectpophealth.org">Demo</a></li>
-          <li><a href="documents.html">Documents</a></li>
-          <li><a href="http://github.com/pophealth" target="_external">Code</a></li>
-          <li><a href="download.html">Download</a></li>
-          <li><a href="glossary.html">Glossary</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="mailto:talk@projectpophealth.org">Contact</a></li>
-        </ul>
+	<body>
+    <div id="header">
+      <div id="logo">
+          <a href="index.html"><img src="images/pophealth_logo_large.png" alt="popHealth Logo" height="65"/></a>
+          <img src="images/certificate.png" alt="Meaningful Use Certified" class="cert"/>
+
       </div>
-      <div id="leftColumn">
-        <div id="logo">
-          <a href="index.html"><img src="images/mu_certification.png" alt="popHealth Logo" /></a>
-        </div>
-        <div id='projectHeader'>
-          <h1>An Open Source Quality Measure Reference Implementation</h1>
-            <ul> 
-            <li>Empowers healthcare providers to perform Meaningful Use quality measure reporting</li>
-            <li>Promotes easier submission of quality measures to public health organizations</li>
-            </ul>
-        </div>
-        <div class="projectDescription"><h2><img src="images/blue_dot.png"/> What is popHealth?</h2></div>
-        <p>popHealth is an open source reference implementation software service that automates the reporting of Meaningful Use quality measures. popHealth integrates with a healthcare provider’s electronic health record (EHR) system using continuity of care records.  popHealth streamlines the automated generation of summary quality measure reports on the provider’s patient population.</p>
-        <div class="milestonesList">
-          <h2>Project Milestones</h2>
-          <table>
-            <tbody>
-              <tr>
-                <td class="milestoneDate">25 Feb 10</td>
-                <td class="milestoneSubject"><del>popHealth Prototype Released</del></td>
-              </tr>
-              <tr>
-                <td class="milestoneDate">01 Oct 10</td>
-                <td class="milestoneSubject"><del>ONC funds popHealth Meaningful Use Reference Implementation Mechanism</del></td>
-              </tr>
-              <tr>
-                <td class="milestoneDate">7 Apr 11</td>
-                <td class="milestoneSubject"><del>popHealth v1.0 with Support of 44 Meaningful Use Stage I Quality Measures</del></td>
-              </tr>
-              <tr>
-                <td class="milestoneDate">14 Jun 11</td>
-                <td class="milestoneSubject"><del>popHealth Presentation At 2011 <a href="http://www.govhealthitconference.com/">Government Health IT Conference</del></a></td>
-              </tr>
-              <tr>
-                <td class="milestoneDate">7 Jul 11</td>
-                <td class="milestoneSubject"><del>popHealth <a href="http://onc-chpl.force.com/ehrcert/EHRProductDetail?id=a0X30000003lxJlEAI&retURL=%2Fehrcert%2FEHRProductSearch&setting=Ambulatory">Certified</a> as a Modular EHR Ambulatory Quality Measure</td>
-              </tr>
-              <tr>
-                <td class="milestoneDate">27 Jul 11</td>
-                <td class="milestoneSubject"><del>popHealth Presentation at <a href="http://www.oscon.com/oscon2011/public/schedule/detail/18348">2011 O'Reilly OSCON Conference</a></del></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="projectDescription"><h2><img src="images/blue_dot.png"/> Who are the intended users?</h2></div>
-        <p>popHealth supports healthcare providers and EHR vendors by reporting clinical quality measures from electronic health record continuity of care files. Providers are empowered to better understand, and analyze the health of their patient population, and meet Meaningful Use reporting objectives, through reports of clinical quality measures. EHR vendors and healthcare providers are free to download, use, and integrate the popHealth software in their systems.</p>
-        <div class="projectDescription">
-          <h2><img src="images/blue_dot.png"/> What is the project's objective?</h2>
-          <p>popHealth is designed to simplify the reporting of summary quality measures, and streamline the exchange of summary quality data. Demonstration of Meaningful Use requires the reporting of quality measure data. This reference implementation open source software demonstrates how providers can rapidly produce and submit Meaningful Use clinical quality measures.  Further, popHealth provides EHR vendors with a reference implementation software package to guide the development of further Meaningful Use quality measures.</p>
-        </div>
-        <div id="feedback">
-          <div id="feedbackLink">For more information, contact us at: <a href="mailto:talk@projectpophealth.org">talk@projectpophealth.org</a></div>
-        </div>
+    	<div id="nav">
+        	<ul>
+        	  <li><a href="index.html" class="selected">Home</a></li>
+		        <li><a href="about.html">About</a></li>
+        	  <li><a href="screen_shots.html">Screen Shots</a></li>
+            <li><a href="http://demo.projectpophealth.org/users/sign_in">Demo</a></li>
+            <li><a href="download.html">Download</a></li>
+  		      <li><a href="http://github.com/pophealth">Code</a></li>
+		        <li><a href="news.html">News</a></li>
+        	  <li><a href="faq.html">FAQ</a></li>
+        	  <li><a href="mailto:talk@projectpophealth.org">Contact</a></li>
+        	</ul> 
+   		 </div>
+	</div>
+
+	<div id="LeftDiv">
+		<div id="top_border">
+		  <img src="images/top_border.png" alt="" class="borders">
+	  </div>
+    	<article class="feature">
+        <h4>An Open-Source Quality Measure Reference Implementation</h4>
+          <p>Empowers healthcare providers to perform Meaningful Use quality measure reporting and promotes easier submission of quality measures to public health organizations</p>
+      </article>
+        <div id="video_1">
+          <a href="about.html"><img src="images/video.jpg" alt="Pophealth Video"/></a> 
       </div>
-      <div id="sidebar">
-        <div id='links'>
-          <a href="http://groups.google.com/group/pophealth-announce/subscribe" target="_external"><img src="images/button_announcements.png" alt="Join Announcement List"/></a>
-        </div>
-        <div id="screenshot">
-          <p class="imageDescription">
-            <b>Example popHealth <a href="images/dashboard.png">Dashboard</a> Report</b>
-          </p>
-          <a href="images/dashboard.png">
-            <img src="images/ui2.png" alt="popHealth Dashboard Screenshot" class="screenshot"/>
-          </a>
-          <p class="imageDescription">
-            popHealth report displaying results of quality measures after data has been extracted from the continuity of care XML records of the provider's patient population
-          </p>
-        </div>
+            <a href="http://groups.google.com/group/pophealth-announce/subscribe"><img src="images/button_announcements.png" alt="Join Announcement List"/></a>
+  </div>
+ <div id="RightDiv">
+	   <div id="sidebar_1">    
+  	   <h3>popHealth Spotlight</h3>
+     </div>
+      
+      <table class="featured">
+        <tbody>
+      	   <tr>
+      	      <th>November<p>7</p></th>
+      	      <td>
+                <h4>Join the popHealth Challenge!</h4>
+                <p>The first place prize will be a cash award of $75,000 and 2 free passes to the Health 2.0 spring conference and 2 free passes to the conference where the winning submission is demoed. Second place prize will be a cash award of $20,000, and third place will be an award of $5,000.      
+              <a href="http://www.health2challenge.org/pophealth-tool-development-challenge/"> See the ONC i2 Challenge website for entry rules and details.</a></p>
+            </td>
+      	   </tr>
+          </tbody>
+      </table>
+  <div class="featured">
+    <div id="sidebar_2">     
+      <h3>Upcoming Events and Milestones</h3>
       </div>
-      <div id="footer">
-        <div id="footerSourceForge">
-          <a href="http://github.com/" target="_external"><img src="images/github_icon.png" alt="GitHub Logo"></a>
-        </div>
-        <div id="footerLinks">
-          Content of this site is sponsored by the <a href="http://www.hhs.gov/healthit/" target="_external">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp
-          <a href="http://www.hhs.gov/Privacy.html" target="_external">Privacy Policy</a> &nbsp 
-          <a href="http://www.hhs.gov/Disclaimer.html" target="_external">Disclaimer</a> &nbsp
-          <br/>Page Last Revised: September 9, 2011
-        </div>
+        <table class="featured">
+          <tbody>
+             	<tr>
+            	    <th>December</th>
+            	     <td>New feature to be added: <a class="NewFeature">Multi-Provider Dashboard</a></td>
+              </tr>
+            	<tr>
+            	     <th>January</th>
+            	     <td>New feature to be added: <a class="NewFeature">Stratification by Race, Ethnicity and Language</a></td>
+              </tr>  
+              <tr>
+                   <td></td>
+                   <td>New feature to be added: <a class="NewFeature">Clinician Input Feature</a></td>
+              </tr>           	
+              <tr>
+            	     <td></td>
+            	     <td>New feature to be added: <a class="NewFeature">Patient Centric View</a></td>
+            	</tr>
+              <tr>
+            	     <td></td>
+            	     <td>Improved installation process</td>
+              </tr>
+
+               <tr>
+             <th></th>
+                <td>Deadline for Challenge Grant submission: <a class="date">January 20</a></td>
+            </tr>                         
+            <tr>
+              <th>February</th>
+               <td>Challenge Grant Winner Announced: <a class="date">February 20th</a></td>
+            </tr>
+            <tr>
+                   <th></th>         
+                <td>popHealth at HIMSS: <a class="date">February 20-24</a></td>
+            </tr>
+            </tbody>	
+         </table>
       </div>
     </div>
-    <script type="text/javascript">
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-      try {
-        var pageTracker = _gat._getTracker("UA-13224247-1");
-        pageTracker._trackPageview();
-      } catch(err) {}
-    </script>
+	<footer>
+
+        <div id="footerSourceForge"><a href="http://github.com/"><img src="images/github_icon.png" alt="GitHub Logo"/></a></div>
+        <div id="footerLinks">
+          This project was funded by a contract from the <a href="http://www.hhs.gov/healthit/">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp
+          <a href="http://www.hhs.gov/Privacy.html">Privacy Policy</a> &nbsp
+          <a href="http://www.hhs.gov/Disclaimer.html">Disclaimer</a> &nbsp
+          <br/>Page Last Revised: November 7, 2011
+        </div>
+    </footer>
   </body>
 </html>

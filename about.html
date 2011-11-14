@@ -1,59 +1,90 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="en">
+<!doctype html>
+<meta charset=utf-8>
+<html lang=en>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="pragma" content="no-cache">
-    <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen">
-    <link rel="icon" type="image/png" href="/images/favicon.ico" />
-    <title>About popHealth</title>
+      <!-- Enable IE9 Standards mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=9" >
+    		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+     <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen"/>
+    <link rel="icon" type="image/png" href="/images/pophealth_logo_small.png"/>
+    <title>popHealth - An Open Source Quality Measure Reference Implementation</title>
+    <script type="text/javascript">
+    
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-25047251-1']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    
+    </script>
   </head>
-  <body>
-    <div id="page">
-      <div id="header" class="clearfix">
-        <ul class="navigation">
-          <li><a href="index.html" class="selected">Home</a></li>
-          <li><a href="video.html">Video</a></li>
-          <li><a href="screen_shots.html">Screen Shots</a></li>
-          <li><a href="http://demo.projectpophealth.org">Demo</a></li>
-          <li><a href="documents.html">Documents</a></li>
-          <li><a href="http://github.com/pophealth" target="_external">Code</a></li>
-          <li><a href="download.html">Download</a></li>
-          <li><a href="glossary.html">Glossary</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="about.html" class="selected">About</a></li>
-          <li><a href="mailto:talk@projectpophealth.org">Contact</a></li>
-        </ul>
+	<body>
+  <div id="header">
+      <div id="logo">
+          <a href="index.html"><img src="images/pophealth_logo_large.png" alt="popHealth Logo" height="65"/></a>
+          <img src="images/certificate.png" class="cert"/>
+
       </div>
-      <div>
-        <div id="logo">
-          <a href="index.html"><img src="images/pophealth_logo_small.png" alt="popHealth Logo" /></a>
+      <div id="nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="selected">About</a></li>
+            <li><a href="screen_shots.html">Screen Shots</a></li>
+            <li><a href="http://demo.projectpophealth.org/users/sign_in">Demo</a></li>
+            <li><a href="download.html">Download</a></li>
+            <li><a href="http://github.com/pophealth">Code</a></li>
+<!--           <li><a href="download.html">Download</a></li>-->
+            <li><a href="news.html">News</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="mailto:talk@projectpophealth.org">Contact</a></li>
+          </ul> 
+       </div>
+  </div>
+<article class="main">
+          <h1>An Open Source Quality Measure Reference Implementation</h1>
+            <h4>Empowers healthcare providers to perform Meaningful Use quality measure reporting and promotes easier submission of quality measures to public health organizations</h4>
+          <iframe title="YouTube video player" width="920" height="548" src="http://www.youtube.com/embed/6wqz9LOJUoI?rel=0" frameborder="25" allowfullscreen></iframe>
+        <section class="projectDescription"><h2>What is popHealth?</h2>
+          <p>popHealth is an open source reference implementation software service that automates the reporting of Meaningful Use quality measures. popHealth integrates with a healthcare provider’s electronic health record (EHR) system using continuity of care records.  popHealth streamlines the automated generation of summary quality measure reports on the provider’s patient population.</p>
+        </section>
+        <section class="projectDescription"><h2>Who are the intended users?</h2>
+          <p>popHealth supports healthcare providers and EHR vendors by reporting clinical quality measures from electronic health record continuity of care files. Providers are empowered to better understand, and analyze the health of their patient population, and meet Meaningful Use reporting objectives, through reports of clinical quality measures. EHR vendors and healthcare providers are free to download, use, and integrate the popHealth software in their systems.</p>
+        </section>
+        <section class="projectDescription">
+          <h2>What is the project's objective?</h2>
+          <p>popHealth is designed to simplify the reporting of summary quality measures, and streamline the exchange of summary quality data. Demonstration of Meaningful Use requires the reporting of quality measure data. This reference implementation open source software demonstrates how providers can rapidly produce and submit Meaningful Use clinical quality measures.  Further, popHealth provides EHR vendors with a reference implementation software package to guide the development of further Meaningful Use quality measures.</p>
+        </section>
+
+          <h2>Documents</h2>
+        <div class="questionAnswer firstQuestion">
+          <div class="questionAnswer">
+            <div class="question">Publications and Presentations</div>
+            <p><a href="documents/popHealth_datasheet_feb_28.pdf">popHealth: A New Approach to Population Health Reporting (handout) (pdf | 958KB)</a></p>
+            <p><a href="documents/popHealth_overview_031511.pdf">popHealth: Project Overview (presentation) (pdf | 6.87MB)</a> </p>
+            <p><a href="documents/popHealth_system_overview.pdf">popHealth: Software System Overview (pdf | 2.7MB)</a></p>
+          </div>
         </div>
-        <div id="projectDescription">
-          <h2>About</h2>
-        </div>
-        <p>The popHealth project is being funded and directed by the <a href="http://www.hhs.gov/fedhealtharch/" target="_external">Federal Health Architecture</a> (FHA) program, Office of the National Coordinator for Health IT at the Department of Health and Human Services. The design, development, and implementation of the popHealth software is being led by the <a href="http://www.mitre.org/" target="_external">MITRE Corporation</a> with direct FHA oversight.</p>
-        <a href="http://www.hhs.gov/fedhealtharch/" target="_external"><img src="images/fha_logo_small.png" alt="Federal Health Architecture Logo" /></a>
-        <p>The <b>Federal Health Architecture</b> is an E-Government Line of Business initiative.  It is a response to the President's Management Agenda, which calls for increased efficiency and effectiveness in all government operations.</p>
-        <p>FHA and its federal partners are helping build a federal health information technology environment that is interoperable with private sector systems and supports the President’s plan to enable better point-of-service care, increased efficiency and improved overall health in the U.S. population.</p>
-        <p>FHA is responsible for:</p>
-        <ul>
-          <li>Leveraging federal expertise by creating a federal health information sharing environment</li>
-          <li>Supporting federal efforts to develop and adopt health IT standards and services</li>
-          <li>Ensuring that federal agencies can seamlessly exchange health data among themselves, with state, local and tribal governments, and with private-sector healthcare organizations</li>
-        </ul>
-        <p>FHA is managed from the Office of the National Coordinator for Health IT at the Department of Health and Human Services and is driven by the President's health IT plan, which calls for the widespread use of interoperable electronic health records by 2014 (<a href="http://www.hhs.gov/fedhealtharch/">http://www.hhs.gov/fedhealtharch/</a>).</p>
-        <a href="http://www.mitre.org/" target="_external"><img src="images/mitre_logo_small.png" alt="The MITRE Corporation Logo" /></a>
-        <p>The <b>MITRE Corporation</b> is a not-for-profit organization chartered to work in the public interest.  MITRE manages four federally funded research and development centers (FFRDCs). An FFRDC is a unique organization that assists the United States government with scientific research and analysis, development and acquisition, and systems engineering and integration.  MITRE also has its own independent research and development program that explores new technologies and new uses of technologies to solve our sponsors’ problems in the near-term and in the future (<a href="http://www.mitre.org">www.mitre.org</a>).</p>
-      </div>
-      <div id="footer">
-        <div id="footerSourceForge">
+          <br/>
+          Documents in PDF format require the <a href="http://get.adobe.com/reader/">Adobe Acrobat Reader®</a>.
+          <br/>
+          If you experience problems with PDF documents, please <a href="http://get.adobe.com/reader/">download the latest version of the Reader®</a>.
+          <p/>
+</article>
+<footer>
+  <div id="footerSourceForge">
           <a href="http://github.com/" target="_external"><img src="images/github_icon.png" alt="GitHub Logo"></a>
         </div>
-        <div id="footerLinks">
-          Content of this site is sponsored by the <a href="http://www.hhs.gov/healthit/" target="_external">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp 
+      <div id="footerLinks">
+          Content of this site is sponsored by the <a href="http://www.hhs.gov/healthit/" target="_external">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp
           <a href="http://www.hhs.gov/Privacy.html" target="_external">Privacy Policy</a> &nbsp 
           <a href="http://www.hhs.gov/Disclaimer.html" target="_external">Disclaimer</a> &nbsp
-          <br/>Page Last Revised: August 25, 2011
+          <br/>Page Last Revised: November 7, 2011
         </div>
       </div>
     </div>
@@ -65,8 +96,7 @@
       try {
         var pageTracker = _gat._getTracker("UA-13224247-1");
         pageTracker._trackPageview();
-      } 
-      catch(err) {}
+      } catch(err) {}
     </script>
   </body>
 </html>
