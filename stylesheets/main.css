@@ -337,6 +337,9 @@ color: #AAAAAA;
   height: 25px;
 }
 
+.bottom {
+  margin-top: 3px;
+}
 
 #News {
   margin-left:  20px;
@@ -739,14 +742,15 @@ div#parti {
 }
 
 div#nextparti h3, div#parti h3 {
-  background: url(../images/liClosed.png) no-repeat scroll 0 35% transparent;
+  background: url(../images/liOPen.png) no-repeat scroll 0 35% transparent;
   margin-left: 30px;
   cursor: pointer;
   padding: 10px 15px;
+  font-weight:bold;
 }
 
 div#nextparti h3.on, div#parti h3.on {
-  background: url(../images/liOpen.png) no-repeat scroll 0 35% transparent;
+  background: url(../images/liClosed.png) no-repeat scroll 0 35% transparent;
 }
 
 div#nextparti{
@@ -762,12 +766,17 @@ div#nextparti{
   border-bottom: 1px solid #ccc;
 }
 
-#devsection, #pilsection {
+#devsection, #prosection {
   margin-bottom: 30px;
+}
+
+#pilsection, #prosec {
+  height: 200px;
 }
 
 #nextparti p, #parti p {
   padding-left: 30px;
 }
+
 
 
