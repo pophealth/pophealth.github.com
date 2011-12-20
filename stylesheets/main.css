@@ -158,8 +158,12 @@ div.cert:hover {
 
 #nav {
 	text-align: right;
+  position: relative;
+  right: 40px;
+}
 
-    
+#nav ul {
+  width: 100%;    
 }
 #header li {
     display:inline-block;
@@ -463,6 +467,18 @@ img{
 #screenshot {
 	margin: 35px 0 0 35px;
 	padding: 40px;
+}
+
+table#screenshot td img{
+  width: 400px;
+}
+table#screenshot td {
+  margin-bottom: 50px;
+}
+
+table td {
+  min-width: 50px;
+  margin-bottom: 40px;
 }
 
 #SourceForgeLogo{
