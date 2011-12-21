@@ -2,42 +2,28 @@
 <meta charset=utf-8>
 <html lang=en>
    <head>
-      <!-- Enable IE9 Standards mode -->
+    <!-- Enable IE9 Standards mode -->
     <meta http-equiv="X-UA-Compatible" content="IE=9" >
-        <!--[if lt IE 9]>
+    <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen"/>
     <link rel="icon" type="image/png" href="/images/pophealth_logo_small.png"/>
     <title>popHealth - An Open Source Quality Measure Reference Implementation</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript">
-    
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-25047251-1']);
-      _gaq.push(['_trackPageview']);
-    
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    
-    </script>
     <script>
-        $(document).ready(function() {
-      $("#parti h3, #nextparti h3").click(function() {
+      $(document).ready(function() {
+        $("#parti h3, #nextparti h3").click(function() {
         $(this).next('p').slideToggle();
         $(this).toggleClass('on');
-      })
-    });
+        })
+      });
     </script>
   </head>
-	<body>
+  <body>
     <div id="header">
       <div id="logo">
-          <a href="index.html"><img src="images/pophealth_logo_large.png" alt="popHealth Logo" height="65"/></a>
-
+        <a href="index.html"><img src="images/pophealth_logo_large.png" alt="popHealth Logo" height="65"/></a>
       </div>
       <div id="nav">
         <ul>
@@ -51,7 +37,7 @@
           <li><a href="news.html">News</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="mailto:talk@projectpophealth.org">Contact</a></li>
-        </ul> 
+        </ul>
      </div>
   </div>
   <div id="parti">
@@ -66,7 +52,6 @@
           <p>Submissions to the popHealth Tool Development Challenge will be accepted until January, 20, 2012<br><a href="http://www.health2challenge.org/pophealth-tool-development-challenge/">more details</a></p>
         <h3>Pivotal Tracker</h3>
           <p>The popHealth Team uses Pivotal Track for feature/bug tracking using agile project management and planning Project popHealth<br><a href="https://www.pivotaltracker.com/projects/123188">more details</a></p>
-      
           <img src="images/bottom_border.png" alt class="borders bottom">
     </div>
       <div id="pilsection">
@@ -82,7 +67,6 @@
             <br>
             <a href="documnents/Healthcare Data Information Form[1].pdf">Healthcare Data Information Form</a>
           </p>
-    
           <img src="images/bottom_border.png" alt class="borders">
       </div>
   </div>
@@ -107,5 +91,26 @@
         <img src="images/bottom_border.png" alt class="borders">
     </div>
   </div>
+	<footer>
+    <div id="footerSourceForge">
+      <a href="http://github.com/" target="_external"><img src="images/github_icon.png" alt="GitHub Logo"></a>
+    </div>
+    <div id="footerLinks">
+      Content of this site is sponsored by the <a href="http://www.hhs.gov/healthit/" target="_external">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp
+      <a href="http://www.hhs.gov/Privacy.html" target="_external">Privacy Policy</a> &nbsp 
+      <a href="http://www.hhs.gov/Disclaimer.html" target="_external">Disclaimer</a> &nbsp
+      <br/>Page Last Revised: December 21, 2011
+    </div>
+  </footer>
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-13224247-1");
+      pageTracker._trackPageview();
+    } catch(err) {}
+  </script>
 </body>
 </html>
