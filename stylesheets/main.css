@@ -712,7 +712,7 @@ div#parti {
 }
 
 div#nextparti h3, div#parti h3 {
-  background: url(../images/liOPen.png) no-repeat scroll 0 35% transparent;
+  background: url(../images/liOpen.png) no-repeat scroll 0 35% transparent;
   margin-left: 30px;
   cursor: pointer;
   padding: 10px 15px;
