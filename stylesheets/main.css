@@ -67,9 +67,15 @@ table.featured td {
 }
 
 table.featured a {
-  color: #56A0AA;
   vertical-align: top;
 }
+
+
+table a {
+  color: #56A0AA;
+
+}
+
 
 
 table.featured a.NewFeature {
@@ -152,8 +158,12 @@ div.cert:hover {
 
 #nav {
 	text-align: right;
+  position: relative;
+  right: 40px;
+}
 
-    
+#nav ul {
+  width: 100%;    
 }
 #header li {
     display:inline-block;
@@ -219,7 +229,7 @@ h2 {
 	color: black;
 }
 
-h3 {
+#RightDiv h3{
 	font-size: 1.2em;
   color:  white;
   font-weight: bold;
@@ -243,7 +253,7 @@ a:hover {
 #header a {
 	color: #000;
 	text-decoration: none;
-	padding: 5px 10px 0 10px;
+	padding: 5px 8px 0 10px;
   font-size: 1.2em;
 
 }
@@ -321,7 +331,7 @@ color: #AAAAAA;
 	width: 480px;
   margin-left:  0px;
   margin-left: 20px;
-  height: 620px;
+  height: 720px;
   border-bottom: 1px solid #ccc;
 }
 
@@ -331,6 +341,9 @@ color: #AAAAAA;
   height: 25px;
 }
 
+.bottom {
+  margin-top: 3px;
+}
 
 #News {
   margin-left:  20px;
@@ -354,7 +367,7 @@ color: #AAAAAA;
   margin-left: 540px;
   width: 480px;
   border-bottom: 1px solid #ccc;
-  height: 620px;
+  height: 720px;
 }
 
 #sidebar_1 h3{
@@ -454,6 +467,18 @@ img{
 #screenshot {
 	margin: 35px 0 0 35px;
 	padding: 40px;
+}
+
+table#screenshot td img{
+  width: 400px;
+}
+table#screenshot td {
+  margin-bottom: 50px;
+}
+
+table td {
+  min-width: 50px;
+  margin-bottom: 40px;
 }
 
 #SourceForgeLogo{
@@ -698,11 +723,76 @@ table#screenshot img {
   width: 300px;
   height: 221px;
   box-shadow: 0 0 4px #4d4d4d;
+}
 
-table.featured td p {
-    font-weight: bold;
-    font-size: 1.2em;
-    color: #999;
 
-  }
+table td p {
+  font-weight: normal;
+  font-size: 1em;
+  color: black;
+}
+
+#devsection, #pilsection, #selsection, #prosec {
+}
+
+h3 {
+  font-size: 1em;
+  color: black;
+  font-weight: normal;
+
+}
+
+
+div#parti {
+  width: 480px;
+  float: left;
+  margin-left: 20px;
+}
+
+
+#parti h2 {
+  color: #669933;
+  padding-left: 45px;
+  margin-top: -10px;
+  border-bottom: 1px solid #ccc;
+}
+
+div#nextparti h3, div#parti h3 {
+  background: url(../images/liOPen.png) no-repeat scroll 0 35% transparent;
+  margin-left: 30px;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-weight:bold;
+}
+
+div#nextparti h3.on, div#parti h3.on {
+  background: url(../images/liClosed.png) no-repeat scroll 0 35% transparent;
+}
+
+div#nextparti{
+  margin-left: 200px; 
+  margin-left: 540px;
+  width: 480px;
+}
+
+#nextparti h2 {
+  color: #56A0AA;
+  padding-left: 45px;
+  margin-top: -10px;
+  border-bottom: 1px solid #ccc;
+}
+
+#devsection, #prosection {
+  margin-bottom: 30px;
+}
+
+#pilsection, #prosec {
+  height: 200px;
+}
+
+#nextparti p, #parti p {
+  padding-left: 30px;
+}
+
+
 
