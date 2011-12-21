@@ -13,24 +13,20 @@ article, aside, dialog, figure, footer, #header, hgroup, nav, section { display:
 
 body { line-height: 1.5; }
 
-
 table.news {
   width: 100%;
   margin-top: 20px;
-
 }
-
 
 table.news h2 {
   line-height: 1.2em;
-    color: #693;
+  color: #693;
 }
 
 table.news td {
-    vertical-align: top;
-    padding-bottom: 40px;
+  vertical-align: top;
+  padding-bottom: 40px;
 }
-
 
 table.news th {
   width: 80px;
@@ -39,7 +35,6 @@ table.news th {
   padding: 0;
   vertical-align: top;
 }
-
 
 table.news th p {
   font-size: 2em;
@@ -50,27 +45,23 @@ table.news th p {
 table.news td h4 {
   font: bold;
   font: 1.1em;
-    vertical-align: top;
+  vertical-align: top;
 }
 
 table.featured {
   width: 480px;
   margin-top: 20px;
-
 }
 
-
 table.featured td {
-    vertical-align: top;
-    padding-bottom: 10px;
-
+  vertical-align: top;
+  padding-bottom: 10px;
 }
 
 table.featured a {
   color: #56A0AA;
   vertical-align: top;
 }
-
 
 table.featured a.NewFeature {
   color: #81B33C;
@@ -84,14 +75,12 @@ table.featured a.date {
   vertical-align: top;
 }
 
-
 table.featured th {
   width: 80px;
   text-align: left;
   font-weight: bold;
   vertical-align: top;
 }
-
 
 table.featured th p {
   font-size: 2em;
@@ -123,20 +112,21 @@ html,body{
 #video {
   padding-left: 50px;
 }
+
 #header {
-    margin-left: 20px;
-    border-bottom: #e6e6e6 solid 2px;
-	  margin-bottom:  60px;
-	  margin-top: 0px;
-    vertical-align: left;
-    position: relative;
-    height: 78px;
+  margin-left: 20px;
+  border-bottom: #e6e6e6 solid 2px;
+  margin-bottom:  60px;
+  margin-top: 0px;
+  vertical-align: left;
+  position: relative;
+  height: 78px;
 }
 
 #logo {
-    float: left;
-    margin-top:  0;
-    background-color: white;
+  float: left;
+  margin-top:  0;
+  background-color: white;
 }
 
 .cert {
@@ -151,36 +141,32 @@ div.cert:hover {
 }
 
 #nav {
-	text-align: right;
-
-    
+  text-align: right;
 }
 #header li {
-    display:inline-block;
-    zoom: 1;
-    *display: inline;
+  display:inline-block;
+  zoom: 1;
+  *display: inline;
 }
-
 
 .faq_title {
-    padding-left:  25px;
+  padding-left:  25px;
 }
-	
 
 .FAQ h2, div#RightDiv h2 {
-	background: url(../images/blue_dot.png) 0 30% no-repeat;
-	text-decoration: none;
+  background: url(../images/blue_dot.png) 0 30% no-repeat;
+  text-decoration: none;
 }
+
 .FAQ li {
-	list-style-type: none;
-	margin-bottom: 20px;
-    margin-left:  100px;
+  list-style-type: none;
+  margin-bottom: 20px;
+  margin-left:  100px;
 }
 
 ul.FAQ p {
-	list-style-type: none;
-	font-size: 100%;
-  
+  list-style-type: none;
+  font-size: 100%;
 }
 
 .questionAnswer {
@@ -209,18 +195,18 @@ ul.FAQ p {
 }
 
 h1 {
-	color: #4d4d4d;
-	font-size: 1.8em;
-	margin-bottom: 20px;
+  color: #4d4d4d;
+  font-size: 1.8em;
+  margin-bottom: 20px;
 }
 
 h2 {
-	font-size: 1.5em;
-	color: black;
+  font-size: 1.5em;
+  color: black;
 }
 
 h3 {
-	font-size: 1.2em;
+  font-size: 1.2em;
   color:  white;
   font-weight: bold;
 }
@@ -241,31 +227,29 @@ a:hover {
 }
 
 #header a {
-	color: #000;
-	text-decoration: none;
-	padding: 5px 10px 0 10px;
+  color: #000;
+  text-decoration: none;
+  padding: 5px 10px 0 10px;
   font-size: 1.2em;
-
 }
-
 
 #header a.selected {
   font-weight: bold;
   color: #4D4D4D;
   border-bottom: solid;
-	border-color: white;
-	border-width: 10px;
+  border-color: white;
+  border-width: 10px;
   border-top: 2px solid #e6e6e6;
   border-radius: 10px 10px 0 0;
 }
 
 #header ul {
-	list-style-type: none;
-	padding-top: 50px;
+  list-style-type: none;
+  padding-top: 50px;
 }
 
 article {
-	text-decoration: none;
+  text-decoration: none;
   padding: 0 20px;  
 }
 
@@ -275,23 +259,22 @@ article.main {
 
 article.feature p{
   font-size: 1em;
-	text-align: left;
-	text-decoration: none;
-  margin-top: 20px;     
+  text-align: left;
+  text-decoration: none;
+  margin-top: 20px;
 }
 
 #objectives {
-	text-align:left;
-
+  text-align:left;
 }
 
-article li { 
-	text-decoration: none;
-	margin: 0 0;
+article li {
+  text-decoration: none;
+  margin: 0 0;
 }
 
 figure {
-	padding: 20px 0 0 0;
+  padding: 20px 0 0 0;
 }
 
 #header a:hover {
@@ -300,37 +283,33 @@ figure {
 
 /*navigation for the blind, blend this into the background*/
 
-
-
 #header li.dead_link:hover{
-color: #AAAAAA;
+ color: #AAAAAA;
 }
 
 /**content**/
 
 #builder {
-	margin: 0px 20px 0 0;
+  margin: 0px 20px 0 0;
 }
 
 #dashboard {
-	margin: 0 20px 0 0;
-	}
-	
+  margin: 0 20px 0 0;
+}
+
 #LeftDiv {
-	float: left;
-	width: 480px;
+  float: left;
+  width: 480px;
   margin-left:  0px;
   margin-left: 20px;
   height: 620px;
   border-bottom: 1px solid #ccc;
 }
 
-
 .borders {
   width: 480px;
   height: 25px;
 }
-
 
 #News {
   margin-left:  20px;
@@ -341,14 +320,11 @@ color: #AAAAAA;
 #About {
   margin-left:  20px;
   margin-right:  20px;
-    }
-
-
-.Headlines & News {
-    font:  #800000;
-    
 }
 
+.Headlines & News {
+  font:  #800000;
+}
 
 #RightDiv {
   margin-left: 540px;
@@ -362,7 +338,7 @@ color: #AAAAAA;
 }
 
 #sidebar_1 {
-	background:  -webkit-gradient(linear, left top, left bottom, 
+  background:  -webkit-gradient(linear, left top, left bottom, 
         from(#79AEB8), to(#56A0AA));
   background:  -webkit-gradient(linear, left top, left bottom, 
         from(#79AEB8), to(#56A0AA));
@@ -386,9 +362,8 @@ color: #AAAAAA;
 }
 
 #sidebar_2 {
-	background:  -webkit-gradient(linear, left top, left bottom, 
+  background:  -webkit-gradient(linear, left top, left bottom, 
         from(#B0CB86), to(#81B33C));
-
   background-image: -webkit-gradient(linear, 0 0, 0 20%, from(#B0CB86), to(#81B33C));
   background-image: -webkit-linear-gradient(#B0CB86, #81B33C);
   background-image: -moz-linear-gradient(top, #B0CB86, #81B33C);
@@ -412,7 +387,6 @@ color: #AAAAAA;
 #sidebar_3 {
   background:  -webkit-gradient(linear, left top, left bottom, 
         from(#ccc), to(#999));
-
   background-image: -webkit-gradient(linear, 0 0, 0 20%, from(#ccc), to(#999));
   background-image: -webkit-linear-gradient(#ccc, #999);
   background-image: -moz-linear-gradient(top, #ccc, #999);
@@ -436,29 +410,27 @@ color: #AAAAAA;
 #feedbackLink {
 }
 
-
-
 #feedback {
-	margin: 20px 0 0 0;
+  margin: 20px 0 0 0;
 }
 
-img.announce{
+img.announce {
   padding-top: 5px;
   margin-left: 70px;
 }
 
-img{
+img {
     border-style: none
 }
 
 #screenshot {
-	margin: 35px 0 0 35px;
-	padding: 40px;
+  margin: 35px 0 0 35px;
+  padding: 40px;
 }
 
 #SourceForgeLogo{
-    width:88px;
-    height:31px;
+  width:88px;
+  height:31px;
 }
 
 article.feature ul{
@@ -466,8 +438,9 @@ article.feature ul{
   font-weight: regular;
   text-decoration: none
 }
+
 article.FAQ p {
-	padding: 5px 0;
+  padding: 5px 0;
 }
 
 .bumper{
@@ -475,26 +448,26 @@ article.FAQ p {
 }
 
 #feedback{
-	margin-top: 50px;
-    display:block;
+  margin-top: 50px;
+  display:block;
 }
 
 #feedback a{
-    font-weight: regular;
-	/*color:#000000;*/
+  font-weight: regular;
+  /*color:#000000;*/
 }
 
 #feedback a:hover{
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 #faqHeader {
-    padding-left:  50px;
+  padding-left:  50px;
 }
 
 .feature{
-    text-align: left;
-    font-size: 1em;
+  text-align: left;
+  font-size: 1em;
 }
 
 .coming_soon{
@@ -502,34 +475,33 @@ article.FAQ p {
 }
 
 ul.FAQ {
-	border: 1px solid white;
-    margin-left:  60px
-	margin-top: 10px;
-	text-decoration: none;
+  border: 1px solid white;
+  margin-left:  60px
+  margin-top: 10px;
+  text-decoration: none;
 }
-
 
 /** Announcement Subscription**/
 table.announcementSubscription{
-    width: 100%;
+  width: 100%;
 }
 
 table.announcementSubscription td.inputLabel{
-    background-color: #dddddd;
-    width: 150px;
+  background-color: #dddddd;
+  width: 150px;
 }
 
 table.announcementSubscription input{
-    width: 250px;
+  width: 250px;
 }
 
 table.announcementSubscription input#emailDigest{
-    width:auto;
-    margin-left:0px;
+  width:auto;
+  margin-left:0px;
 }
 
 .submitEmailSubscription{
-    margin-left:220px;
+  margin-left:220px;
 }
 
 fieldset{
@@ -537,39 +509,38 @@ fieldset{
 }
 
 #announcements {
-	float: right;
+  float: right;
   margin: 0 0 0 0;
   width:      0px;
 }
 
 #sidebar tr:hover {
-    background:#f9f9f9;
+  background:#f9f9f9;
 }
 
 .milestoneDate {
-    width: 80px;
-    color:#666;
+  width: 80px;
+  color:#666;
 }
 
 .milestoneSubject {
-	    padding: 0 0 0 20px;
+  padding: 0 0 0 20px;
 }
 
 .milestonesList td{
-    border-bottom: 1px  solid #666;
+  border-bottom: 1px  solid #666;
 }
 th{
-    text-align:left;
-    font:  red;
+  text-align:left;
+  font:  red;
 }
 
 /* * Content * */
 
-
 #logoDiv{
-    float: left;
-    display:block;
-    width: 100%;
+  float: left;
+  display:block;
+  width: 100%;
 }
 
 #content,
@@ -587,18 +558,17 @@ th{
 }
 
 .term {
-    border-top:1px solid #ccc;
-    padding-top:10px;
-    padding-bottom:10px;
-    font-weight: bold;
-
+  border-top:1px solid #ccc;
+  padding-top:10px;
+  padding-bottom:10px;
+  font-weight: bold;
 }
 
 .definition {
-    font-weight: bold;
-    padding-top:10px;
-    padding-bottom:5px;
-    margin-bottom: 20px;
+  font-weight: bold;
+  padding-top:10px;
+  padding-bottom:5px;
+  margin-bottom: 20px;
 }
 
 #l32_docs{
@@ -612,8 +582,8 @@ th{
 }
 
 .installationStep {
-    padding-top:5px;
-    padding-bottom:5px;
+  padding-top:5px;
+  padding-bottom:5px;
 }
 
 .firstInstallationStep {
@@ -621,57 +591,48 @@ th{
 }
 
 footer {
-    color:#999999;
-    padding:20px 0px 20px 0;
-    clear:both;
-    width: 1000px;
-    margin: 20px;
+  color:#999999;
+  padding:20px 0px 20px 0;
+  clear:both;
+  width: 1000px;
+  margin: 20px;
 }
 
 .indexfooter {
-	margin-top: 150px;
+  margin-top: 150px;
 }
 
 footer a {
-    color:#000;
+  color:#000;
 }
 
 footer a:hover {
-    color:#56a0ab;
+  color:#56a0ab;
 }
 
 #footerLicense{
-    float:left;
-    width: 500px;
+  float:left;
+  width: 500px;
 }
 
 #footerSourceForge{
-    float:left;
-    width: 50px;
+  float:left;
+  width: 50px;
 }
 
 #footerLinks{
-	font-size: 12px;
-    float:left;
-    margin-left:  25px;
+  font-size: 12px;
+  float:left;
+  margin-left:  25px;
 }
 
 a.feedBurner {
-    background:url(../images/feedicon.gif) no-repeat 0 100% ;
-    padding:1px 20px 0 20px;
+  background:url(../images/feedicon.gif) no-repeat 0 100%;
+  padding:1px 20px 0 20px;
 }
 
 a.feedBurner:hover {
-    background:url(../images/feedicon.gif) no-repeat ;
-}
-
-a.delicious {
-    background:url(../images/delicon.gif) no-repeat 0 100% ;
-    padding:1px 0px 0 20px;
-}
-
-a.delicious:hover{
-    background:url(../images/delicon.gif) no-repeat ;
+  background:url(../images/feedicon.gif) no-repeat;
 }
 
 .main h4 {
@@ -679,7 +640,6 @@ a.delicious:hover{
   font-size: 1.2em;
   margin-bottom: 1.5em;
 }
-
 
 article.main section {
   margin: 20px 0;
@@ -698,11 +658,10 @@ table#screenshot img {
   width: 300px;
   height: 221px;
   box-shadow: 0 0 4px #4d4d4d;
+}
 
 table.featured td p {
-    font-weight: bold;
-    font-size: 1.2em;
-    color: #999;
-
-  }
-
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #999;
+}
