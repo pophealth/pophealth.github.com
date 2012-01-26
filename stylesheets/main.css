@@ -747,3 +747,13 @@ div#nextparti{
 #nextparti p, #parti p {
   padding-left: 30px;
 }
+
+article.ParticipantDetail {
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+p.ParticipantIndent {
+  margin-left: 20px;
+  margin-bottom: .5em;
+}

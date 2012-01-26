@@ -44,6 +44,7 @@
         <li><a href="#funding">Who is funding the popHealth project?</a></li>
         <li><a href="#meaningfuluse">Can popHealth be used to demonstrate Meaningful Use?</a></li>
         <li><a href="#certified">Is popHealth Certified for Meaningful Use?</a></li>
+        <li><a href="#humanfactors">Does popHealth have human factors specialists on the team?</a></li>
       </ul>
       <h2>Technical Details</h2>
       <ul id="faqHeader">
@@ -68,10 +69,10 @@
     </div>
       <div class="questionAnswer firstQuestion">
         <div class="question" id="whatIsPopHealth">What is popHealth?</div>
-        <p>popHealth is an open source reference implementation software service that automates the reporting of Meaningful Use quality measures. popHealth integrates with a healthcare provider’s electronic health record (EHR) system using continuity of care records.  popHealth streamlines the automated generation of summary quality measure reports on the provider’s patient population.</p>
+        <p>popHealth is an open source reference implementation software service that automates the reporting of Meaningful Use quality measures. popHealth integrates with a healthcare provider\u2019s electronic health record (EHR) system using continuity of care records.  popHealth streamlines the automated generation of summary quality measure reports on the provider\u2019s patient population.</p>
         <p>Key to popHealth's value for providers and vendors interested in implementing summary quality reporting:</p>
           <ul>
-            <p>
+	     <p> 	
               <li>The ability to quickly view and report static quality measures based on established quality measures.</li>
               <li>Infrastructure to eventually remotely automate the addition of new quality measure reports, and export multiple modes of reporting output.</li>
             </p>
@@ -86,11 +87,11 @@
         <div class="question" id="users">Who are the intended users of popHealth?</div>
         <p>popHealth supports healthcare providers and EHR vendors by reporting clinical quality measures from electronic health record continuity of care files. Providers are empowered to better understand, and analyze the health of their patient population, and meet Meaningful Use reporting objectives, through reports of clinical quality measures. EHR vendors and healthcare providers are free to download, use, and integrate the popHealth software in their systems.</p>
       </div>
-      <div class="questionAnswer">
-        <div class="question" id="certification">Does popHealth work with any ONC-certified Electronic Health Record System?</div>
-        <p>popHealth was designed to work with ONC-certified Electronic Health Record Systems producing Continuity of Care files with clinical data coded per the clinical vocabularies used in the Meaningful Use Clinical Quality Measure eSpecifications posted on the <a href="https://www.cms.gov/QualityMeasures/03_ElectronicSpecifications.asp">CMS website</a>.</p>
-        <p>For popHealth to produce Meaningful Use quality measure results, a certified Electronic Health Record system must be configured to provide coded results for all fields expressed in either the HITSP C32 or ASTM CCR Health Information Exchange standards.  As both Continuity of Care XML standards and the Meaningful Use Clinical Quality Measures evolve, popHealth will adjust for future changes of the standards and of the quality measures.  Meaningful Use Clinical Quality Measures electronic specifications define clinical data concepts and values coded in specific clinical vocabularies.  To produce reports based on these definitions, the following code and value sets are required:
-          <ul>
+        <div class="questionAnswer">
+          <div class="question" id="certification">Does popHealth work with any ONC-certified Electronic Health Record System?</div>
+          <p>popHealth was designed to work with ONC-certified Electronic Health Record Systems producing Continuity of Care files with clinical data coded per the clinical vocabularies used in the Meaningful Use Clinical Quality Measure eSpecifications posted on the <a href="https://www.cms.gov/QualityMeasures/03_ElectronicSpecifications.asp">CMS website</a>.</p>
+          <p>For popHealth to produce Meaningful Use quality measure results, a certified Electronic Health Record system must be configured to provide coded results for all fields expressed in either the HITSP C32 or ASTM CCR Health Information Exchange standards.  As both Continuity of Care XML standards and the Meaningful Use Clinical Quality Measures evolve, popHealth will adjust for future changes of the standards and of the quality measures.  Meaningful Use Clinical Quality Measures electronic specifications define clinical data concepts and values coded in specific clinical vocabularies.  To produce reports based on these definitions, the following code and value sets are required:
+           <ul>
             <li>Allergies: RxNorm, SNOMED-CT</li>
             <li>Care Goals: SNOMED-CT</li>
             <li>Clinical Lab: LOINC</li>
@@ -121,16 +122,20 @@
       </div>
       <div class="questionAnswer">
         <div class="question" id="meaningfuluse">Can popHealth be used to demonstrate Meaningful Use?</div>
-        <p>The popHealth Meaningful Use Stage I measures are being developed and tested to assure accurate MU Clinical Quality Measure reports.  Collaboration with Meaningful Use Clinical Quality Measure specification stewards will assure that popHealth’s reports calculate as designed.  The “export report” function provides an easy-to-run method for providers to submit reports in the required technical format.</p>
+        <p>The popHealth Meaningful Use Stage I measures are being developed and tested to assure accurate MU Clinical Quality Measure reports.  Collaboration with Meaningful Use Clinical Quality Measure specification stewards will assure that popHealth\u2019s reports calculate as designed.  The \u201cexport report\u201d function provides an easy-to-run method for providers to submit reports in the required technical format.</p>
         <p>Providers are encouraged to validate the accuracy of their Meaningful Use Clinical Quality Reports to allow for data entry or coding variation.</p>
       </div>
       <div class="questionAnswer">
         <div class="question" id="certified">Is popHealth Certified for Meaningful Use?</div>
         <p>popHealth is a Certified Clinical Quality Measure software module.  Its status is publicly available on the <a href="http://onc-chpl.force.com/ehrcert/EHRProductDetail?id=a0X30000003lxJlEAI&retURL=%2Fehrcert%2FEHRProductSearch&setting=Ambulatory">CHPL site</a></p>
       </div>
+        <div class="questionAnswer">
+          <div class="question" id="humanfactors">Does popHealth have human factors specialists on the team?</div>
+          <p>Yes, popHealth has two human factors specialists on the team.  Human factors is a multidisciplinary field that concerns the study of how people interact with technological systems. Human factors practitioners consider the physical settings, cognitive and perceptual capabilities of the user, the organizational climate and how these factors interact with technology. The primary goal is to understand the user and develop technology that enhances what people do well and provide support for those tasks that people find difficult. Human factors has important implications for health care systems; for example, clinical quality measure reporting can be difficult to understand; therefore, a team of human factors experts apply their knowledge of human computer interaction, usability, and user interface design to improve the usability of the popHealth software. The application of human factors principles ensures users can fully employ the functionality of the system to successfully report clinical quality. In addition, two human factors psychology doctoral candidates, Erik Nelson and Andre Garcia, volunteer their time and expertise to the popHealth team.</p>
+        </div>
       <div class="questionAnswer">
         <div class="question" id="provideruse">What is basic Concept of Operations for use of popHealth by a provider?</div>
-        <p>popHealth has been designed to operate within a provider’s infrastructure. This design decision has been made to address privacy and security concerns associated with access to information associated with individual patient records.</p>
+        <p>popHealth has been designed to operate within a provider\u2019s infrastructure. This design decision has been made to address privacy and security concerns associated with access to information associated with individual patient records.</p>
           <img src="images/provider_workflow.png" alt="popHealth Provider Workflow" class="screenshot" style="border:1px solid #EEEEEE; margin-left: 25px">
       </div>
       <div class="questionAnswer">
