@@ -88,12 +88,21 @@ table.featured th p {
   vertical-align: top;
 }
 
-table.featured td h4 {
+article.spotlight h1 {
   font: bold;
   color #693;
   font: 1.1em;
+
+}
+article.spotlight .date {
+  color: #333333;
+  font-weight: bold;
+
 }
 
+article.spotlight {
+    padding: 10px 0;
+}
 html,body{
   font-family:myriad, sans-serif;
   font-size: 14px;
@@ -678,8 +687,9 @@ table#screenshot{
 
 table#screenshot img {
   width: 300px;
-  height: 221px;
+  height: 250px;
   box-shadow: 0 0 4px #4d4d4d;
+  margin-top: 40px;
 }
 
 table td p {
