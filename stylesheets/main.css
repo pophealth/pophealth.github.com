@@ -48,6 +48,15 @@ table.news td h4 {
   vertical-align: top;
 }
 
+table.event td {
+  padding-bottom: 3px;
+  color: #0250CE;
+}
+
+table.event {
+  padding-bottom: 10px;
+}
+
 table.featured {
   width: 480px;
   margin-top: 20px;
@@ -766,4 +775,12 @@ article.ParticipantDetail {
 p.ParticipantIndent {
   margin-left: 20px;
   margin-bottom: .5em;
+}
+
+.spotlight-sub {
+  padding: 10px 0 5px 40px; 
+}
+
+.spotlight-sub div {
+  padding-bottom: 8px;
 }
