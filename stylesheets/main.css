@@ -110,7 +110,10 @@ article.spotlight .date {
 }
 
 article.spotlight {
-    padding: 10px 0;
+    padding: 10px 0 0 0;
+}
+p.spotlight {
+  margin: 10px 0 10px 20px;
 }
 html,body{
   font-family:myriad, sans-serif;
@@ -788,5 +791,8 @@ li.spotlight span{
 }
  
 li.spotlight span:before{
+}
 
+img#gm_logo {
+  margin-left: 20px;
 }
