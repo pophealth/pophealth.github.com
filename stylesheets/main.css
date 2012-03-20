@@ -58,8 +58,8 @@ table.event {
 }
 
 table.featured {
-  width: 480px;
-  margin-top: 20px;
+  width: 450px;
+  margin: 20px 15px;
 }
 
 table.featured td {
@@ -71,7 +71,7 @@ table.featured a {
   vertical-align: top;
 }
 
-table.featured a.NewFeature {
+table.featured td a.NewFeature {
   color: #81B33C;
   font-weight: bold;
   vertical-align: top;
@@ -110,10 +110,11 @@ article.spotlight .date {
 }
 
 article.spotlight {
-    padding: 10px 0 0 0;
+    padding: 10px 0 0 15px;
+    margin-bottom: 65px;
 }
 p.spotlight {
-  margin: 10px 0 10px 20px;
+  margin: 10px 0 10px 0px;
 }
 html,body{
   font-family:myriad, sans-serif;
@@ -277,7 +278,7 @@ a:hover {
 
 article {
   text-decoration: none;
-  padding: 0 20px;  
+  padding: 0 15px;  
 }
 
 article.main {
@@ -329,7 +330,7 @@ figure {
   width: 480px;
   margin-left:  0px;
   margin-left: 20px;
-  height: 720px;
+  height: 680px;
   border-bottom: 1px solid #ccc;
 }
 
@@ -361,7 +362,7 @@ figure {
   margin-left: 540px;
   width: 480px;
   border-bottom: 1px solid #ccc;
-  height: 720px;
+  height: 680px;
 }
 
 #sidebar_1 h3{
