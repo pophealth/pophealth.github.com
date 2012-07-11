@@ -1,22 +1,53 @@
 <!doctype html>
-<meta charset=utf-8>
 <html lang=en>
-  <head>
-    <!-- Enable IE9 Standards mode -->
-    <meta http-equiv="X-UA-Compatible" content="IE=9" >
+  <head> 
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
     <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen"/>
     <link rel="icon" type="image/png" href="/images/pophealth_logo_small.png"/>
-    <title>popHealth - Frequently Asked Questions</title>
+    <title>FAQ</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+     // DOM ready
+     $(function() {
+        // Create the dropdown base
+        $("<select />").appendTo("nav");
+        // Create default option "Go to..."
+        $("<option />", {
+           "value"   : "",
+           "text"    : "Go to..."
+        }).appendTo("nav select");
+        // Populate dropdown with menu items
+        $("nav a").each(function() {
+         var el = $(this);
+         var opt = $("<option />", {
+             "value"   : el.attr("href"),
+             "text"    : el.text()
+         });
+         if ($(this).hasClass("active")) opt.attr("selected","selected");
+         opt.appendTo("nav select");
+        });
+       // To make dropdown actually work
+       // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/
+        $("nav select").change(function() {
+          window.location = $(this).find("option:selected").val();
+        });
+     });
+    </script>
   </head>
   <body>
-    <div id="header">
+    <header>
       <div id="logo">
         <a href="index.html"><img src="images/pophealth_logo_large.png" alt="popHealth Logo" height="65"/></a>
       </div>
-      <div id="nav">
+      <nav>
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="about.html">About</a></li>
@@ -26,72 +57,81 @@
           <li><a href="http://github.com/pophealth">Code</a></li>
           <li><a href="participate.html">Participate</a></li>
           <li><a href="news.html">News</a></li>
-          <li><a href="faq.html" class="selected">FAQ</a></li>
+          <li><a href="faq.html" class="active">FAQ</a></li>
           <li><a href="mailto:talk@projectpophealth.org">Contact</a></li>
         </ul>
-      </div>
-    </div>
-    <div class="main">
-      <h1>Frequently Asked Questions</h1>
-      <h2>General Overview</h2>
-      <ul id="faqHeader">
-        <li><a href="#whatIsPopHealth">What is popHealth?</a></li>
-        <li><a href="#objective">What is the objective of popHealth?</a></li>
-        <li><a href="#users">Who are the intended users of popHealth?</a></li>
-        <li><a href="#certification">Does popHealth work with any ONC-certified Electronic Health Record System?</a></li>
-        <li><a href="#philosophy">What is the popHealth design philosophy?</a></li>
-        <li><a href="#vendor">Do I need to be a healthcare provider or EHR vendor to use popHealth?</a></li>
-        <li><a href="#funding">Who is funding the popHealth project?</a></li>
-        <li><a href="#meaningfuluse">Can popHealth be used to demonstrate Meaningful Use?</a></li>
-        <li><a href="#certified">Is popHealth Certified for Meaningful Use?</a></li>
-        <li><a href="#humanfactors">Does popHealth have human factors specialists on the team?</a></li>
-      </ul>
-      <h2>Technical Details</h2>
-      <ul id="faqHeader">
-          <li><a href="#provideruse">What is basic Concept of Operations for use of popHealth by a provider?</a></li>
-          <li><a href="#report">How can popHealth be used to report EHR quality measurement data?</a></li>
-          <li><a href="#standards">What standards does popHealth use?</a></li>
-          <li><a href="#stepbystep">Are there step-by-step instructions for setting up popHealth from source code?</a></li>
-          <li><a href="#browsers">What web browsers can be used with popHealth?</a></li>
-          <li><a href="#languages">What programming languages does popHealth use?</a></li>
-          <li><a href="#c32version">What version of the HITSP C32 does popHealth work with?</a></li>
-          <li><a href="#testrecords">Are there test XML records that I can use to validate popHealth is correctly working?</a></li>
+      </nav>
+    </header>
+    <div class="wrapper">
+     <h1 class="heading">Frequently Asked Questions</h1>
+      <section id="faq_topics">
+        <div class="top_border_full"></div>
+        <div class="top"></div>
+        <article>
+        <h2>General Overview</h2>
+        <ul class="faqHeader">
+          <li><a href="#whatIsPopHealth">What is popHealth?</a></li>
+          <li><a href="#objective">What is the objective of popHealth?</a></li>
+          <li><a href="#users">Who are the intended users of popHealth?</a></li>
+          <li><a href="#certification">Does popHealth work with any ONC-certified Electronic Health Record System?</a></li>
+          <li><a href="#philosophy">What is the popHealth design philosophy?</a></li>
+          <li><a href="#vendor">Do I need to be a healthcare provider or EHR vendor to use popHealth?</a></li>
+          <li><a href="#funding">Who is funding the popHealth project?</a></li>
+          <li><a href="#meaningfuluse">Can popHealth be used to demonstrate Meaningful Use?</a></li>
+          <li><a href="#certified">Is popHealth Certified for Meaningful Use?</a></li>
+          <li><a href="#humanfactors">Does popHealth have human factors specialists on the team?</a></li>
         </ul>
-      <h2>Open Source</h2>
-      <ul id="faqHeader">
-        <li><a href="#communication">How is communication managed on the open source project?</a></li>
-        <li><a href="#laika">Is popHealth related to project Laika?</a></li>
-        <li><a href="#hquery">Is popHealth related to project hQuery?</a></li>
-        <li><a href="#contribute">Can I contribute software source code to popHealth?</a></li>
-        <li><a href="#codequality">Are there coding conventions that I must follow to submit code?</a></li>
-        <li><a href="#agpl">Since popHealth requires the MongoDB database, does the AGPL license also apply to popHealth?</a></li>
-      </ul>
-    </div>
-      <div class="questionAnswer firstQuestion">
-        <div class="question" id="whatIsPopHealth">What is popHealth?</div>
-        <p>popHealth is an open source reference implementation software service that automates the reporting of Meaningful Use quality measures. popHealth integrates with a healthcare provider\u2019s electronic health record (EHR) system using continuity of care records.  popHealth streamlines the automated generation of summary quality measure reports on the provider\u2019s patient population.</p>
-        <p>Key to popHealth's value for providers and vendors interested in implementing summary quality reporting:</p>
-          <ul>
-	     <p> 	
-              <li>The ability to quickly view and report static quality measures based on established quality measures.</li>
-              <li>Infrastructure to eventually remotely automate the addition of new quality measure reports, and export multiple modes of reporting output.</li>
-            </p>
+        </article>
+        <article>
+          <h2>Technical Details</h2>
+          <ul class="faqHeader">
+            <li><a href="#provideruse">What is basic Concept of Operations for use of popHealth by a provider?</a></li>
+            <li><a href="#report">How can popHealth be used to report EHR quality measurement data?</a></li>
+            <li><a href="#standards">What standards does popHealth use?</a></li>
+            <li><a href="#stepbystep">Are there step-by-step instructions for setting up popHealth from source code?</a></li>
+            <li><a href="#browsers">What web browsers can be used with popHealth?</a></li>
+            <li><a href="#languages">What programming languages does popHealth use?</a></li>
+            <li><a href="#c32version">What version of the HITSP C32 does popHealth work with?</a></li>
+            <li><a href="#testrecords">Are there test XML records that I can use to validate popHealth is correctly working?</a></li>
           </ul>
-        </p>
-      </div>
-      <div class="questionAnswer">
-        <div class="question" id="objective">What is the objective of popHealth?</div>
-        <p>popHealth is designed to simplify the reporting of summary quality measures, and streamline the exchange of summary quality data. Demonstration of Meaningful Use requires the reporting of quality measure data. This reference implementation open source software demonstrates how providers can rapidly produce and submit Meaningful Use clinical quality measures.  Further, popHealth provides EHR vendors with a reference implementation software package to guide the development of further Meaningful Use quality measures.</p>
-      </div>
-      <div class="questionAnswer">
-        <div class="question" id="users">Who are the intended users of popHealth?</div>
-        <p>popHealth supports healthcare providers and EHR vendors by reporting clinical quality measures from electronic health record continuity of care files. Providers are empowered to better understand, and analyze the health of their patient population, and meet Meaningful Use reporting objectives, through reports of clinical quality measures. EHR vendors and healthcare providers are free to download, use, and integrate the popHealth software in their systems.</p>
-      </div>
-        <div class="questionAnswer">
-          <div class="question" id="certification">Does popHealth work with any ONC-certified Electronic Health Record System?</div>
+        </article>
+        <article>
+          <h2>Open Source</h2>
+          <ul class="faqHeader">
+            <li><a href="#communication">How is communication managed on the open source project?</a></li>
+            <li><a href="#laika">Is popHealth related to project Laika?</a></li>
+            <li><a href="#hquery">Is popHealth related to project hQuery?</a></li>
+            <li><a href="#contribute">Can I contribute software source code to popHealth?</a></li>
+            <li><a href="#codequality">Are there coding conventions that I must follow to submit code?</a></li>
+            <li><a href="#agpl">Since popHealth requires the MongoDB database, does the AGPL license also apply to popHealth?</a></li>
+          </ul>
+        </article>
+        <div class="bottom_border_full"></div>
+        <div class="bottom"></div>
+      </section>
+      <section id="faq_articles">
+        <article>
+          <h1 id="whatIsPopHealth">What is popHealth?</h1>
+          <p>popHealth is an open source reference implementation software service that automates the reporting of Meaningful Use quality measures. popHealth integrates with a healthcare provider\u2019s electronic health record (EHR) system using continuity of care records.  popHealth streamlines the automated generation of summary quality measure reports on the provider\u2019s patient population.</p>
+          <p>Key to popHealth's value for providers and vendors interested in implementing summary quality reporting:</p>
+          <ul>	
+            <li>The ability to quickly view and report static quality measures based on established quality measures.</li>
+            <li>Infrastructure to eventually remotely automate the addition of new quality measure reports, and export multiple modes of reporting output.</li>
+          </ul>
+        </article>
+        <article>
+          <h1 id="objective">What is the objective of popHealth?</h1>
+          <p>popHealth is designed to simplify the reporting of summary quality measures, and streamline the exchange of summary quality data. Demonstration of Meaningful Use requires the reporting of quality measure data. This reference implementation open source software demonstrates how providers can rapidly produce and submit Meaningful Use clinical quality measures.  Further, popHealth provides EHR vendors with a reference implementation software package to guide the development of further Meaningful Use quality measures.</p>
+        </article>
+        <article>
+          <h1 id="users">Who are the intended users of popHealth?</h1>
+          <p>popHealth supports healthcare providers and EHR vendors by reporting clinical quality measures from electronic health record continuity of care files. Providers are empowered to better understand, and analyze the health of their patient population, and meet Meaningful Use reporting objectives, through reports of clinical quality measures. EHR vendors and healthcare providers are free to download, use, and integrate the popHealth software in their systems.</p>
+        </article>
+        <article>
+          <h1 id="certification">Does popHealth work with any ONC-certified Electronic Health Record System?</h1>
           <p>popHealth was designed to work with ONC-certified Electronic Health Record Systems producing Continuity of Care files with clinical data coded per the clinical vocabularies used in the Meaningful Use Clinical Quality Measure eSpecifications posted on the <a href="https://www.cms.gov/QualityMeasures/03_ElectronicSpecifications.asp">CMS website</a>.</p>
-          <p>For popHealth to produce Meaningful Use quality measure results, a certified Electronic Health Record system must be configured to provide coded results for all fields expressed in either the HITSP C32 or ASTM CCR Health Information Exchange standards.  As both Continuity of Care XML standards and the Meaningful Use Clinical Quality Measures evolve, popHealth will adjust for future changes of the standards and of the quality measures.  Meaningful Use Clinical Quality Measures electronic specifications define clinical data concepts and values coded in specific clinical vocabularies.  To produce reports based on these definitions, the following code and value sets are required:
-           <ul>
+          <p>For popHealth to produce Meaningful Use quality measure results, a certified Electronic Health Record system must be configured to provide coded results for all fields expressed in either the HITSP C32 or ASTM CCR Health Information Exchange standards.  As both Continuity of Care XML standards and the Meaningful Use Clinical Quality Measures evolve, popHealth will adjust for future changes of the standards and of the quality measures.  Meaningful Use Clinical Quality Measures electronic specifications define clinical data concepts and values coded in specific clinical vocabularies.  To produce reports based on these definitions, the following code and value sets are required:</p>
+          <ul>
             <li>Allergies: RxNorm, SNOMED-CT</li>
             <li>Care Goals: SNOMED-CT</li>
             <li>Clinical Lab: LOINC</li>
@@ -105,112 +145,115 @@
             <li>Social History: SNOMED-CT</li>
             <li>Vital Signs: ICD-9-CM, ICD-10-CM, SNOMED-CT</li>
           </ul>
-        </p>
-      </div>
-      <div class="questionAnswer">
-        <div class="question" id="philosophy">What is the popHealth design philosophy?</div>
-        <p>popHealth is designed for ease of deployment, use and integration with a healthcare provider's EHR system. The software has been designed to be permissive and extensible, with the ability to support various data standards for input and output. All popHealth software, and dependent libraries are available under an open source distribution license.</p>
-        <p>popHealth demonstrates an alternative approach to population health analysis and reporting. It does this by performing analysis within a healthcare provider's infrastructure and producing a summary data for evaluation and submission. This option provides an alternative to existing models where providers must transport large quantities of data, which simplifies the reporting and review process.</p>
-      </div>
-      <div class="questionAnswer">
-        <div class="question" id="vendor">Do I need to be a healthcare provider or EHR vendor to use popHealth?</div>
-        <p>No. While a healthcare provider will have access to real patient records, and an EHR provider will have a much better understanding of the technical details of the data standards that are used for healthcare information technology systems, we have ensured that others can use popHealth. However, even novice technologists interested in learning more about healthcare quality measures will benefit from downloading and using popHealth. </p>
-      </div>
-      <div class="questionAnswer">
-        <div class="question" id="funding">Who is funding the popHealth project?</div>
-        <p>The popHealth project is being funded by the Office of the National Coordinator for Health Information Technology (<a href="http://healthit.hhs.gov/portal/server.pt/community/healthit_hhs_gov__home/">ONC</a>) within the United States Department of Health and Human Services (<a href="http://www.hhs.gov/">HHS</a>).</p>
-      </div>
-      <div class="questionAnswer">
-        <div class="question" id="meaningfuluse">Can popHealth be used to demonstrate Meaningful Use?</div>
-        <p>The popHealth Meaningful Use Stage I measures are being developed and tested to assure accurate MU Clinical Quality Measure reports.  Collaboration with Meaningful Use Clinical Quality Measure specification stewards will assure that popHealth\u2019s reports calculate as designed.  The \u201cexport report\u201d function provides an easy-to-run method for providers to submit reports in the required technical format.</p>
-        <p>Providers are encouraged to validate the accuracy of their Meaningful Use Clinical Quality Reports to allow for data entry or coding variation.</p>
-      </div>
-      <div class="questionAnswer">
-        <div class="question" id="certified">Is popHealth Certified for Meaningful Use?</div>
-        <p>popHealth is a Certified Clinical Quality Measure software module.  Its status is publicly available on the <a href="http://onc-chpl.force.com/ehrcert/EHRProductDetail?id=a0X30000003lxJlEAI&retURL=%2Fehrcert%2FEHRProductSearch&setting=Ambulatory">CHPL site</a></p>
-      </div>
-        <div class="questionAnswer">
-          <div class="question" id="humanfactors">Does popHealth have human factors specialists on the team?</div>
-          <p>Yes, popHealth has two human factors specialists on the team.  Human factors is a multidisciplinary field that concerns the study of how people interact with technological systems. Human factors practitioners consider the physical settings, cognitive and perceptual capabilities of the user, the organizational climate and how these factors interact with technology. The primary goal is to understand the user and develop technology that enhances what people do well and provide support for those tasks that people find difficult. Human factors has important implications for health care systems; for example, clinical quality measure reporting can be difficult to understand; therefore, a team of human factors experts apply their knowledge of human computer interaction, usability, and user interface design to improve the usability of the popHealth software. The application of human factors principles ensures users can fully employ the functionality of the system to successfully report clinical quality. In addition, two human factors psychology doctoral candidates, Erik Nelson and Andre Garcia, volunteer their time and expertise to the popHealth team.</p><img id="gm_logo" src="http://logo.gmu.edu/hireslogos/primarylogo/PC/GMUblack.jpg" alt="George Mason University" height="90" width="150">
-        </div>
-      <div class="questionAnswer">
-        <div class="question" id="provideruse">What is basic Concept of Operations for use of popHealth by a provider?</div>
-        <p>popHealth has been designed to operate within a provider\u2019s infrastructure. This design decision has been made to address privacy and security concerns associated with access to information associated with individual patient records.</p>
-          <img src="images/provider_workflow.png" alt="popHealth Provider Workflow" class="screenshot" style="border:1px solid #EEEEEE; margin-left: 25px">
-      </div>
-      <div class="questionAnswer">
-        <div class="question" id="report">How can popHealth be used to report EHR quality measurement data?</div>
-        <p>At its core, popHealth is a simple way of aggregating patients' healthcare data inside a provider's secure operational system. By providing software that can perform analysis and reporting from within a healthcare provider's infrastructure, popHealth demonstrates an alternative approach to population health analysis and reporting. It is an alternative to the existing, legacy model of centralized data collection and analysis.</p>
-      </div>
-      <div class="questionAnswer">
-        <div class="question" id="standards">What standards does popHealth use?</div>
-        <p>popHealth has been designed to be permissive, and support numerous data and transport standards.  popHealth's first deployment uses the <a href="http://hitsp.org/ConstructSet_Details.aspx?&PrefixAlpha=4&PrefixNumeric=32">HITSP C32</a> and <a href="http://www.ccrstandard.com/">ASTM Continuity of Care Record (CCR)</a>standard for data input, and the Physician Quality Report Initiative (PQRI) registry XML for reporting output. popHealth is designed to be extensible, supporting multiple standards for both input and output into the future; <a href="http://xml.coverpages.org/CDA-Release2-Unofficial.html" target="_external">CDA documents</a>, <a href="http://wiki.hl7.org/index.php?title=Product_CCD">HL7 CCD</a>, <a href="http://www.astm.org/COMMIT/E31_ConceptPaper.doc">ASTM CCR</a>, and the <a href="http://wiki.hl7.org/index.php?title=Quality_Reporting_Document_Architecture">HL7 QRDA</a>.</p>
-      </div>
-      <div class="questionAnswer">
-        <div class="question" id="stepbystep">Are there step-by-step instructions for setting up popHealth from source code?</div>
-        <p>Yes.  For information technologists who are comfortable with the performing the installation of software components and and modules on servers, there is both step-by-step instructions and explanations on the project's software <a href="https://github.com/pophealth/popHealth/wiki">wiki</a>.</p>
-      </div>
-      <div class="questionAnswer">
-        <div class="question" id="browsers">What web browsers can be used with popHealth?</div>
-        <p>popHealth has been developed and tested for use in FireFox 3.0 and higher, Internet Explorer 8 and higher, as well as Safari 4. Support for other web browsers has not been tested, but the project will endeavor to support as many web browsers as is possible.</p>
-      </div>
-      <div class="questionAnswer">
-        <div class="question" id="languages">What programming languages does popHealth use?</div>
-        <p>popHealth runs on the <a href="http://rubyonrails.org/">Ruby on Rails</a> web framework, the <a href="http://www.mongodb.org/">MongoDB</a> open source document database, <a href="http://en.wikipedia.org/wiki/JavaScript">JavaScript</a>, and <a href="http://redis.io/">Redis</a>.  In particular, popHealth requires the use of Ruby 1.9.2, Rails3, and MongoDB v1.8 or higher, and Redis v2.2 or higher.  Quality measures are expressed in <a href="http://json.org/">JSON</a> including use of JavaScript for integrating with a map-reduce framework for calculating the quality measure report results.  Developing new software with popHealth, and/or adding new customized features, will require non-trivial software development knowledge of the Ruby, JavaScript and HTML programming languages, as well as comfortability in working with MongoDB.</p>
-      </div>
-      <div class="questionAnswer">
-        <div class="question" id="c32version">What version of the HITSP C32 does popHealth work with?</div>
-        <p>popHealth has been designed to work with v2.5 of the HITSP C32 specification.  For more information about the HITSP C32 standard, refer to the HITSP <a href="http://www.hitsp.org/">website</a>.</p>
-      </div>
-      <div class="questionAnswer">
-        <div class="question" id="testrecords">Are there test XML records that I can use to validate popHealth is correctly working?</div>
-        <p>Yes.  There is a sister project to popHealth, called Cypress, that has some C32 and CCR XML records available for testing an EHR system's ability to accurately produce CQM results based on 225 test patient records.  You can access these 225 C32 and CCR XML records <a href="https://github.com/projectcypress/cypress/downloads">here</a>.</p>
-      </div>
-      <div class="questionAnswer">
-        <div class="question" id="communication">How is communication managed on the open source project?</div>
-        <p>The most prominent, and active activities are always published on the project <a href="index.html">website</a>.  We have attempted to include enough high level information on our project site and our installation instructions available in the source code to setup an instance of popHealth.  Whenever possible, please make use of our <a href="faq.html" class="selected">FAQ</a> and software documentation before exploring other communication channels.</p>
-        <p>There are three email distribution lists which may also be used to request information about the project's plans and activities.  These lists are</p>
-        <ul>
-          <li><a href="mailto:announcements@projectpophealth.org">announcements@projectpophealth.org</a> which anyone can <a href="http://groups.google.com/group/pophealth-announce/subscribe" target="_external">subscribe</a> to.  Messages to this list are limited to the popHealth governing organizations.</li>
-          <li><a href="mailto:talk@projectpophealth.org">talk@projectpophealth.org</a> which like the announcement list, anyone can <a href="http://groups.google.com/group/pophealth-talk/subscribe" target="_external">subscribe</a> to.  Additionally, anyone is free to submit questions about the project to this list.  To prevent spam, all messages are first reviewed by the project team before being forwarded to the distribution list.</li>
-          <li><a href="mailto:dev@projectpophealth.org">dev@projectpophealth.org</a> is used exclusively for software development questions.  Membership to this list is also <a href="http://groups.google.com/group/pophealth-dev/subscribe" target="_external">open to anyone</a>.  <em><b>However, we encourage individuals to limit participation in this list those that are active software engineers</b></em>.  Likewise, anyone is free to submit questions about the project to this list.  Similarly, to prevent spam, all messages are first reviewed by the project team before being forwarded to the distribution list.</li>
-        </ul>
-      </div>
-      <div class="questionAnswer">
-        <div class="question" id="laika">How is popHealth related to project <a href="http://projectlaika.org" target="_external">Laika</a>?</div>
-        <p>The vast majority of the software supporting popHealth runs atop of <a href="http://www.mitre.org" target="_external">the MITRE Corporation's</a> open source <a href="http://projectlaika.org" target="_external">Laika</a> project infrastructure.  Laika is an open source electronic health record (EHR) testing framework that can support testing EHR systems for interoperability against the HITSP C32 standard, HL7 v2.* Messages, and the IHE XDS.b Web Service exchange.  Similar to popHealth, all of the Laika software and source code, is also freely available under an Apache 2.0 open source distribution license.</p>
-      </div>
-      <div class="questionAnswer">
-        <div class="question" id="hquery">How is popHealth related to project <a href="http://projecthquery.org/" target="_external">hQuery</a>?</div>
-        <p>Similar to popHealth, <a href="http://projecthquery.org" target="_external">hQuery</a> is another open source healthcare project.  The hQuery system uses a similar architecture to popHealth but is generalized to support ad-hoc queries distributed over a number of patient populations. Also similar to popHealth, hQuery integrates with certified EHR systems by leveraging their ability to generate HITSP C32 or ASTM CCR patient summaries.
-      </div>
-      <div class="questionAnswer">
-        <div class="question" id="contribute">Can I contribute software source code to popHealth?</div>
-        <p>Yes. Code contributions, bug fixes, ideas for new features, are all welcome for the popHealth user interface and to the kernel logic code around our shared quality measure engine. A requirement for contributing software is that any and all software contributed to popHealth is released under an Apache 2.0 open source distribution license, and that you transfer copyright of any code or patches you submit to the project. Source code contributions, as well as dialog/discussions for feature requests and enhancements will be publicly reviewed and vetted by the popHealth project's governing organizations.</p>
-        <p>To submit a new feature for consideration into the popHealth repository, setup an account on <a href="https://github.com/">GitHub</a>.  Fork the popHealth code, and create a branch of popHealth on your repository.  Send the link to your popHealth branch to the popHealth <a href="mailto:dev@projectpophealth.org">developer email list</a>, and cite either an existing bug or feature from the popHealth project tracker to specify the changes that you are contributing.</p>
-        <p>If you have suggestions on new features, or want to report a bug that has not yet been tracked, send an email to the <a href="mailto:dev@projectpophealth.org">developer email list</a> with either the details to reproduce a bug, or detailed description about a suggested feature that you would like to see added to popHealth.</p>
-      </div>
-      <div class="questionAnswer">
-        <div class="question" id="codequality">Are there coding conventions that I must follow to submit code?</div>
-        <p>Yes.  The popHealth open source community is dedicated to ensuring that the quality of the software source code is always supporting very high standards.  There is a Ruby code convention requirement <a href="https://github.com/eedrummer/styleguide/blob/master/ruby.markdown">here</a>, and the project follows Google's JavaScript style guide <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">here</a>.  Further, any additional features added to the popHealth project must include mature unit tests to ensure that the intended feature is performing correctly.</p>
-      </div>
-      <div class="questionAnswer">
-        <div class="question" id="agpl">Since popHealth requires the MongoDB database, does the AGPL license also apply to popHealth?</div>
-        <p>While popHealth uses MongoDB for database infrastructure, popHealth is licensed under the Apache 2.0 distribution license.  There are no requirements for any EHR vendor to open access of their closed source code for any paid commercial system, or free open source system, that integrates with the popHealth software via the Apache 2.0 distribution license.</p>
-        <p>Use of open source infrastructure can cause confusion in situations like this.  10Gen, the company that stewards MongoDB, has provided clarification on the commercial use of systems that use MongoDB for database infrastructure in a commercial project <a href="http://www.mongodb.org/display/DOCS/Licensing">here</a>.  They directly address the situation where a commercial company may want to include MongoDB in a product and ensure that commercial projects are never required to publish their product's source code:</p>
-        <p>"<a href="http://www.mongodb.org/display/DOCS/Licensing"><em>it is never required that applications using mongo be published</em></a>".</p>
-        <p>An issue that could theoretically arise would be if a commercial EHR opted use/subsume popHealth, modify the MongoDB database server for some additional need, and then incorporate a modified version of MongoDB into their commercial project.  At that point, a modified version of the MongoDB source code would need to be made available by an Electronic Health Record vendor.  However, since it is difficult to consider a hypothetical need for that, the popHealth community is confident that commercial EHR vendors will be able to integrate popHealth with your products, and charge whatever fee they deem appropriate when using the popHealth software in a paid commercial project.  The popHealth software will not produce any viral requirement to open other projects.</p>
-      </div>
+        </article>
+        <article>
+          <h1 id="philosophy">What is the popHealth design philosophy?</h1>
+          <p>popHealth is designed for ease of deployment, use and integration with a healthcare provider's EHR system. The software has been designed to be permissive and extensible, with the ability to support various data standards for input and output. All popHealth software, and dependent libraries are available under an open source distribution license.</p>
+          <p>popHealth demonstrates an alternative approach to population health analysis and reporting. It does this by performing analysis within a healthcare provider's infrastructure and producing a summary data for evaluation and submission. This option provides an alternative to existing models where providers must transport large quantities of data, which simplifies the reporting and review process.</p>
+        </article>
+        <article>
+          <h1 id="vendor">Do I need to be a healthcare provider or EHR vendor to use popHealth?</h1>
+          <p>No. While a healthcare provider will have access to real patient records, and an EHR provider will have a much better understanding of the technical details of the data standards that are used for healthcare information technology systems, we have ensured that others can use popHealth. However, even novice technologists interested in learning more about healthcare quality measures will benefit from downloading and using popHealth. </p>
+        </article>
+        <article>
+          <h1 id="funding">Who is funding the popHealth project?</h1>
+          <p>The popHealth project is being funded by the Office of the National Coordinator for Health Information Technology (<a href="http://healthit.hhs.gov/portal/server.pt/community/healthit_hhs_gov__home/">ONC</a>) within the United States Department of Health and Human Services (<a href="http://www.hhs.gov/">HHS</a>).</p>
+        </article>
+        <article>
+          <h1 id="meaningfuluse">Can popHealth be used to demonstrate Meaningful Use?</h1>
+          <p>The popHealth Meaningful Use Stage I measures are being developed and tested to assure accurate MU Clinical Quality Measure reports.  Collaboration with Meaningful Use Clinical Quality Measure specification stewards will assure that popHealth\u2019s reports calculate as designed.  The \u201cexport report\u201d function provides an easy-to-run method for providers to submit reports in the required technical format.</p>
+          <p>Providers are encouraged to validate the accuracy of their Meaningful Use Clinical Quality Reports to allow for data entry or coding variation.</p>
+        </article>
+        <article>
+          <h1 id="certified">Is popHealth Certified for Meaningful Use?</h1>
+          <p>popHealth is a Certified Clinical Quality Measure software module.  Its status is publicly available on the <a href="http://onc-chpl.force.com/ehrcert/EHRProductDetail?id=a0X30000003lxJlEAI&retURL=%2Fehrcert%2FEHRProductSearch&setting=Ambulatory">CHPL site</a></p>
+        </article>
+        <article>
+          <h1 id="humanfactors">Does popHealth have human factors specialists on the team?</h1>
+          <p>Yes, popHealth has two human factors specialists on the team.  Human factors is a multidisciplinary field that concerns the study of how people interact with technological systems. Human factors practitioners consider the physical settings, cognitive and perceptual capabilities of the user, the organizational climate and how these factors interact with technology. The primary goal is to understand the user and develop technology that enhances what people do well and provide support for those tasks that people find difficult. Human factors has important implications for health care systems; for example, clinical quality measure reporting can be difficult to understand; therefore, a team of human factors experts apply their knowledge of human computer interaction, usability, and user interface design to improve the usability of the popHealth software. The application of human factors principles ensures users can fully employ the functionality of the system to successfully report clinical quality. In addition, two human factors psychology doctoral candidates, Erik Nelson and Andre Garcia, volunteer their time and expertise to the popHealth team.</p>
+          <img id="gm_logo" src="http://logo.gmu.edu/hireslogos/primarylogo/PC/GMUblack.jpg" alt="George Mason University">
+        </article>
+        <article>
+          <h1 id="provideruse">What is basic Concept of Operations for use of popHealth by a provider?</h1>
+          <p>popHealth has been designed to operate within a provider\u2019s infrastructure. This design decision has been made to address privacy and security concerns associated with access to information associated with individual patient records.</p>
+            <img src="images/provider_workflow.png" alt="popHealth Provider Workflow" class="screenshot">
+        </article>
+        <article>
+          <h1 id="report">How can popHealth be used to report EHR quality measurement data?</h1>
+          <p>At its core, popHealth is a simple way of aggregating patients' healthcare data inside a provider's secure operational system. By providing software that can perform analysis and reporting from within a healthcare provider's infrastructure, popHealth demonstrates an alternative approach to population health analysis and reporting. It is an alternative to the existing, legacy model of centralized data collection and analysis.</p>
+        </article>
+        <article>
+          <h1 id="standards">What standards does popHealth use?</h1>
+          <p>popHealth has been designed to be permissive, and support numerous data and transport standards.  popHealth's first deployment uses the <a href="http://hitsp.org/ConstructSet_Details.aspx?&PrefixAlpha=4&PrefixNumeric=32">HITSP C32</a> and <a href="http://www.ccrstandard.com/">ASTM Continuity of Care Record (CCR)</a>standard for data input, and the Physician Quality Report Initiative (PQRI) registry XML for reporting output. popHealth is designed to be extensible, supporting multiple standards for both input and output into the future; <a href="http://xml.coverpages.org/CDA-Release2-Unofficial.html">CDA documents</a>, <a href="http://wiki.hl7.org/index.php?title=Product_CCD">HL7 CCD</a>, <a href="http://www.astm.org/COMMIT/E31_ConceptPaper.doc">ASTM CCR</a>, and the <a href="http://wiki.hl7.org/index.php?title=Quality_Reporting_Document_Architecture">HL7 QRDA</a>.</p>
+        </article>
+        <article>
+          <h1 id="stepbystep">Are there step-by-step instructions for setting up popHealth from source code?</h1>
+          <p>Yes.  For information technologists who are comfortable with the performing the installation of software components and and modules on servers, there is both step-by-step instructions and explanations on the project's software <a href="https://github.com/pophealth/popHealth/wiki">wiki</a>.</p>
+        </article>
+        <article>
+          <h1 id="browsers">What web browsers can be used with popHealth?</h1>
+          <p>popHealth has been developed and tested for use in FireFox 3.0 and higher, Internet Explorer 8 and higher, as well as Safari 4. Support for other web browsers has not been tested, but the project will endeavor to support as many web browsers as is possible.</p>
+        </article>
+        <article>
+          <h1 id="languages">What programming languages does popHealth use?</h1>
+          <p>popHealth runs on the <a href="http://rubyonrails.org/">Ruby on Rails</a> web framework, the <a href="http://www.mongodb.org/">MongoDB</a> open source document database, <a href="http://en.wikipedia.org/wiki/JavaScript">JavaScript</a>, and <a href="http://redis.io/">Redis</a>.  In particular, popHealth requires the use of Ruby 1.9.2, Rails3, and MongoDB v1.8 or higher, and Redis v2.2 or higher.  Quality measures are expressed in <a href="http://json.org/">JSON</a> including use of JavaScript for integrating with a map-reduce framework for calculating the quality measure report results.  Developing new software with popHealth, and/or adding new customized features, will require non-trivial software development knowledge of the Ruby, JavaScript and HTML programming languages, as well as comfortability in working with MongoDB.</p>
+        </article>
+        <article>
+          <h1 id="c32version">What version of the HITSP C32 does popHealth work with?</h1>
+          <p>popHealth has been designed to work with v2.5 of the HITSP C32 specification.  For more information about the HITSP C32 standard, refer to the HITSP <a href="http://www.hitsp.org/">website</a>.</p>
+        </article>
+        <article>
+          <h1 id="testrecords">Are there test XML records that I can use to validate popHealth is correctly working?</h1>
+          <p>Yes.  There is a sister project to popHealth, called Cypress, that has some C32 and CCR XML records available for testing an EHR system's ability to accurately produce CQM results based on 225 test patient records.  You can access these 225 C32 and CCR XML records <a href="https://github.com/projectcypress/cypress/downloads">here</a>.</p>
+        </article>
+        <article>
+          <h1 id="communication">How is communication managed on the open source project?</h1>
+          <p>The most prominent, and active activities are always published on the project <a href="index.html">website</a>.  We have attempted to include enough high level information on our project site and our installation instructions available in the source code to setup an instance of popHealth.  Whenever possible, please make use of our <a href="faq.html" class="selected">FAQ</a> and software documentation before exploring other communication channels.</p>
+          <p>There are three email distribution lists which may also be used to request information about the project's plans and activities.  These lists are</p>
+          <ul>
+            <li><a href="mailto:announcements@projectpophealth.org">announcements@projectpophealth.org</a> which anyone can <a href="http://groups.google.com/group/pophealth-announce/subscribe">subscribe</a> to.  Messages to this list are limited to the popHealth governing organizations.</li>
+            <li><a href="mailto:talk@projectpophealth.org">talk@projectpophealth.org</a> which like the announcement list, anyone can <a href="http://groups.google.com/group/pophealth-talk/subscribe">subscribe</a> to.  Additionally, anyone is free to submit questions about the project to this list.  To prevent spam, all messages are first reviewed by the project team before being forwarded to the distribution list.</li>
+            <li><a href="mailto:dev@projectpophealth.org">dev@projectpophealth.org</a> is used exclusively for software development questions.  Membership to this list is also <a href="http://groups.google.com/group/pophealth-dev/subscribe">open to anyone</a>.  <em><b>However, we encourage individuals to limit participation in this list those that are active software engineers</b></em>.  Likewise, anyone is free to submit questions about the project to this list.  Similarly, to prevent spam, all messages are first reviewed by the project team before being forwarded to the distribution list.</li>
+          </ul>
+        </article>
+        <article>
+          <h1 id="laika">How is popHealth related to project <a href="http://projectlaika.org">Laika</a>?</h1>
+          <p>The vast majority of the software supporting popHealth runs atop of <a href="http://www.mitre.org">the MITRE Corporation's</a> open source <a href="http://projectlaika.org">Laika</a> project infrastructure.  Laika is an open source electronic health record (EHR) testing framework that can support testing EHR systems for interoperability against the HITSP C32 standard, HL7 v2.* Messages, and the IHE XDS.b Web Service exchange.  Similar to popHealth, all of the Laika software and source code, is also freely available under an Apache 2.0 open source distribution license.</p>
+        </article>
+        <article>
+          <h1 id="hquery">How is popHealth related to project <a href="http://projecthquery.org/">hQuery</a>?</h1>
+          <p>Similar to popHealth, <a href="http://projecthquery.org">hQuery</a> is another open source healthcare project.  The hQuery system uses a similar architecture to popHealth but is generalized to support ad-hoc queries distributed over a number of patient populations. Also similar to popHealth, hQuery integrates with certified EHR systems by leveraging their ability to generate HITSP C32 or ASTM CCR patient summaries.
+        </article>
+        <article>
+          <h1 id="contribute">Can I contribute software source code to popHealth?</h1>
+          <p>Yes. Code contributions, bug fixes, ideas for new features, are all welcome for the popHealth user interface and to the kernel logic code around our shared quality measure engine. A requirement for contributing software is that any and all software contributed to popHealth is released under an Apache 2.0 open source distribution license, and that you transfer copyright of any code or patches you submit to the project. Source code contributions, as well as dialog/discussions for feature requests and enhancements will be publicly reviewed and vetted by the popHealth project's governing organizations.</p>
+          <p>To submit a new feature for consideration into the popHealth repository, setup an account on <a href="https://github.com/">GitHub</a>.  Fork the popHealth code, and create a branch of popHealth on your repository.  Send the link to your popHealth branch to the popHealth <a href="mailto:dev@projectpophealth.org">developer email list</a>, and cite either an existing bug or feature from the popHealth project tracker to specify the changes that you are contributing.</p>
+          <p>If you have suggestions on new features, or want to report a bug that has not yet been tracked, send an email to the <a href="mailto:dev@projectpophealth.org">developer email list</a> with either the details to reproduce a bug, or detailed description about a suggested feature that you would like to see added to popHealth.</p>
+        </article>
+        <article>
+          <h1 id="codequality">Are there coding conventions that I must follow to submit code?</h1>
+          <p>Yes.  The popHealth open source community is dedicated to ensuring that the quality of the software source code is always supporting very high standards.  There is a Ruby code convention requirement <a href="https://github.com/eedrummer/styleguide/blob/master/ruby.markdown">here</a>, and the project follows Google's JavaScript style guide <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">here</a>.  Further, any additional features added to the popHealth project must include mature unit tests to ensure that the intended feature is performing correctly.</p>
+        </article>
+        <article>
+          <h1 id="agpl">Since popHealth requires the MongoDB database, does the AGPL license also apply to popHealth?</h1>
+          <p>While popHealth uses MongoDB for database infrastructure, popHealth is licensed under the Apache 2.0 distribution license.  There are no requirements for any EHR vendor to open access of their closed source code for any paid commercial system, or free open source system, that integrates with the popHealth software via the Apache 2.0 distribution license.</p>
+          <p>Use of open source infrastructure can cause confusion in situations like this.  10Gen, the company that stewards MongoDB, has provided clarification on the commercial use of systems that use MongoDB for database infrastructure in a commercial project <a href="http://www.mongodb.org/display/DOCS/Licensing">here</a>.  They directly address the situation where a commercial company may want to include MongoDB in a product and ensure that commercial projects are never required to publish their product's source code:</p>
+          <p>"<a href="http://www.mongodb.org/display/DOCS/Licensing"><em>it is never required that applications using mongo be published</em></a>".</p>
+          <p>An issue that could theoretically arise would be if a commercial EHR opted use/subsume popHealth, modify the MongoDB database server for some additional need, and then incorporate a modified version of MongoDB into their commercial project.  At that point, a modified version of the MongoDB source code would need to be made available by an Electronic Health Record vendor.  However, since it is difficult to consider a hypothetical need for that, the popHealth community is confident that commercial EHR vendors will be able to integrate popHealth with your products, and charge whatever fee they deem appropriate when using the popHealth software in a paid commercial project.  The popHealth software will not produce any viral requirement to open other projects.</p>
+        </article>
+        <div class="bottom_border_full"></div>
+        <div class="bottom"></div>
+      </section>
     </div>
     <footer>
       <div id="footerSourceForge">
-        <a href="http://github.com/" target="_external"><img src="images/github_icon.png" alt="GitHub Logo"></a>
+        <a href="http://github.com/"><img src="images/github_icon.png" alt="GitHub Logo"></a>
       </div>
       <div id="footerLinks">
-        Content of this site is sponsored by the <a href="http://www.hhs.gov/healthit/" target="_external">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp
-        <a href="http://www.hhs.gov/Privacy.html" target="_external">Privacy Policy</a> &nbsp 
-        <a href="http://www.hhs.gov/Disclaimer.html" target="_external">Disclaimer</a> &nbsp
-        <br/>Page Last Revised: January 26, 2012
+        Content of this site is sponsored by the <a href="http://www.hhs.gov/healthit/">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp;
+        <a href="http://www.hhs.gov/Privacy.html">Privacy Policy</a> &nbsp;
+        <a href="http://www.hhs.gov/Disclaimer.html">Disclaimer</a> &nbsp;
+        <br/>Page Last Revised: July 11, 2012
       </div>
     </footer>
     <script type="text/javascript">

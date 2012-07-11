@@ -1,87 +1,153 @@
 <!doctype html>
-<meta charset=utf-8>
 <html lang=en>
-  <head>
-    <!-- Enable IE9 Standards mode -->
-    <meta http-equiv="X-UA-Compatible" content="IE=9" >
+  <head> 
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen"/>
     <link rel="icon" type="image/png" href="/images/pophealth_logo_small.png"/>
-    <title>popHealth - Download Instructions</title>
+    <title>Download</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+     // DOM ready
+     $(function() {
+        // Create the dropdown base
+        $("<select />").appendTo("nav");
+        // Create default option "Go to..."
+        $("<option />", {
+           "value"   : "",
+           "text"    : "Go to..."
+        }).appendTo("nav select");
+        // Populate dropdown with menu items
+        $("nav a").each(function() {
+         var el = $(this);
+         var opt = $("<option />", {
+             "value"   : el.attr("href"),
+             "text"    : el.text()
+         });
+         if ($(this).hasClass("active")) opt.attr("selected","selected");
+         opt.appendTo("nav select");
+        });
+       // To make dropdown actually work
+       // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/
+        $("nav select").change(function() {
+          window.location = $(this).find("option:selected").val();
+        });
+     });
+    </script>
   </head>
   <body>
-    <div id="header">
+    <header>
       <div id="logo">
         <a href="index.html"><img src="images/pophealth_logo_large.png" alt="popHealth Logo" height="65"/></a>
       </div>
-      <div id="nav">
+      <nav>
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="screen_shots.html">Screen Shots</a></li>
           <li><a href="http://demo.projectpophealth.org/users/sign_in">Demo</a></li>
-          <li><a href="download.html" class="selected">Download</a></li>
+          <li><a href="download.html" class="active">Download</a></li>
           <li><a href="http://github.com/pophealth">Code</a></li>
           <li><a href="participate.html">Participate</a></li>
           <li><a href="news.html">News</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="mailto:talk@projectpophealth.org">Contact</a></li>
-        </ul> 
-      </div>
-    </div>
-    <div class="main">
-      <h1>VMWare Player Download and Installation Instructions</h1>
-      <br/>
-      If you are having issues with the 6 step download process enumerated here, please refer to our <a href="documents/pophealth_trouble_shooting_guide.pdf">detailed trouble-shooting guide</a>.
-      <div class="installationStep firstInstallationStep">
-        <div class="installationStep">
-          <h2>Step 1:</h2> <a href="http://downloads.vmware.com/d/info/desktop_downloads/vmware_player/3_0" target="_external"><img src="images/download_button.jpg" width="114" height="122"></a>
+        </ul>
+      </nav>
+    </header>
+    <div class="wrapper">
+      <h1 class="heading">Download and Installation Instructions</h1>
+      <section>
+        <p>If you are having issues with the 6 step download process enumerated here, please refer to our <a href="documents/pophealth_trouble_shooting_guide.pdf">detailed trouble-shooting guide</a>.<p>
+        <div class="top_border_full"></div>
+        <div class="top"></div>
+        <article>
+          <h4>Step 1:</h4> 
+          <a href="http://downloads.vmware.com/d/info/desktop_downloads/vmware_player/3_0">
+          <img class="dl" src="images/download_button.jpg" alt="download"/></a>
           <p>Download and Install VMWare Player v3.0  To download VMWare player for free, you will need to sign up for an account via a form.</p>
-          <br/>
-          <h2>Step 2:</h2> <a href="https://s3.amazonaws.com/pophealth/popHealth.vmwarevm.zip" target="_external"><img src="images/download_button.jpg" width="114" height="122" /></a>
+        </article>
+        <div class="bottom_border_full"></div>
+        <div class="bottom"></div>
+      </section>
+      <section>
+        <div class="top_border_full"></div>
+        <div class="top"></div>
+        <article>
+          <h4>Step 2:</h4> <a href="https://s3.amazonaws.com/pophealth/popHealth.vmwarevm.zip"><img class="dl" src="images/download_button.jpg" alt="download"/></a>
           <p> Next, download the popHealth v1.1.3 Virtual Machine and save the file someplace on your computer, such as your Desktop, or in a another directory where you will want to use popHealth.  You should unzip this file, and you will now have an uncompressed virtual machine "<em>popHealth.vmwarevm</em>".  This file will allow you to launch a popHealth server, data importer and C32/CCR analysis tools on your computer.</p>
-          <br/>
-          <h2>Step 3:</h2> <a href="images/pophealth_desktop.png"><img src="images/pophealth_desktop.png" width="244" height="212" /></a>
+        </article>
+        <div class="bottom_border_full"></div>
+        <div class="bottom"></div>
+      </section>
+      <section>
+        <div class="top_border_full"></div>
+        <div class="top"></div>
+        <article>
+          <h4>Step 3:</h4> <a href="images/pophealth_desktop.png"><img class="ss" src="images/pophealth_desktop.png" alt="download"/></a>
           <p>After you have installed VMWare Player, and downloaded the popHealth virtual machine, double-click on the popHealth machine image to startup your own popHealth virtual machine.  After the VM starts, you should see an image of a virtual machine running with a purple desktop background.  This is the popHealth virtual machine, that has been pre-configured with all of the software dependancies necessary to run popHealth.</p>
-          <br/>
-          <h2>Step 4:</h2> <a href="images/pophealth_continuity_of_care_records_copied.png"><img src="images/pophealth_continuity_of_care_records_copied.png" width="244" height="212" /></a>
+        </article>
+        <div class="bottom_border_full"></div>
+        <div class="bottom"></div>
+      </section>
+      <section>
+        <div class="top_border_full"></div>
+        <div class="top"></div>
+        <article>
+          <h4>Step 4:</h4> <a href="images/pophealth_continuity_of_care_records_copied.png"><img src="images/pophealth_continuity_of_care_records_copied.png" class="ss" alt="CCR Records Copied"/></a>
           <p>Next, export your patient records via the HITPS C32 format, or ASTM CCR format from your Electronic Health Record system.  You should include all your C32 or CCR records in a single folder.  Drag this folder into your popHealth desktop.  If you don't have any C32 or CCR files, and would still like to user popHealth with randomized patient data, refer to our instructions for seeding the system with random data under the "Test Patient Records" section of our Wiki <a href="https://github.com/pophealth/popHealth/wiki/Installation">here</a>.</p>
-          <br/>
-          <h2>Step 5:</h2> <a href="images/pophealth_importer.png"><img src="images/pophealth_importer.png" width="244" height="212" /></a>
+        </article>
+        <div class="bottom_border_full"></div>
+        <div class="bottom"></div>
+      </section>
+      <section>
+        <div class="top_border_full"></div>
+        <div class="top"></div>
+        <article>
+          <h4>Step 5:</h4> <a href="images/pophealth_importer.png"><img src="images/pophealth_importer.png" class="ss" alt="Importer"/></a>
           <p>Import your patient records into popHealth.  To do this, start up the popHealth Data Importer tool by double clicking on the "popHealth C32/CCR Importer" icon on the desktop.  Once the popHealth Data Importer tool starts up, you should select a directory from the file menu where all of your C32 or CCR XML files have been exported by going to the menu bar and selecting File:Open.  Once you have selected the directory directory with your records, all of the files in that directory will be analyzed and displayed in the popHealth Data Importer tool.  You can now select the "Import" button on the bottom of the user interface. Each C32 or CCR record in the directory you have selected will be uploaded to the popHealth database via a secure RESTful service on the popHealth web application.</p>
-          <br/>
-          <h2>Step 6:</h2> <a href="images/pophealth_web_application.png"><img src="images/pophealth_web_application.png" width="244" height="212" /></a>  
+        </article>
+        <div class="bottom_border_full"></div>
+        <div class="bottom"></div>
+      </section>
+      <section>
+        <div class="top_border_full"></div>
+        <div class="top"></div>
+        <article>
+          <h4>Step 6:</h4> <a href="images/pophealth_web_application.png"><img src="images/pophealth_web_application.png" class="ss" alt="Web Application"/></a>  
           <p>Double click on the popHealth Web Application desktop icon.  This will bring up the popHealth report user interface via the FireFox browser.  If you have already created a popHealth account, you should enter your credentials now.  If you have not created a popHealth account, you should create a new account via the form available via the "Create New Account" link on the login page.</p>
           <p>Congratulations!  You are now using the popHealth application, and can select measures via the list of Meaningful Use Clinical Quality Measures on the left side of the popHealth interface.</p>
-          <br/>
+        </article>
+        <div class="bottom_border_full"></div>
+        <div class="bottom"></div>
+      </section>
+      <section>
+        <div class="top_border_full"></div>
+        <div class="top"></div>
+        <article>
           <p>* For users wanting to set up popHealth on a non-Windows system using the popHealth virtual machine, you will need to consider alternative VM hosting applications such as VMWare Fusion for the Apple platform, or Virtual Box.</p>
           <p>** For users wanting to set up popHealth as a dedicated server, refer to the detailed, step-by-step instructions from the popHealth wiki page available <a href="https://github.com/pophealth/popHealth/wiki/Installation">here</a>.  Setting up a dedicated popHealth server will require users are comfortable with server administration tasks, such as installing <a href="http://www.mongodb.org/">MongoDB</a>, <a href="https://rvm.beginrescueend.com/">Ruby on Rails</a>, <a href="http://redis.io/">Redis</a>, and other software dependancies, sometimes from source code.</p>
-        </div>
-        <br/>
-        Documents in PDF format require the <a href="http://get.adobe.com/reader/">Adobe Acrobat Reader®</a>.
-        <br/>
-        If you experience problems with PDF documents, please <a href="http://get.adobe.com/reader/">download the latest version of the Reader®</a>.
-        <p/>
-      </div>
-      <br>
-      <h1>Windows 7 Installation Instructions</h1>
-      <br/>
-      The popHealth Windows 7 follows the steps in the <a href="installer/pophealth_windows_installer_1.4.pdf">installation instructions</a> for the associated binary installers below:
-      <br/>
-      <a href="installer/popHealth-1.4.1-i386.exe">Windows7 32 Bit Installer</a>
-      <br/>
-      <a href="installer/popHealth-1.4.1-x86_64.exe">Windows7 64 Bit Installer</a>
-      <br/>
+          <p>Documents in PDF format require the <a href="http://get.adobe.com/reader/">Adobe Acrobat Reader®</a>.</p>
+          <p>If you experience problems with PDF documents, please <a href="http://get.adobe.com/reader/">download the latest version of the Reader®</a>.
+          </p>
+        </article>
+        <div class="bottom_border_full"></div>
+        <div class="bottom"></div>
+      </section>
     </div>
     <footer>
-      <div id="footerSourceForge"><a href="http://github.com/" target="_external"><img src="images/github_icon.png" alt="GitHub Logo"></a></div>
+      <div id="footerSourceForge"><a href="http://github.com/"><img src="images/github_icon.png" alt="GitHub Logo"/></a></div>
       <div id="footerLinks">
-        Content of this site is sponsored by the <a href="http://www.hhs.gov/healthit/" target="_external">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp
-        <a href="http://www.hhs.gov/Privacy.html" target="_external">Privacy Policy</a> &nbsp 
-        <a href="http://www.hhs.gov/Disclaimer.html" target="_external">Disclaimer</a> &nbsp
-        <br/>Page Last Revised: March 30, 2012
+        Content of this site is sponsored by the <a href="http://www.hhs.gov/healthit/">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp;
+        <a href="http://www.hhs.gov/Privacy.html">Privacy Policy</a> &nbsp; 
+        <a href="http://www.hhs.gov/Disclaimer.html">Disclaimer</a> &nbsp;
+        <br>Page Last Revised: July 11, 2012
       </div>
     </footer>
     <script type="text/javascript">

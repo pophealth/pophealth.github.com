@@ -1,16 +1,45 @@
-<!DOCTYPE html>
-<html>
-  <head>
-
-    <code>
-      <script src="build/jquery.js"></script>
-      <script src="build/mediaelement-and-player.min.js"></script>
-      <link rel="stylesheet" href="/stylesheets/mediaelementplayer.css" />
-    </code>
-    <!--[if lt IE 9]>
-<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-    <title>Webinar</title>
+<!doctype html>
+<html lang=en>
+  <head> 
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lte IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen"/>
+    <link rel="icon" type="image/png" href="/images/pophealth_logo_small.png"/>
+    <title>popHealth - Webinar</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+     // DOM ready
+     $(function() {
+        // Create the dropdown base
+        $("<select />").appendTo("nav");
+        // Create default option "Go to..."
+        $("<option />", {
+           "value"   : "",
+           "text"    : "Go to..."
+        }).appendTo("nav select");
+        // Populate dropdown with menu items
+        $("nav a").each(function() {
+         var el = $(this);
+         var opt = $("<option />", {
+             "value"   : el.attr("href"),
+             "text"    : el.text()
+         });
+         if ($(this).hasClass("active")) opt.attr("selected","selected");
+         opt.appendTo("nav select");
+        });
+       // To make dropdown actually work
+       // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/
+        $("nav select").change(function() {
+          window.location = $(this).find("option:selected").val();
+        });
+     });
+    </script>
   </head>
   <body>
     <video 

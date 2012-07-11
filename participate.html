@@ -1,31 +1,53 @@
 <!doctype html>
-<meta charset=utf-8>
 <html lang=en>
-  <head>
-    <!-- Enable IE9 Standards mode -->
-    <meta http-equiv="X-UA-Compatible" content="IE=9" >
+  <head> 
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
     <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen"/>
     <link rel="icon" type="image/png" href="/images/pophealth_logo_small.png"/>
-    <title>popHealth - Participation Information</title>
+    <title>Participate</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script>
-      $(document).ready(function() {
-        $("#parti h3, #nextparti h3").click(function() {
-        $(this).next('p').slideToggle();
-        $(this).toggleClass('on');
-        })
-      });
+     // DOM ready
+     $(function() {
+        // Create the dropdown base
+        $("<select />").appendTo("nav");
+        // Create default option "Go to..."
+        $("<option />", {
+           "value"   : "",
+           "text"    : "Go to..."
+        }).appendTo("nav select");
+        // Populate dropdown with menu items
+        $("nav a").each(function() {
+         var el = $(this);
+         var opt = $("<option />", {
+             "value"   : el.attr("href"),
+             "text"    : el.text()
+         });
+         if ($(this).hasClass("active")) opt.attr("selected","selected");
+         opt.appendTo("nav select");
+        });
+       // To make dropdown actually work
+       // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/
+        $("nav select").change(function() {
+          window.location = $(this).find("option:selected").val();
+        });
+     });
     </script>
   </head>
   <body>
-    <div id="header">
+    <header>
       <div id="logo">
         <a href="index.html"><img src="images/pophealth_logo_large.png" alt="popHealth Logo" height="65"/></a>
       </div>
-      <div id="nav">
+      <nav>
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="about.html">About</a></li>
@@ -33,83 +55,103 @@
           <li><a href="http://demo.projectpophealth.org/users/sign_in">Demo</a></li>
           <li><a href="download.html">Download</a></li>
           <li><a href="http://github.com/pophealth">Code</a></li>
-          <li><a href="participate.html" class="selected">Participate</a></li>
+          <li><a href="participate.html" class="active">Participate</a></li>
           <li><a href="news.html">News</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="mailto:talk@projectpophealth.org">Contact</a></li>
         </ul>
-      </div>
-    </div>
-    <div id="parti">
-      <div id="devsection">
-        <img src="images/top_border.png" alt class="borders">
-        <h2>Developers</h2>
-        <h3>GitHub Site</h3>
-          <p><strong>Description:</strong>  Code contributions, bug fixes, ideas for new features, are all welcome for the popHealth user interface and to the kernel logic code around our shared quality measure engine.<br><a href="https://github.com/pophealth">GitHub Site</a></p>
-        <h3>Email Developer List</h3>
+      </nav>
+    </header>
+    <div class="wrapper">
+      <section id="devsection" class="First">
+        <div class="top_border"></div>
+        <article class="bordered">
+          <h1>Developers</h1>
+          <h2>GitHub Site</h2>
+          <p><strong>Description:</strong>  Code contributions, bug fixes, ideas for new features, are all welcome for the popHealth user interface and to the kernel logic code around our shared quality measure engine.</p>
+          <p><a href="https://github.com/pophealth">GitHub Site</a></p>
+        </article>
+        <article class="bordered">
+          <h2>Email Developer List</h2>
           <p><a href="mailto:dev@projectpophealth.org">dev@projectpophealth.org</a></p>
-        <h3>Pivotal Tracker</h3>
-          <p>The popHealth Team uses Pivotal Track for feature/bug tracking using agile project management and planning Project popHealth<br><a href="https://www.pivotaltracker.com/projects/123188">more details</a></p>
-          <br>
-        <h3>Developers in the News</h3>
-
+        </article>
+        <article class="bordered">
+          <h2>Pivotal Tracker</h2>
+          <p>The popHealth Team uses Pivotal Track for bordered/bug tracking using agile project management and planning Project popHealth</p><p><a href="https://www.pivotaltracker.com/projects/123188">more details</a></p>
+        </article>
+        <article class="bordered">
+          <h2>Developers in the News</h2>
           <p> popHealth Challenge Grant Winner announced at HIMSS12!   Click <a href="http://www.health2news.com/2012/02/22/pophealth-tool-development-challenge-winners/">here</a> to learn more about the winners.</p>
-            <br>
-          <img src="images/bottom_border.png" alt class="borders bottom">
-    </div>
-      <div id="pilsection">
-        <img src="images/top_border.png" alt class="borders">
-      <h2>Pilot</h2>
-        <h3>Contact</h3>
-        <p>Email the Talk List with questions and answers about participating in a popHealth pilot: <br><a href="mailto:talk@projectpophealth.org">talk@projectpophealth.org</a></p>
-        <h3>Documents</h3>
-           <p>
-            <a href="documents/popHealth_pilot_weighted_application_form_12022011.docx">Pilot Applications Form</a>
-            <br>
-            <a href="documents/Healthcare Data Information Form.pdf">Healthcare Data Information Form</a>
-            <br>
-            <a href="documents/popHealth_Process_Document.docx">Pilot Process Document</a>
-            <br>
+        </article>
+        <div class="bottom_border"></div>
+        <div class="bottom"></div>
+      </section>
+      <section id="prosection" class="Second">
+        <div class="top_border"></div>
+        <article class="bordered">
+          <h1>Community Feedback</h1>
+          <h2>Webinar Presentation</h2>
+          <p>Listen to a recording of the Webinar presentation on popHealth v1.4 to see what refinements have been made to new features from February 2nd, 2012
+            <a href="webinar.html">Available here</a>
+            <a href="http://get.adobe.com/reader/"> Requires Adobe Reader <img src="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/images/shared/product_mnemonics/16x16/reader_16x16.png" alt="Adobe Reader"/></a><a href="http://get.adobe.com/reader/"></a>
           </p>
-          <img src="images/bottom_border.png" alt class="borders">
-      </div>
-    </div>
-    <div id="nextparti">
-      <div id="prosection">
-      <img src="images/top_border.png" alt class="borders">
-      <h2>Community Feedback</h2>
-        <h3>Webinar Presentation</h3>
-          <p>Listen to a recording of the Webinar presentation on popHealth v1.4 to see what refinements have been made to new features from February 2nd, 2012<a href="webinar.html"> <br>Available here</a><br>
-
-            <a href="http://get.adobe.com/reader/"> Requires Adobe Reader <img src="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/images/shared/product_mnemonics/16x16/reader_16x16.png" alt="Adobe Reader"><a href="http://get.adobe.com/reader/"></a><br></p>
-        <h3>MAeHC Press Release</h3>
+        </article>
+        <article class="bordered">
+          <h2>MAeHC Press Release</h2>
           <p>The Massachusetts eHealth Collaborative (MAeHC), a non-profit pioneer and leader in healthcare delivery through health information technology, announced recently that it has partnered with MITRE's Center for Transforming Health, a not-for-profit organization chartered to work in the public interest, to demonstrate comparative measure results for meaningful use quality metrics reporting at the HIMSS 2012.  <a href="http://www.healthcaretechnologyonline.com/article.mvc/Massachusetts-eHealth-Collaborative-MAeHC-0001">Read more</a></p>
-        <h3>Announcement List</h3>
+        </article>
+        <article class="bordered">
+          <h2>Announcement List</h2>
           <p>Join the popHealth Announcement List to receive highlighted messages on the software.  <a href="https://accounts.google.com/ServiceLogin?passive=true&service=groups2&continue=http://groups.google.com/group/pophealth-announce/subscribe&cd=US&hl=en">here</a></p>
-
-        <img src="images/bottom_border.png" alt class="borders">
-    </div>
-    <div id="selsection">
-      <img src="images/top_border.png" alt class="borders">
-      <h2>Self-Service</h2>
-        <h3>Download and Installation Instructions</h3><p><a href="download.html">more details</a></p>
-        <h3>Improved Installation</h3>
-        <p>Completed April, 2012</p>
-        <h3>Contact</h3>
-        <p>Email the Talk List with questions for a response within 24 hours: <a href="mailto:talk@projectpophealth.org">talk@projectpophealth.org</a></p>
-        <img src="images/bottom_border.png" alt class="borders">
-      </div>
+        </article>
+        <div class="bottom_border"></div>
+        <div class="bottom"></div>
+      </section>
+      <section id="pilsection" class="First">
+        <div class="top_border"></div>
+        <article class="bordered">
+        <h1>Pilot</h1>
+          <h2>Contact</h2>
+          <p>Email the Talk List with questions and answers about participating in a popHealth pilot: </p><p><a href="mailto:talk@projectpophealth.org">talk@projectpophealth.org</a></p>
+        </article>
+        <article class="bordered">
+          <h2>Documents</h2>
+           <p><a href="documents/popHealth_pilot_weighted_application_form_12022011.docx">Pilot Applications Form</a></p>
+           <p><a href="documents/Healthcare%20Data%20Information%20Form.pdf">Healthcare Data Information Form</a></p>
+           <p><a href="documents/popHealth_Process_Document.docx">Pilot Process Document</a></p>
+        </article>
+        <div class="bottom_border"></div>
+        <div class="bottom"></div>
+      </section>
+      <section id="selsection" class="Second">
+        <div class="top_border"></div>
+        <article class="bordered">
+          <h1>Self-Service</h1>
+          <h2>Download and Installation Instructions</h2>
+          <p><a href="download.html">more details</a></p>
+        </article>
+        <article class="bordered">
+          <h2>Improved Installation</h2>
+          <p>Completed April, 2012</p>
+        </article>
+        <article class="bordered">
+          <h2>Contact</h2>
+          <p>Email the Talk List with questions for a response within 24 hours: <a href="mailto:talk@projectpophealth.org">talk@projectpophealth.org</a></p>
+        </article>
+        <div class="bottom_border"></div>
+        <div class="bottom"></div>
+      </section>
     </div>
     <footer>
       <div id="footerSourceForge">
-        <a href="http://github.com/" target="_external"><img src="images/github_icon.png" alt="GitHub Logo"></a>
+        <a href="http://github.com/"><img src="images/github_icon.png" alt="GitHub Logo"></a>
       </div>
       <div id="footerLinks">
-        Content of this site is sponsored by the <a href="http://www.hhs.gov/healthit/" target="_external">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp
-        <a href="http://www.hhs.gov/Privacy.html" target="_external">Privacy Policy</a> &nbsp
-        <a href="http://www.hhs.gov/Disclaimer.html" target="_external">Disclaimer</a> &nbsp
-        <br>Page Last Revised: March 20, 2012
-
+        Content of this site is sponsored by the <a href="http://www.hhs.gov/healthit/">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp;
+        <a href="http://www.hhs.gov/Privacy.html">Privacy Policy</a> &nbsp;
+        <a href="http://www.hhs.gov/Disclaimer.html">Disclaimer</a> 
+        &nbsp;
+        <br>Page Last Revised: July 11, 2012
       </div>
     </footer>
     <script type="text/javascript">

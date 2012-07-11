@@ -1,114 +1,129 @@
 <!doctype html>
-<meta charset=utf-8>
 <html lang=en>
-  <head>
-    <!-- Enable IE9 Standards mode -->
-    <meta http-equiv="X-UA-Compatible" content="IE=9" >
+  <head> 
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
     <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen"/>
     <link rel="icon" type="image/png" href="/images/pophealth_logo_small.png"/>
-    <title>popHealth - News</title>
+    <title>News</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+     // DOM ready
+     $(function() {
+        // Create the dropdown base
+        $("<select />").appendTo("nav");
+        // Create default option "Go to..."
+        $("<option />", {
+           "value"   : "",
+           "text"    : "Go to..."
+        }).appendTo("nav select");
+        // Populate dropdown with menu items
+        $("nav a").each(function() {
+         var el = $(this);
+         var opt = $("<option />", {
+             "value"   : el.attr("href"),
+             "text"    : el.text()
+         });
+         if ($(this).hasClass("active")) opt.attr("selected","selected");
+         opt.appendTo("nav select");
+        });
+       // To make dropdown actually work
+       // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/
+        $("nav select").change(function() {
+          window.location = $(this).find("option:selected").val();
+        });
+     });
+    </script>
   </head>
   <body>
-    <div id="header">
+    <header>
       <div id="logo">
         <a href="index.html"><img src="images/pophealth_logo_large.png" alt="popHealth Logo" height="65"/></a>
       </div>
-      <div id="nav">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="screen_shots.html">Screen Shots</a></li>
-            <li><a href="http://demo.projectpophealth.org/users/sign_in">Demo</a></li>
-            <li><a href="download.html">Download</a></li>
-            <li><a href="http://github.com/pophealth">Code</a></li>
-            <li><a href="participate.html">Participate</a></li>
-            <li><a href="news.html" class="selected">News</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="mailto:talk@projectpophealth.org">Contact</a></li>
-          </ul>
-       </div>
-    </div>
-    <div class="main">
-      <h1>Latest News</h1></br>
-    <table class="news">
-      <tr>
-        <th>April<p>2012</p></th>
-        <td><h2>More PopHealth Lessons learned </h2>by John Halamka
-        <p>In the March HIT Standards Committee we highlighted 3 gaps in the standards needed to calculate quality metrics automatically from EHRs  1.  A longitudinal (not encounter level) patient summary format to transmit appropriate data elements from an EHR to a quality measurement entity  2.  A batch reporting format to transmit data elements for multiple patients to a quality measurement entity  3.  Although PQRI XML and QRDA have been suggested for reporting data between quality measurement entities and organizations that use this data for payment/compliance, there is not a widely adopted standard for quality reporting in production today.<a href="http://geekdoctor.blogspot.com/2012/04/more-pophealth-lessons-learned.html">Read entire article.</a></p>
-        </td>
-      </tr>
-      <tr>
-        <th>March<p>2012</p></th>
-        <td><h2>popHealth</h2>by John Halamka
-        <p>While in Chicago last Thursday, I was asked how we validated our quality measures when we moved from chart abstraction to automated computation of PRQS, Meaningful Use, Pioneer ACO, and Alternative Quality Contract measures via the Massachusetts eHealth Collaborative Quality Data Center (QDC).   This is an important question because Meaningful Use Stage 2 enables easy use of modular components outside the EHR such that data can be captured in the EHR and sent to a cloud based analytics engine via standards such as CCD/C32 for content and Direct for transport.<a href="http://geekdoctor.blogspot.com/2012/03/pophealth.html">Read entire article.</a></p>
-        </td>
-      </tr>
-      <tr>
-        <th>February<p>2012</p></th>
-        <td><h2>popHealth Makes Meaningful Use Reporting Easier. How Can You Help Providers Transition to EHRs?</h2>
-        <p>Electronic health records (EHRs) and health information technology will modernize the way that health care professionals do their work and provide care to patients by giving them the tools to offer their patients better, more efficient care. There are also great tools like popHealth available to help providers make the transition to EHRs.
-         <a href="http://www.healthit.gov/buzz-blog/health-innovation/meaningful-use-reporting/">Read entire article.</a></p></td>
-      </tr>
-      <tr>
-        <th>February<p>2012</p></th>
-        <td><h2>ONC, HHS Officials Announce Winners of Health App Contests</h2>
-        <p>On Wednesday, the Office of the National Coordinator for Health IT and Health 2.0 announced the winners of a contest that challenged software developers to create applications using the popHealth framework, Modern Healthcare reports 
-         <a href="http://www.ihealthbeat.org/articles/2012/2/24/onc-hhs-officials-announce-winners-of-health-app-contests.aspx">Read entire article.</a></p></td>
-      </tr>
-      <tr>
-        <th>February<p>2012</p></th>
-        <td><h2>popHealth Tool Development Challenge: Winners Announced</h2>by Austin Cohen
-        <p>At HIMSS today, the Office of the National Coordinator for Health Information Technology (ONC) and Health 2.0 announced the three winners of the popHealth Tool Development Challenge: Team popEYE, Team Agent and Team greatOne.  Congratulations to the winners!       
-          <a href="http://www.health2news.com/2012/02/22/pophealth-tool-development-challenge-winners/">Read entire article.</a></p></td>
-      </tr>
-      <tr>
-        <th>February<p>2012</p></th>
-        <td><h2>Massachusetts eHealth Collaborative (MAeHC) And MITRE To Participate In popHealth Demonstration At HIMSS 2012 Interoperability Showcase</h2>
-        <p>MAeHC and MITRE to Demonstrate Comparison of the MAeHC Quality Data Center Meaningful Use Measure Reporting with PopHealth       
-          <a href="http://www.healthcaretechnologyonline.com/article.mvc/Massachusetts-eHealth-Collaborative-MAeHC-0001">Read entire article.</a></p></td>
-      </tr>
-      <tr>
-        <th>February<p>2012</p></th>
-        <td><h2>Open Source Reporting Tool Simplifies MU Quality Measures Reporting</h2>
-        <p>popHealth, an open source reference implementation software service developed by The MITRE Corporation in 2009 with funding from the Office of the National Coordinator (ONC) released its latest version earlier this month. The tool automates Meaningful Use clinical quality measure reporting and gives physicians both aggregate statistics and the ability to drill down to named individuals.       
-          <a href="http://insidehealth.com/2012/02/open-source-reporting-tool-simplifies-mu-quality-measures-reporting/">Read entire article.</a></p></td>
-      </tr>
-      <tr>
-        <th>February<p>2012</p></th>
-        <td><h2>Epocrates EHR Receives ONC-ATCB Certification by Drummond Group
-        </h2>
-        <p>SAN MATEO, Calif., Feb 3, 2012 (GlobeNewswire via COMTEX) -- Epocrates, Inc. has received the federal government's "meaningful use" stamp of approval by earning complete EHR ambulatory certification for Epocrates EHR v2. The designation officially deems the electronic health record (EHR) software capable of enabling providers to qualify for funding under the American Recovery and Reinvestment Act (ARRA). Tested and certified under the Drummond Group's Electronic Health Records Office of the National Coordinator Authorized Testing and Certification Body (ONC-ATCB) program, the EHR software is 2011/2012 compliant in accordance with the criteria adopted by the Secretary of Health and Human Services.         
-          <a href="http://www.marketwatch.com/story/epocrates-ehr-receives-onc-atcb-certification-by-drummond-group-2012-02-03">Read entire article.</a></p></td>
-      </tr>
-      <tr>
-        <th>February<p>2012</p></th>
-        <td><h2>popHealth at HIMSS12 Conference</h2>
-        <p>Please join us at the HIMSS12 Conference to hear about popHealth, a clinical quality measure reporting tool.   If you are planning to attend in person, you can find a list of activities below.  popHealth currently supports the electronic specifications for the 44 Stage 1 clinical quality measures for eligible professionals, with plans to encode Stage 2 clinical quality measure specifications upon their expected release in 2012.  Come and engage with the popHealth Team and hear what we have planned for the near future.  <a href="http://openhealthnews.com/events/2012-02-13/pophealth-himss12-conference">Read entire article.</a></p></td>
-      </tr>
-      <tr>
-        <th>February<p>2012</p></th>
-        <td>
-          <p>
-          <h2>popHealth for Providers</h2>
-          <table class="event">
-            <tr><td><strong>WHEN:</strong></td><td>Tuesday, February 21st</td></tr>  
-            <tr><td><strong>TIME:</strong></td><td>3:00 pm — 4:00 pm</td></tr>  
-            <tr><td><strong>LOCATION:&nbsp;&nbsp;</strong></td><td>HIMSS12 Conference, Las Vegas, NV<br>MITRE Government VIP Room - Venetian Toscana 3601
-        </td>
-      </tr>  
-    </table>
-          Please join us at the HIMSS Conference to hear about popHealth, a clinical quality measure reporting tool.  The Office of the National Coordinator for Health IT (ONC) sponsored the development of popHealth to support providers and EHR vendors in achieving and reporting Meaningful Use of health IT.  popHealth currently supports the electronic specifications for the 44 Stage 1 clinical quality measures for eligible professionals, with plans to encode Stage 2 clinical quality measure specifications upon their expected release in 2012.  popHealth has recently implemented new features in its latest release and we would like to take the opportunity to show you how they could empower the providers within your communities and engage in open discussion.
-          <br><br>
-          To ensure room capacity, please RSVP to Renee Rookwood:  <a href="mailto:rrookwood@mitre.org">rrookwood@mitre.org</a>.
-          <p>
-        </td>
-      </tr>
-      <tr>
-        <th>February<p>2012</p></th>
-        <td>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="screen_shots.html">Screen Shots</a></li>
+          <li><a href="http://demo.projectpophealth.org/users/sign_in">Demo</a></li>
+          <li><a href="download.html">Download</a></li>
+          <li><a href="http://github.com/pophealth">Code</a></li>
+          <li><a href="participate.html">Participate</a></li>
+          <li><a href="news.html" class="active">News</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="mailto:talk@projectpophealth.org">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="wrapper">
+      <div class="top_border_full"></div>
+      <div class="top"></div>
+      <h1 class="heading">Latest News</h1>
+      <table class="news">
+        <tr>
+          <th>April<p>2012</p></th>
+          <td><h2>More PopHealth Lessons learned </h2>by John Halamka
+          <p>In the March HIT Standards Committee we highlighted 3 gaps in the standards needed to calculate quality metrics automatically from EHRs  1.  A longitudinal (not encounter level) patient summary format to transmit appropriate data elements from an EHR to a quality measurement entity  2.  A batch reporting format to transmit data elements for multiple patients to a quality measurement entity  3.  Although PQRI XML and QRDA have been suggested for reporting data between quality measurement entities and organizations that use this data for payment/compliance, there is not a widely adopted standard for quality reporting in production today.<a href="http://geekdoctor.blogspot.com/2012/04/more-pophealth-lessons-learned.html">Read entire article.</a></p>
+          </td>
+        </tr>
+        <tr>
+          <th>March<p>2012</p></th>
+          <td><h2>popHealth</h2>by John Halamka
+          <p>While in Chicago last Thursday, I was asked how we validated our quality measures when we moved from chart abstraction to automated computation of PRQS, Meaningful Use, Pioneer ACO, and Alternative Quality Contract measures via the Massachusetts eHealth Collaborative Quality Data Center (QDC).   This is an important question because Meaningful Use Stage 2 enables easy use of modular components outside the EHR such that data can be captured in the EHR and sent to a cloud based analytics engine via standards such as CCD/C32 for content and Direct for transport.<a href="http://geekdoctor.blogspot.com/2012/03/pophealth.html">Read entire article.</a></p>
+          </td>
+        </tr>
+        <tr>
+          <th>February<p>2012</p></th>
+          <td><h2>popHealth Makes Meaningful Use Reporting Easier. How Can You Help Providers Transition to EHRs?</h2>
+          <p>Electronic health records (EHRs) and health information technology will modernize the way that health care professionals do their work and provide care to patients by giving them the tools to offer their patients better, more efficient care. There are also great tools like popHealth available to help providers make the transition to EHRs.
+           <a href="http://www.healthit.gov/buzz-blog/health-innovation/meaningful-use-reporting/">Read entire article.</a></p></td>
+        </tr>
+        <tr>
+          <th>February<p>2012</p></th>
+          <td><h2>ONC, HHS Officials Announce Winners of Health App Contests</h2>
+          <p>On Wednesday, the Office of the National Coordinator for Health IT and Health 2.0 announced the winners of a contest that challenged software developers to create applications using the popHealth framework, Modern Healthcare reports 
+           <a href="http://www.ihealthbeat.org/articles/2012/2/24/onc-hhs-officials-announce-winners-of-health-app-contests.aspx">Read entire article.</a></p></td>
+        </tr>
+        <tr>
+          <th>February<p>2012</p></th>
+          <td><h2>popHealth Tool Development Challenge: Winners Announced</h2>by Austin Cohen
+          <p>At HIMSS today, the Office of the National Coordinator for Health Information Technology (ONC) and Health 2.0 announced the three winners of the popHealth Tool Development Challenge: Team popEYE, Team Agent and Team greatOne.  Congratulations to the winners!       
+            <a href="http://www.health2news.com/2012/02/22/pophealth-tool-development-challenge-winners/">Read entire article.</a></p></td>
+        </tr>
+        <tr>
+          <th>February<p>2012</p></th>
+          <td><h2>Massachusetts eHealth Collaborative (MAeHC) And MITRE To Participate In popHealth Demonstration At HIMSS 2012 Interoperability Showcase</h2>
+          <p>MAeHC and MITRE to Demonstrate Comparison of the MAeHC Quality Data Center Meaningful Use Measure Reporting with PopHealth       
+            <a href="http://www.healthcaretechnologyonline.com/article.mvc/Massachusetts-eHealth-Collaborative-MAeHC-0001">Read entire article.</a></p></td>
+        </tr>
+        <tr>
+          <th>February<p>2012</p></th>
+          <td><h2>Open Source Reporting Tool Simplifies MU Quality Measures Reporting</h2>
+          <p>popHealth, an open source reference implementation software service developed by The MITRE Corporation in 2009 with funding from the Office of the National Coordinator (ONC) released its latest version earlier this month. The tool automates Meaningful Use clinical quality measure reporting and gives physicians both aggregate statistics and the ability to drill down to named individuals.       
+            <a href="http://insidehealth.com/2012/02/open-source-reporting-tool-simplifies-mu-quality-measures-reporting/">Read entire article.</a></p></td>
+        </tr>
+        <tr>
+          <th>February<p>2012</p></th>
+          <td><h2>Epocrates EHR Receives ONC-ATCB Certification by Drummond Group
+          </h2>
+          <p>SAN MATEO, Calif., Feb 3, 2012 (GlobeNewswire via COMTEX) -- Epocrates, Inc. has received the federal government's "meaningful use" stamp of approval by earning complete EHR ambulatory certification for Epocrates EHR v2. The designation officially deems the electronic health record (EHR) software capable of enabling providers to qualify for funding under the American Recovery and Reinvestment Act (ARRA). Tested and certified under the Drummond Group's Electronic Health Records Office of the National Coordinator Authorized Testing and Certification Body (ONC-ATCB) program, the EHR software is 2011/2012 compliant in accordance with the criteria adopted by the Secretary of Health and Human Services.         
+            <a href="http://www.marketwatch.com/story/epocrates-ehr-receives-onc-atcb-certification-by-drummond-group-2012-02-03">Read entire article.</a></p></td>
+        </tr>
+        <tr>
+          <th>February<p>2012</p></th>
+          <td><h2>popHealth at HIMSS12 Conference</h2>
+          <p>Please join us at the HIMSS12 Conference to hear about popHealth, a clinical quality measure reporting tool.   If you are planning to attend in person, you can find a list of activities below.  popHealth currently supports the electronic specifications for the 44 Stage 1 clinical quality measures for eligible professionals, with plans to encode Stage 2 clinical quality measure specifications upon their expected release in 2012.  Come and engage with the popHealth Team and hear what we have planned for the near future.  <a href="http://openhealthnews.com/events/2012-02-13/pophealth-himss12-conference">Read entire article.</a></p></td>
+        </tr>
+        <tr>
+          <th>February<p>2012</p></th>
+          <td>
           <p><h2>popHealth for Vendors</h2>
           <table class="event">
             <tr><td><strong>WHEN:</strong></td><td>Wednesday, February 22nd </td></tr>  
@@ -149,88 +164,78 @@
         <th>December<p>2011</p></th>
         <td><h2>popHealth v1.3 New Feature Webinar</h2>
         <p>On December 19th, at 1:00 p.m. Eastern Standard Time, a new feature webinar will be hosted by the popHealth project to detail new features under development.<br><br><strong> To attend the audio conference:</strong><br>Dial: <strong>703-983-6338</strong>, <br>Meeting ID: <strong>500600</strong>, <br>Meeting Password:<strong>56005600</strong>. <br><br><strong>To attend the webinar:</strong><br>Go to <a href="http://audioconference.mitre.org">audioconference.mitre.org</a>, <br>enter Meeting ID: <strong>500600</strong> into the empty field and click attend meeting,<br> then enter Password: <strong> 56005600</strong> into the empty field. <br>Accept any security warnings.</p></td>
-    </tr>
-    <tr>
-        <th>December<p>2011</p></th>
-          <td><h2>popHealth v1.3 New Feature Webinar</h2>
-          <p>On December 19th, at 1:00 p.m. Eastern Standard Time, a new feature webinar will be hosted by the popHealth project to detail new features under development.<br><br><strong> To attend the audio conference:</strong><br>Dial: <strong>703-983-6338</strong>, <br>Meeting ID: <strong>500600</strong>, <br>Meeting Password:<strong>56005600</strong>. <br><br><strong>To attend the webinar:</strong><br>Go to <a href="http://audioconference.mitre.org">audioconference.mitre.org</a>, <br>enter Meeting ID: <strong>500600</strong> into the empty field and click attend meeting,<br> then enter Password: <strong> 56005600</strong> into the empty field. <br>Accept any security warnings.</p></td>
-        </tr>
-        <tr>
-          <th>November<p>2011</p></th>
-          <td><h2>popHealth presents at the 2011 ONC Annual Meeting</h2><p>On November 18, the popHealth Team presented <b>"Utilizing the popHealth tool to support quality measure analysis"</b> to workshop attendees at the Annual ONC Grantee and Stakeholder Summit.</p>
-          </td>
-        </tr>
-        <tr>
-          <th>November<p>2011</p></th>
-          <td><h2>popHealth App Challenge Launched by ONC and Health 2.0</h2> by Julie Michelle Smyth, OpenHealthNews<p>We should be seeing major improvements to the open source popHealth reporting tool as a result of a Challenge Award just announced by the Office of the National Coordinator for Health Information Technology (ONC) and Health 2.0. It is hoped that the awards will  motivate developers to create innovative applications that will enhance the open source tool beyond its current capabilities. <a href="http://openhealthnews.com/hotnews/pophealth-app-challenge-launched-onc-and-health-20">Read entire article.</a></p>
-          </td>
-        </tr>
-        <tr>
-          <th>October<p>2011</p></th>
-          <td><h2>ONC, Health 2.0 launch popHealth app challenge</h2> by Mary Mosquera, Government Health IT<p>A couple weeks ago I talked to two members of the popHealth project, which culls quality measures from electronic health records and formats them either for convenient display--so providers can review their quality measures on the Web--or for submission to regulators who require reports on these measures. popHealth was produced by the MITRE corporation under a grant from the Office of the National Coordinator at the US Department of Health and Human Services.  <a href="http://radar.oreilly.com/2011/07/pophealth-open-source-software.html">Read entire article.</a></p>
-          </td>
-        </tr>
-        <tr>
-          <th>September<p>2011</p></th>
-          <td><h2>ONC, Funds Open-Source Software to Streamline Clinical Quality Measures Reporting for Meaningful Use Program</h2> by Sara Cottington, MHA, RHIT, CPHQ, Journal of AHIMA<p > Reporting Clinical Quality measures from an electronic health record (EHR) system is new territory and can be challenging for providers.  However, that is just what eligible professionals must do to participate in the meaningful use EHR incentive program.  <a href="http://www.ahimajournal-digital.com/ahimajournal/201109?pg=52#pg52">Read entire article.</a></p>
-          </td>
-        </tr>
-        <tr>
-          <th>July<p>2011</p></th>
-          <td><h2>popHealth Open Source Software Permits Viewing and Reporting of Quality Measures in Health Care</h2> by Andy Oram, O'Reilly Radar<p>The Office of the National Coordinator for Health IT and the Health 2.0 entrepreneurial organization have opened a contest for developers to innovate with the popHealth tool beyond its reporting functions so healthcare providers can learn more about their patient populations and improve their care.  <a href="http://govhealthit.com/news/onc-health-20-launch-pophealth-app-challenge">Read entire article.</a></p>
-          </td>
-        </tr>
-        <tr>
-          <th>June<p>2011</p></th>
-          <td><h2>ONC's popHealth automates meaningful use reporting for docs</h2> by Mary Mosquera, Government Health IT</p><p style="font-size: 10pt">WASHINGTON  The Office of the National Coordinator for Health IT (ONC) has made available a free tool to simplify the reporting by physicians and practices of clinical quality measures for meaningful use.
-                 Although popHealth was just a concept a year ago, ONC has conducted real-world testing and is highlighting it as providers begin to demonstrate meaningful use. <a href="http://www.healthcareitnews.com/news/oncs-pophealth-automates-meaningful-use-reporting-docs">Read entire article.</a></p>
-          </td>
-        </tr>
-        <tr>
-          <th>February<p>2011</p></th>
-          <td><h2>ONC provides free population health measurement tool</h2>by Diana Manos, Senior Editor<p>As the government gears up to develop standards for meaningful use Stages 2 and 3, the American Medical Association and MITRE Corporation, on behalf of the Office of the National Coordinator for Health Information Technology, are working on a project to help test the collection of population health “in the real world.”  <a href="http://www.healthcareitnews.com/news/onc-provides-population-health-measurement-tool">Read entire article.</a></p>
-        </tr>
-        <tr>
-          <th>February<p>2010</p></th>
-          <td><h2>ONC unveils "popHealth" for EHR-based quality reporting</h2> by Mary Mosquera, Government Health IT<p>The Office of the National Coordinator for Health IT began making available today open source software that will let physicians extract data automatically from their electronic health record systems and generate quality reports and analysis on their patients' healthcare.  The "popHealth" prototype software is designed to make it easier for providers to submit summary quality measures or data to public health organizations and federal agencies as part of their existing workflow, according to the ONC announcement.  <a href="http://www.govhealthit.com/news/onc-unveils-%C3%A2%E2%82%AC%CB%9Cpophealth-ehr-based-quality-reporting">Read entire article.</a></p>
-          </td>
-        </tr>
-        <tr>
-          <th>July<p>2011</p></th>
-          <td><h2>popHealth Open Source Software Permits Viewing and Reporting of Quality Measures in Health Care</h2> by Andy Oram, O'Reilly Radar<p>The Office of the National Coordinator for Health IT and the Health 2.0 entrepreneurial organization have opened a contest for developers to innovate with the popHealth tool beyond its reporting functions so healthcare providers can learn more about their patient populations and improve their care. <a href="http://govhealthit.com/news/onc-health-20-launch-pophealth-app-challenge">Read entire article.</a></p>
-          </td>
-          </tr>
-        </tr>
-        <tr>
-          <th>June<p>2011</p></th>
-          <td><h2>ONC's popHealth automates meaningful use reporting for docs</h2> by Mary Mosquera, Government Health IT</p><p style="font-size: 10pt">WASHINGTON The Office of the National Coordinator for Health IT (ONC) has made available a free tool to simplify the reporting by physicians and practices of clinical quality measures for meaningful use.  Although popHealth was just a concept a year ago, ONC has conducted real-world testing and is highlighting it as  providers begin to demonstrate meaningful use. <a href="http://www.healthcareitnews.com/news/oncs-pophealth-automates-meaningful-use-reporting-docs">Read entire article.</a></p>
-          </td>
-        </tr>
-        <tr>
-          <th>February<p>2010</p></th>
-          <td><h2>ONC unveils "popHealth" for EHR-based quality reporting</h2> by Mary Mosquera, Government Health IT<p>The Office of the National Coordinator for Health IT began making available today open source software that will let physicians extract data automatically from their electronic health record systems and generate quality reports and analysis on their patients' healthcare.  The "popHealth" prototype software is designed to make it easier for providers to submit summary quality measures or data to public health organizations and federal agencies as part of their existing workflow, according to the ONC announcement.<a href="http://www.govhealthit.com/news/onc-unveils-%C3%A2%E2%82%AC%CB%9Cpophealth-ehr-based-quality-reporting">Read entire article.</a></p>
-          </td>
-        </tr>
+      </tr>
+      <tr>
+        <th>November<p>2011</p></th>
+        <td>
+          <h2>popHealth presents at the 2011 ONC Annual Meeting</h2><p>On November 18, the popHealth Team presented <b>"Utilizing the popHealth tool to support quality measure analysis"</b> to workshop attendees at the Annual ONC Grantee and Stakeholder Summit.</p>
+        </td>
+      </tr>
+      <tr>
+        <th>November<p>2011</p></th>
+        <td>
+          <h2>popHealth App Challenge Launched by ONC and Health 2.0</h2> by Julie Michelle Smyth, OpenHealthNews<p>We should be seeing major improvements to the open source popHealth reporting tool as a result of a Challenge Award just announced by the Office of the National Coordinator for Health Information Technology (ONC) and Health 2.0. It is hoped that the awards will  motivate developers to create innovative applications that will enhance the open source tool beyond its current capabilities. <a href="http://openhealthnews.com/hotnews/pophealth-app-challenge-launched-onc-and-health-20">Read entire article.</a></p>
+        </td>
+      </tr>
+      <tr>
+        <th>October<p>2011</p></th>
+        <td>
+          <h2>ONC, Health 2.0 launch popHealth app challenge</h2> by Mary Mosquera, Government Health IT<p>A couple weeks ago I talked to two members of the popHealth project, which culls quality measures from electronic health records and formats them either for convenient display--so providers can review their quality measures on the Web--or for submission to regulators who require reports on these measures. popHealth was produced by the MITRE corporation under a grant from the Office of the National Coordinator at the US Department of Health and Human Services.  <a href="http://radar.oreilly.com/2011/07/pophealth-open-source-software.html">Read entire article.</a></p>
+        </td>
+      </tr>
+      <tr>
+        <th>September<p>2011</p></th>
+        <td>
+          <h2>ONC, Funds Open-Source Software to Streamline Clinical Quality Measures Reporting for Meaningful Use Program</h2> by Sara Cottington, MHA, RHIT, CPHQ, Journal of AHIMA<p > Reporting Clinical Quality measures from an electronic health record (EHR) system is new territory and can be challenging for providers.  However, that is just what eligible professionals must do to participate in the meaningful use EHR incentive program.  <a href="http://www.ahimajournal-digital.com/ahimajournal/201109?pg=52#pg52">Read entire article.</a></p>
+        </td>
+      </tr>
+      <tr>
+        <th>July<p>2011</p></th>
+        <td>
+          <h2>popHealth Open Source Software Permits Viewing and Reporting of Quality Measures in Health Care</h2> by Andy Oram, O'Reilly Radar<p>The Office of the National Coordinator for Health IT and the Health 2.0 entrepreneurial organization have opened a contest for developers to innovate with the popHealth tool beyond its reporting functions so healthcare providers can learn more about their patient populations and improve their care.  <a href="http://govhealthit.com/news/onc-health-20-launch-pophealth-app-challenge">Read entire article.</a></p>
+        </td>
+      </tr>
+      <tr>
+        <th>June<p>2011</p></th>
+        <td>
+          <h2>ONC's popHealth automates meaningful use reporting for docs</h2> by Mary Mosquera, Government Health IT<p>WASHINGTON  The Office of the National Coordinator for Health IT (ONC) has made available a free tool to simplify the reporting by physicians and practices of clinical quality measures for meaningful use.
+          Although popHealth was just a concept a year ago, ONC has conducted real-world testing and is highlighting it as providers begin to demonstrate meaningful use. <a href="http://www.healthcareitnews.com/news/oncs-pophealth-automates-meaningful-use-reporting-docs">Read entire article.</a></p>
+        </td>
+      </tr>
+      <tr>
+        <th>February<p>2011</p></th>
+        <td>
+          <h2>ONC provides free population health measurement tool</h2>by Diana Manos, Senior Editor<p>As the government gears up to develop standards for meaningful use Stages 2 and 3, the American Medical Association and MITRE Corporation, on behalf of the Office of the National Coordinator for Health Information Technology, are working on a project to help test the collection of population health “in the real world.”  <a href="http://www.healthcareitnews.com/news/onc-provides-population-health-measurement-tool">Read entire article.</a></p>
+        </td>
+      </tr>
+      <tr>
+        <th>February<p>2010</p></th>
+        <td>
+          <h2>ONC unveils "popHealth" for EHR-based quality reporting</h2> by Mary Mosquera, Government Health IT<p>The Office of the National Coordinator for Health IT began making available today open source software that will let physicians extract data automatically from their electronic health record systems and generate quality reports and analysis on their patients' healthcare.  The "popHealth" prototype software is designed to make it easier for providers to submit summary quality measures or data to public health organizations and federal agencies as part of their existing workflow, according to the ONC announcement.  <a href="http://www.govhealthit.com/news/onc-unveils-%C3%A2%E2%82%AC%CB%9Cpophealth-ehr-based-quality-reporting">Read entire article.</a></p>
+        </td>
+      </tr>
       </table>
-    </div>
-    <footer>
-      <div id="footerSourceForge"><a href="http://github.com/" target="_external"><img src="images/github_icon.png" alt="GitHub Logo"/></a></div>
-      <div id="footerLinks">
-        This project was funded by a contract from the <a href="http://www.hhs.gov/healthit/" target="_external">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp
-        <a href="http://www.hhs.gov/Privacy.html" target="_external">Privacy Policy</a> &nbsp
-        <a href="http://www.hhs.gov/Disclaimer.html" target="_external">Disclaimer</a> &nbsp
-        <br>Page Last Revised: April 19, 2012
+      <div class="bottom_border_full"></div>
+          <div class="bottom"></div>
       </div>
-    </footer>
-    <script type="text/javascript">
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-      try {
-        var pageTracker = _gat._getTracker("UA-13224247-1");
-        pageTracker._trackPageview();
-      } catch(err) {}
-    </script>
-  </body>
-</html>
+      <footer>
+        <div id="footerSourceForge"><a href="http://github.com/" target="_external"><img src="images/github_icon.png" alt="GitHub Logo"/></a></div>
+        <div id="footerLinks">
+          This project was funded by a contract from the <a href="http://www.hhs.gov/healthit/" target="_external">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp
+          <a href="http://www.hhs.gov/Privacy.html" target="_external">Privacy Policy</a> &nbsp
+          <a href="http://www.hhs.gov/Disclaimer.html" target="_external">Disclaimer</a> &nbsp
+          <br>Page Last Revised: July 11, 2012
+        </div>
+      </footer>
+        <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">
+          try {
+          var pageTracker = _gat._getTracker("UA-13224247-1");
+          pageTracker._trackPageview();
+          } catch(err) {}
+        </script>
+    </body>
+  </html>

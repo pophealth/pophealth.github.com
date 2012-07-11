@@ -1,89 +1,131 @@
 <!doctype html>
-<meta charset=utf-8>
 <html lang=en>
   <head>
-    <!-- Enable IE9 Standards mode -->
-    <meta http-equiv="X-UA-Compatible" content="IE=9" >
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen"/>
     <link rel="icon" type="image/png" href="/images/pophealth_logo_small.png"/>
-    <title>popHealth - About Page</title>
+    <title>About popHealth</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+     // DOM ready
+     $(function() {
+        // Create the dropdown base
+        $("<select />").appendTo("nav");
+        // Create default option "Go to..."
+        $("<option />", {
+           "value"   : "",
+           "text"    : "Go to..."
+        }).appendTo("nav select");
+        // Populate dropdown with menu items
+        $("nav a").each(function() {
+         var el = $(this);
+         var opt = $("<option />", {
+             "value"   : el.attr("href"),
+             "text"    : el.text()
+         });
+         if ($(this).hasClass("active")) opt.attr("selected","selected");
+         opt.appendTo("nav select");
+        });
+       // To make dropdown actually work
+       // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/
+        $("nav select").change(function() {
+          window.location = $(this).find("option:selected").val();
+        });
+     });
+    </script>
   </head>
   <body>
-  <div id="header">
-    <div id="logo">
-      <a href="index.html"><img src="images/pophealth_logo_large.png" alt="popHealth Logo" height="65"/></a>
-    </div>
-    <div id="nav">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="about.html" class="selected">About</a></li>
-        <li><a href="screen_shots.html">Screen Shots</a></li>
-        <li><a href="http://demo.projectpophealth.org/users/sign_in">Demo</a></li>
-        <li><a href="download.html">Download</a></li>
-        <li><a href="http://github.com/pophealth">Code</a></li>
-        <li><a href="participate.html">Participate</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="mailto:talk@projectpophealth.org">Contact</a></li>
-      </ul> 
-    </div>
-  </div>
-  <article class="main">
-    <h1>An Open Source Quality Measure Reference Implementation</h1>
-    <h4>Empowers healthcare providers to perform Meaningful Use quality measure reporting and promotes easier submission of quality measures to public health organizations</h4>
-    <iframe title="YouTube video player" width="920" height="548" src="http://www.youtube.com/embed/b0zqtYYPE0c" frameborder="0" allowfullscreen></iframe>
-    <section class="projectDescription">
-      <h2>What is popHealth?</h2>
-      <p>popHealth is an open source reference implementation software service that automates the reporting of Meaningful Use quality measures. popHealth integrates with a healthcare provider’s electronic health record (EHR) system using continuity of care records.  popHealth streamlines the automated generation of summary quality measure reports on the provider’s patient population.</p>
-    </section>
-    <section class="projectDescription">
-      <h2>Who are the intended users?</h2>
-      <p>popHealth supports healthcare providers and EHR vendors by reporting clinical quality measures from electronic health record continuity of care files. Providers are empowered to better understand, and analyze the health of their patient population, and meet Meaningful Use reporting objectives, through reports of clinical quality measures. EHR vendors and healthcare providers are free to download, use, and integrate the popHealth software in their systems.</p>
-    </section>
-    <section class="projectDescription">
-      <h2>What is the project's objective?</h2>
-      <p>popHealth is designed to simplify the reporting of summary quality measures, and streamline the exchange of summary quality data. Demonstration of Meaningful Use requires the reporting of quality measure data. This reference implementation open source software demonstrates how providers can rapidly produce and submit Meaningful Use clinical quality measures.  Further, popHealth provides EHR vendors with a reference implementation software package to guide the development of further Meaningful Use quality measures.</p>
-    </section>
-    <h2>Documents</h2>
-    <div class="questionAnswer firstQuestion">
-      <div class="questionAnswer">
-        <div class="question">Publications and Presentations</div>
-        <p><a href="documents/popHealth_fact_sheet_02132011.pdf">popHealth: A New Approach to Population Health Reporting (handout) (pdf | 700KB)</a></p>
-        <p><a href="documents/pophealth_overview_04032012.pdf">popHealth: Project Overview (presentation) (pdf | 7MB)</a></p>
-        <p><a href="documents/popHealth_software_design_document_041712.pdf">popHealth: Software Design Document (pdf | 2MB)</a></p>
-        <p><a href="documents/pophealth_instructions_04172012.pdf">popHealth User Instructions (pdf | 2MB)</a></p>
-        <p><a href="documents/popHealth_bidmc_maehc_pilot_public_released_03302012.pdf">popHealth/BIDMC Pilot Results (pdf | 7MB)</a></p>
+    <header>
+      <div id="logo">
+        <a href="index.html"><img src="images/pophealth_logo_large.png" alt="popHealth Logo" height="65"/></a>
       </div>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="screen_shots.html">Screen Shots</a></li>
+          <li><a href="http://demo.projectpophealth.org/users/sign_in">Demo</a></li>
+          <li><a href="download.html">Download</a></li>
+          <li><a href="http://github.com/pophealth">Code</a></li>
+          <li><a href="participate.html">Participate</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="mailto:talk@projectpophealth.org">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="wrapper">
+      <div class="top_border_full"></div>
+      <div class="top"></div>
+      <h1 class="heading">About</h1>
+      <iframe title="YouTube video player" width="920" height="548" src="http://www.youtube.com/embed/b0zqtYYPE0c"></iframe>
+      <div class="bottom_border_full"></div>
+      <div class="bottom"></div>
+      <section class="projectDescription">
+        <div class="top_border_full"></div>
+        <div class="top"></div>
+        <article>
+          <h1>What is popHealth?</h1>
+            <p>popHealth is an open source reference implementation software service that automates the reporting of Meaningful Use quality measures. popHealth integrates with a healthcare provider’s electronic health record (EHR) system using continuity of care records.  popHealth streamlines the automated generation of summary quality measure reports on the provider’s patient population.</p>
+        </article>
+        <article>
+          <h1>Who are the intended users?</h1>
+          <p>popHealth supports healthcare providers and EHR vendors by reporting clinical quality measures from electronic health record continuity of care files. Providers are empowered to better understand, and analyze the health of their patient population, and meet Meaningful Use reporting objectives, through reports of clinical quality measures. EHR vendors and healthcare providers are free to download, use, and integrate the popHealth software in their systems.</p>
+        </article>
+        <article>
+          <h1>What is the project's objective?</h1>
+          <p>popHealth is designed to simplify the reporting of summary quality measures, and streamline the exchange of summary quality data. Demonstration of Meaningful Use requires the reporting of quality measure data. This reference implementation open source software demonstrates how providers can rapidly produce and submit Meaningful Use clinical quality measures.  Further, popHealth provides EHR vendors with a reference implementation software package to guide the development of further Meaningful Use quality measures.</p>
+        </article>
+        <div class="bottom_border_full"></div>
+        <div class="bottom"></div>
+      </section>
+      <section>
+        <div class="top_border_full"></div>
+        <div class="top"></div>
+        <article>
+          <h1>Documents</h1>
+          <h2>Publications and Presentations</h2>
+          <ul>
+            <li><a href="documents/popHealth_fact_sheet_02132011.pdf">popHealth: A New Approach to Population Health Reporting (handout) (pdf | 700KB)</a></p>
+            <li><a href="documents/pophealth_overview_04032012.pdf">popHealth: Project Overview (presentation) (pdf | 7MB)</a></p>
+            <li><a href="documents/popHealth_software_design_document_041712.pdf">popHealth: Software Design Document (pdf | 2MB)</a></p>
+            <li><a href="documents/pophealth_instructions_04172012.pdf">popHealth User Instructions (pdf | 2MB)</a></p>
+            <li><a href="documents/popHealth_bidmc_maehc_pilot_public_released_03302012.pdf">popHealth/BIDMC Pilot Results (pdf | 7MB)</a></p>
+          </ul>
+          <p>Documents in PDF format require the <a href="http://get.adobe.com/reader/">Adobe Acrobat Reader®</a>. If you experience problems with PDF documents, please <a href="http://get.adobe.com/reader/">download the latest version of the Reader®</a>.
+          </p>
+        </article>
+        <div class="bottom_border_full"></div>
+        <div class="bottom"></div>
+      </section>
     </div>
-    <br/>
-    Documents in PDF format require the <a href="http://get.adobe.com/reader/">Adobe Acrobat Reader®</a>.
-    <br/>
-    If you experience problems with PDF documents, please <a href="http://get.adobe.com/reader/">download the latest version of the Reader®</a>.
-    <p/>
-  </article>
-  <footer>
-    <div id="footerSourceForge">
-      <a href="http://github.com/" target="_external"><img src="images/github_icon.png" alt="GitHub Logo"></a>
-    </div>
-    <div id="footerLinks">
-      Content of this site is sponsored by the <a href="http://www.hhs.gov/healthit/" target="_external">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp
-      <a href="http://www.hhs.gov/Privacy.html" target="_external">Privacy Policy</a> &nbsp 
-      <a href="http://www.hhs.gov/Disclaimer.html" target="_external">Disclaimer</a> &nbsp
-      <br>Page Last Revised: April 17, 2012
-    </div>
-  </footer>
-  <script type="text/javascript">
-    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-  </script>
-  <script type="text/javascript">
-    try {
-      var pageTracker = _gat._getTracker("UA-13224247-1");
-      pageTracker._trackPageview();
-    } catch(err) {}
-  </script>
+    <footer>
+      <div id="footerSourceForge">
+        <a href="http://github.com/"><img src="images/github_icon.png" alt="GitHub Logo"></a>
+      </div>
+      <div id="footerLinks">
+        Content of this site is sponsored by the <a href="http://www.hhs.gov/healthit/">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp;
+        <a href="http://www.hhs.gov/Privacy.html">Privacy Policy</a> &nbsp;
+        <a href="http://www.hhs.gov/Disclaimer.html">Disclaimer</a> &nbsp;
+        <br>Page Last Revised: July 11, 2012
+      </div>
+    </footer>
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-13224247-1");
+        pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
   </body>
 </html>

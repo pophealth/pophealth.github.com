@@ -1,26 +1,57 @@
 <!doctype html>
-<meta charset=utf-8>
 <html lang=en>
-  <head>
-    <!-- Enable IE9 Standards mode -->
-    <meta http-equiv="X-UA-Compatible" content="IE=9" >
+  <head> 
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
     <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen"/>
     <link rel="icon" type="image/png" href="/images/pophealth_logo_small.png"/>
-    <title>popHealth - Screen Shots</title>
+    <title>Screenshots</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+     // DOM ready
+     $(function() {
+        // Create the dropdown base
+        $("<select />").appendTo("nav");
+        // Create default option "Go to..."
+        $("<option />", {
+           "value"   : "",
+           "text"    : "Go to..."
+        }).appendTo("nav select");
+        // Populate dropdown with menu items
+        $("nav a").each(function() {
+         var el = $(this);
+         var opt = $("<option />", {
+             "value"   : el.attr("href"),
+             "text"    : el.text()
+         });
+         if ($(this).hasClass("active")) opt.attr("selected","selected");
+         opt.appendTo("nav select");
+        });
+       // To make dropdown actually work
+       // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/
+        $("nav select").change(function() {
+          window.location = $(this).find("option:selected").val();
+        });
+     });
+    </script>
   </head>
   <body>
-    <div id="header">
+    <header>
       <div id="logo">
         <a href="index.html"><img src="images/pophealth_logo_large.png" alt="popHealth Logo" height="65"/></a>
       </div>
-      <div id="nav">
+      <nav>
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="screen_shots.html"class="selected">Screen Shots</a></li>
+          <li><a href="screen_shots.html" class="active">Screen Shots</a></li>
           <li><a href="http://demo.projectpophealth.org/users/sign_in">Demo</a></li>
           <li><a href="download.html">Download</a></li>
           <li><a href="http://github.com/pophealth">Code</a></li>
@@ -29,74 +60,105 @@
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="mailto:talk@projectpophealth.org">Contact</a></li>
         </ul>
-      </div>
-    </div>
-    <div class="main">
-      <h1>Screen Shots</h1>
+      </nav>
+    </header>
+    <div class="wrapper">
+      <h1 class="heading">Screen Shots</h1>
       <h4>All data and information in the popHealth screen shots are associated with fictional individuals.</h4>
-      <table id="screenshot">
-        <tbody>
-          <tr>
-            <td>
-              <a href="images/pophealth_login.png"><img src="images/pophealth_login_small.png" alt="popHealth Login Page" title="popHealth Login Page"></a>
-              <br/>
-              <a href="images/pophealth_login.png" alt="popHealth Login Page">Login Page</a><br>
-            </td>
-            <td></td>
-            <td>
-              <a href="images/Single_Provider_Dashboard_Page.png"><img src="images/Single_Provider_Dashboard_Page.png" alt="Single Provider Dashboard Page" title="Single Provider Dashboard Page"></a>
-              <br/>
-              <a href="images/Single_Provider_Dashboard_Page.png">Single Provider Dashboard Page</a><br>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a href="images/Individual_Measure_Page.png"><img src="images/Individual_Measure_Page.png" alt="Individual Measure Page" title="Patient List Page"></a>
-              <br/>
-              <a href="images/Individual_Measure_Page.png">Individual Measure Page</a><br>
-            </td>
-            <td></td>
-            <td>
-              <a href="images/Patient_List_Page.png"><img src="images/Patient_List_Page.png" alt="Patient List Page" title="Patient List Page"></a>
-              <br/>
-              <a href="images/Patient_List_Page.png">Patient List Page</a><br>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a href="images/Multi-Provider_Practice_Page.png"><img src="images/Multi-Provider_Practice_Page.png" alt="Multi-Provider Dash Page" title="Multi-Provider Dash Page"></a>
-              <br/>
-              <a href="images/Multi-Provider_Practice_Page.png" style="font-style:italic">Multi-Provider Practice Page</a><br>
-            </td>
-            <td></td>
-           <td>
-              <a href="images/Multi-Provider_Measure_Page.png"><img src="images/Multi-Provider_Measure_Page.png" alt="Multi-Provider Measure Page" title="Multi-Provider Measure Page"></a>
-              <br/>
-              <a href="images/Multi-Provider_Measure_Page.png" style="font-style:italic">Multi-Provider Measure Page</a><br>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a href="images/Patient_View_Page.png"><img src="images/Patient_View_Page.png" alt="Patient View" title="Patient View - design"></a>
-              <br/>
-              <a href="images/Patient_View_Page.png" style="font-style:italic">Patient View</a><br>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <br/>
-      <p/>
+      <section class="First">
+        <div class="top_border_full"></div>
+        <div class="top"></div>
+        <figure id="Login">
+          <img src="images/pophealth_login.png" alt="popHealth Login Page" title="popHealth Login Page">
+          <figcaption>
+            <a href="images/pophealth_login.png">Login Page</a>
+          </figcaption>
+        </figure>
+        <div class="bottom_border_full"></div>
+        <div class="bottom"></div>
+      </section>
+      <section class="Second">
+        <div class="top_border_full"></div>
+        <div class="top"></div>
+        <figure id="SingleProviderDash">
+          <img src="images/Single_Provider_Dashboard_Page.png" alt="Single Provider Dashboard Page" title="Single Provider Dashboard Page">
+          <figcaption>
+            <a href="images/Single_Provider_Dashboard_Page.png">Single Provider Dashboard Page</a>
+          </figcaption>
+        </figure>
+        <div class="bottom_border_full"></div>
+        <div class="bottom"></div>
+      </section>
+      <section class="First">
+        <div class="top_border_full"></div>
+        <div class="top"></div>
+        <figure id="MeasurePage">
+            <img src="images/Individual_Measure_Page.png" alt="Individual Measure Page" title="Patient List Page">
+            <figcaption>
+              <a href="images/Individual_Measure_Page.png">Individual Measure Page</a>
+            </figcaption>
+        </figure>
+        <div class="bottom_border_full"></div>
+        <div class="bottom"></div>
+      </section>
+      <section class="Second">
+        <div class="top_border_full"></div>
+        <div class="top"></div>
+        <figure id="PatientList">
+            <img src="images/Patient_List_Page.png" alt="Patient List Page" title="Patient List Page">
+            <figcaption>
+              <a href="images/Patient_List_Page.png">Patient List Page</a>
+            </figcaption>
+        </figure>
+        <div class="bottom_border_full"></div>
+        <div class="bottom"></div>
+      </section>
+      <section class="First">
+        <div class="top_border_full"></div>
+        <div class="top"></div>
+        <figure id="Multi-Provider">
+          <img src="images/Multi-Provider_Practice_Page.png" alt="Multi-Provider Dash Page" title="Multi-Provider Dash Page">
+          <figcaption>
+            <a href="images/Multi-Provider_Practice_Page.png" style="font-style:italic">Multi-Provider Practice Page</a>
+          </figcaption>
+        </figure>
+        <div class="bottom_border_full"></div>
+        <div class="bottom"></div>
+      </section>
+      <section class="Second">
+        <div class="top_border_full"></div>
+        <div class="top"></div>
+        <figure id="Multi-ProviderMeasure">
+          <img src="images/Multi-Provider_Measure_Page.png" alt="Multi-Provider Measure Page" title="Multi-Provider Measure Page">
+          <figcaption>
+            <a href="images/Multi-Provider_Measure_Page.png" style="font-style:italic">Multi-Provider Measure Page</a>
+          </figcaption>
+        </figure>
+        <div class="bottom_border_full"></div>
+        <div class="bottom"></div>
+      </section>
+      <section class="First">  
+        <div class="top_border_full"></div>
+        <div class="top"></div>    
+        <figure id="PatientView">
+          <img src="images/Patient_View_Page.png" alt="Patient View" title="Patient View - design">
+          <figcaption>
+            <a href="images/Patient_View_Page.png" style="font-style:italic">Patient View</a>
+          </figcaption>
+        </figure>
+        <div class="bottom_border_full"></div>
+        <div class="bottom"></div>
+      </section>
+    </div>
+    <footer>
+      <div id="footerSourceForge">
+        <a href="http://github.com/"><img src="images/github_icon.png" alt="GitHub Logo"></a>
       </div>
-      <footer>
-        <div id="footerSourceForge">
-          <a href="http://github.com/" target="_external"><img src="images/github_icon.png" alt="GitHub Logo"></a>
-        </div>
-        <div id="footerLinks">
-          Content of this site is sponsored by the <a href="http://www.hhs.gov/healthit/" target="_external">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp 
-          <a href="http://www.hhs.gov/Privacy.html" target="_external">Privacy Policy</a> &nbsp
-          <a href="http://www.hhs.gov/Disclaimer.html" target="_external">Disclaimer</a> &nbsp
-          <br/>Page Last Revised: February 2, 2012
-        </div>
+      <div id="footerLinks">
+        Content of this site is sponsored by the <a href="http://www.hhs.gov/healthit/">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp;
+        <a href="http://www.hhs.gov/Privacy.html">Privacy Policy</a> &nbsp;
+        <a href="http://www.hhs.gov/Disclaimer.html">Disclaimer</a> &nbsp;
+        <br>Page Last Revised: July 11, 2012
       </div>
     </footer>
     <script type="text/javascript">

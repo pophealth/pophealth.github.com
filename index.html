@@ -1,24 +1,54 @@
 <!doctype html>
-<meta charset=utf-8>
 <html lang=en>
   <head> 
-    <!-- Enable IE9 Standards mode -->
-    <meta http-equiv="X-UA-Compatible" content="IE=9" >
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen"/>
     <link rel="icon" type="image/png" href="/images/pophealth_logo_small.png"/>
     <title>popHealth - An Open Source Quality Measure Reference Implementation</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+     // DOM ready
+     $(function() {
+        // Create the dropdown base
+        $("<select />").appendTo("nav");
+        // Create default option "Go to..."
+        $("<option />", {
+           "value"   : "",
+           "text"    : "Go to..."
+        }).appendTo("nav select");
+        // Populate dropdown with menu items
+        $("nav a").each(function() {
+         var el = $(this);
+         var opt = $("<option />", {
+             "value"   : el.attr("href"),
+             "text"    : el.text()
+         });
+         if ($(this).hasClass("active")) opt.attr("selected","selected");
+         opt.appendTo("nav select");
+        });
+       // To make dropdown actually work
+       // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/
+        $("nav select").change(function() {
+          window.location = $(this).find("option:selected").val();
+        });
+     });
+    </script>
   </head>
   <body>
-    <div id="header">
+    <header>
       <div id="logo">
         <a href="index.html"><img src="images/pophealth_logo_large.png" alt="popHealth Logo" height="65"/></a>
       </div>
-      <div id="nav">
+      <nav>
         <ul>
-          <li><a href="/" class="selected">Home</a></li>
+          <li><a href="/" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="screen_shots.html">Screen Shots</a></li>
           <li><a href="http://demo.projectpophealth.org/users/sign_in">Demo</a></li>
@@ -29,32 +59,36 @@
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="mailto:talk@projectpophealth.org">Contact</a></li>
         </ul>
-      </div>
-    </div>
-    <div id="LeftDiv">
-      <div id="top_border"><img src="images/top_border.png" alt="" class="borders"></div>
-      <article class="feature">
-        <h4>An Open-Source Quality Measure Reference Implementation</h4>
-        <p>Empowers healthcare providers to perform Meaningful Use quality measure reporting and promotes easier submission of quality measures to public health organizations</p>
-      </article>
-      <div id="video_1">
-        <a href="about.html"><img src="images/video.jpg" alt="Pophealth Video"/></a> 
-      </div>
-      <a href="http://groups.google.com/group/pophealth-announce/subscribe"><img src="images/button_announcements.png" alt="Join Announcement List"/></a>
-      <img src="images/bottom_border.png" alt="" class="borders">
-    </div>
-    <div id="RightDiv">
-      <div id="sidebar_1">
-        <h3>popHealth Spotlight</h3>
-      </div>
-        <article class="spotlight">
-          <h4>popHealth to support Stage 2 clinical quality measures!</h4>
-            <p class="spotlight">popHealth v2.0 will be coming in a timely fashion after release of the final rule this summer, 2012.  Click <a href="http://www.gpo.gov/fdsys/pkg/FR-2012-03-07/pdf/2012-4443.pdf">here</a> to read the proposed rule.</p>
-       </article>
-      <div class="featured">
-        <div id="sidebar_2">
-          <h3>Upcoming Events and Milestones</h3>
+      </nav>
+    </header>
+    <div class="wrapper">
+      <section class="First">
+        <div class="top_border"></div>
+        <article class="feature">
+          <h4>An Open-Source Quality Measure Reference Implementation</h4>
+          <p>Empowers healthcare providers to perform Meaningful Use quality measure reporting and promotes easier submission of quality measures to public health organizations</p>
+        </article>
+        <article class="feature">
+          <div id="video_1">
+            <a href="about.html"><img src="images/video.jpg" alt="Pophealth Video"/></a> 
+          </div>
+          <a href="http://groups.google.com/group/pophealth-announce/subscribe"><img src="images/button_announcements.png" alt="Join Announcement List"/></a>
+        </article>
+        <div class="bottom_border"></div>
+        <div class="bottom"></div>
+      </section>
+      <section class="Second">
+        <div id="sidebar_1">
+          <h3>popHealth Spotlight</h3>
         </div>
+          <article class="spotlight">
+            <h4>popHealth to support Stage 2 clinical quality measures!</h4>
+              <p class="spotlight">popHealth v2.0 will be coming in a timely fashion after release of the final rule this summer, 2012.  Click <a href="http://www.gpo.gov/fdsys/pkg/FR-2012-03-07/pdf/2012-4443.pdf">here</a> to read the proposed rule.</p>
+         </article>
+        <div class="featured">
+          <div id="sidebar_2">
+            <h3>Upcoming Events and Milestones</h3>
+          </div>
         <table class="featured">
           <tbody>
             <tr>
@@ -101,7 +135,7 @@
         This project was funded by a contract from the <a href="http://www.hhs.gov/healthit/">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp
         <a href="http://www.hhs.gov/Privacy.html">Privacy Policy</a> &nbsp
         <a href="http://www.hhs.gov/Disclaimer.html">Disclaimer</a> &nbsp
-        <br>Page Last Revised: April 24, 2012
+        <br>Page Last Revised: July 11, 2012
       </div>
     </footer>
     <script type="text/javascript">
