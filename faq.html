@@ -101,7 +101,6 @@
           <ul class="faqHeader">
             <li><a href="#communication">How is communication managed on the open source project?</a></li>
             <li><a href="#laika">Is popHealth related to project Laika?</a></li>
-            <li><a href="#hquery">Is popHealth related to project hQuery?</a></li>
             <li><a href="#contribute">Can I contribute software source code to popHealth?</a></li>
             <li><a href="#codequality">Are there coding conventions that I must follow to submit code?</a></li>
             <li><a href="#agpl">Since popHealth requires the MongoDB database, does the AGPL license also apply to popHealth?</a></li>
@@ -167,7 +166,7 @@
         </article>
         <article>
           <h1 id="certified">Is popHealth Certified for Meaningful Use?</h1>
-          <p>popHealth is a Certified Clinical Quality Measure software module.  Its status is publicly available on the <a href="http://onc-chpl.force.com/ehrcert/EHRProductDetail?id=a0X30000003lxJlEAI&retURL=%2Fehrcert%2FEHRProductSearch&setting=Ambulatory">CHPL site</a></p>
+          <p>popHealth v1.4 is a Certified Clinical Quality Measure software module for Meaningful Use Stage 1.  Its status is publicly available on the <a href="http://onc-chpl.force.com/ehrcert/EHRProductDetail?id=a0X30000003lxJlEAI&retURL=%2Fehrcert%2FEHRProductSearch&setting=Ambulatory">CHPL site</a>.  popHealth v2.1 which is aligned with Meaningful Use Stage 2, has not yet been certified for the Meaningful Use Stage 2 program.</p>
         </article>
         <article>
           <h1 id="humanfactors">Does popHealth have human factors specialists on the team?</h1>
@@ -204,7 +203,7 @@
         </article>
         <article>
           <h1 id="testrecords">Are there test XML records that I can use to validate popHealth is correctly working?</h1>
-          <p>Yes.  There is a sister project to popHealth, called Cypress, that has some C32 and CCR XML records available for testing an EHR system's ability to accurately produce CQM results based on 225 test patient records.  You can access these 225 C32 and CCR XML records <a href="https://github.com/projectcypress/cypress/downloads">here</a>.</p>
+          <p>Yes.  There is a sister project to popHealth, called Cypress, that has some C32 and CCR XML records available for testing an EHR system's ability to accurately produce CQM results based on 225 test patient records.  You can access these 225 C32 and CCR XML records for testing the MU Stage 1 CQM logic for popHealth v1.4 <a href="https://github.com/projectcypress/cypress/downloads">here</a>.  For Meaningful Use Stage 2 testing, you can access the Cypress v2 software and generate QRDA Category 1 XML files to test popHealth.  Cypress v2 is available <a href="http://projectcypress.org">here</a>.</p>
         </article>
         <article>
           <h1 id="mu_stage2_hqmf">Where are the authoritative HQMF definitions of the Meaningful Use Stage 2 CQMs?</h1>
@@ -223,10 +222,6 @@
         <article>
           <h1 id="laika">How is popHealth related to project <a href="http://projectlaika.org">Laika</a>?</h1>
           <p>The vast majority of the software supporting popHealth runs atop of <a href="http://www.mitre.org">the MITRE Corporation's</a> open source <a href="http://projectlaika.org">Laika</a> project infrastructure.  Laika is an open source electronic health record (EHR) testing framework that can support testing EHR systems for interoperability against the HITSP C32 standard, HL7 v2.* Messages, and the IHE XDS.b Web Service exchange.  Similar to popHealth, all of the Laika software and source code, is also freely available under an Apache 2.0 open source distribution license.</p>
-        </article>
-        <article>
-          <h1 id="hquery">How is popHealth related to project <a href="http://projecthquery.org/">hQuery</a>?</h1>
-          <p>Similar to popHealth, <a href="http://projecthquery.org">hQuery</a> is another open source healthcare project.  The hQuery system uses a similar architecture to popHealth but is generalized to support ad-hoc queries distributed over a number of patient populations. Also similar to popHealth, hQuery integrates with certified EHR systems by leveraging their ability to generate HITSP C32 or ASTM CCR patient summaries.
         </article>
         <article>
           <h1 id="contribute">Can I contribute software source code to popHealth?</h1>
