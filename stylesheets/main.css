@@ -1075,6 +1075,10 @@ and (max-width : 320px) {
   } 
 }
 
+#upcoming_meetings article p {
+  margin-bottom: 20px;
+}
+
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen
 and (min-device-width : 320px)
