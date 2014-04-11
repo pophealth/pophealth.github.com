@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang=en>
+  <head> 
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen"/>
+    <link rel="icon" type="image/png" href="/images/pophealth_logo_small.png"/>
+    <title>Community Demo Servers</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+     // DOM ready
+     $(function() {
+        // Create the dropdown base
+        $("<select />").appendTo("nav");
+        // Create default option "Go to..."
+        $("<option />", {
+           "value"   : "",
+           "text"    : "Go to..."
+        }).appendTo("nav select");
+        // Populate dropdown with menu items
+        $("nav a").each(function() {
+         var el = $(this);
+         var opt = $("<option />", {
+             "value"   : el.attr("href"),
+             "text"    : el.text()
+         });
+         if ($(this).hasClass("active")) opt.attr("selected","selected");
+         opt.appendTo("nav select");
+        });
+       // To make dropdown actually work
+       // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/
+        $("nav select").change(function() {
+          window.location = $(this).find("option:selected").val();
+        });
+     });
+    </script>
+  </head>
+  <body>
+    <header>
+      <div id="logo">
+        <a href="index.html"><img src="images/pophealth_logo_large.png" alt="popHealth Logo" height="65"/></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="screen_shots.html">Screen Shots</a></li>
+          <li><a href="https://github.com/pophealth/popHealth/wiki/Installation-v2.1">Download</a></li>
+          <li><a href="http://github.com/pophealth">Code</a></li>
+          <li><a href="participate.html">Participate</a></li>
+          <li><a href="demo.html" class="active">Demo</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="mailto:pophealth-talk@googlegroups.com">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="wrapper">
+     <h1 class="heading">Community Demo Servers</h1>
+     <div class="wrapper">
+      <section>
+        <p>
+          Several demo servers have been setup by the community members for the benefit of other users. Please <a href="https://github.com/pophealth/popHealth/wiki/Community-Demo-Servers">click here</a> to see the complete list. If you have a demo server, please feel free to update the wiki page with the relevant information pointing to your demo server.
+          <br/>
+          <br/>
+          Community Maintained Demo Servers: <a href="https://github.com/pophealth/popHealth/wiki/Community-Demo-Servers">https://github.com/pophealth/popHealth/wiki/Community-Demo-Servers</a>
+        </p>
+      </section>
+    </div>
+    <footer>
+      <div id="footerSourceForge">
+        <a href="http://github.com/"><img src="images/github_icon.png" alt="GitHub Logo"></a>
+      </div>
+      <div id="footerLinks">
+        Content of this site is sponsored by the <a href="http://www.hhs.gov/healthit/">Office of the National Coordinator for Health Information Technology (ONC)</a> &nbsp;
+        <a href="http://www.hhs.gov/Privacy.html">Privacy Policy</a> &nbsp;
+        <a href="http://www.hhs.gov/Disclaimer.html">Disclaimer</a> &nbsp;
+        <br/>Page Last Revised: Apr 11, 2014
+      </div>
+    </footer>
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-13224247-1");
+        pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
+  </body>
+</html>
